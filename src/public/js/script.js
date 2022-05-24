@@ -67,17 +67,17 @@ function prev() {
 
 //form-handles
 
-var update = localStorage.getItem('myvalue')
-localStorage.clear()
-function register() {
-    location.href = "./form.ejs"
-}
+// var update = localStorage.getItem('myvalue')
+// localStorage.clear()
+// function register() {
+//     location.href = "./form.ejs"
+// }
 
-window.onload = function loadPage() {
-    const resg = document.querySelector('.signup');
-    const log = document.querySelector('.signin');
-    if (update != null) {
-        resg.style.display = 'none'
-        log.innerText = `Xin chào ${update}`;
-    }
-}
+// window.onload = function loadPage() {
+//     const resg = document.querySelector('.signup');
+//     const log = document.querySelector('.signin');
+//     if (update != null) {
+//         resg.style.display = 'none'
+//         log.innerText = `Xin chào ${update}`;
+//     }
+// }

@@ -6,11 +6,17 @@ let getHomepage = async (req, res) => {
 }
 
 let getDetailProduct = async (req, res) => {
+    //logic
     let productId = req.params.id;
     let [product] = await pool.execute(`SELECT * FROM shopee_item WHERE id = ?`, [productId]);
     return res.send(JSON.stringify(product));
 }
 
+let getDangKiPage = async (req, res) => {
+    //logic
+    return res.render('form.ejs')
+}
+
 module.exports = {
-    getHomepage, getDetailProduct
+    getHomepage, getDetailProduct, getDangKiPage
 }
