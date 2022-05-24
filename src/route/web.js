@@ -5,7 +5,7 @@ let router = express.Router();
 const initWebRoute = (app) => {
 
     router.get('/', homeController.getHomepage);
-
+    router.get('/product/:id', homeController.getDetailProduct)
     router.get('/dangki', (req, res) => {
         return res.render('form.ejs',)
     })

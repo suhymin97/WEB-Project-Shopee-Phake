@@ -591,44 +591,41 @@
 
     </div>
 
-    <!--Server Render san pham-->
+    <!--Server Render san pham start here-->
     <div class="box_render_level_1">
         <!--Box render level 1-->
-        <% for(let i=0; i < dataUser.length; i++) { %>
+        <% for(let i=0; i < dataProduct.length; i++) { %>
+
             <div class="box_render_level_2">
                 <!--Box render level 2-->
+                <a class="item_image__server_render" href="/product/<%= dataProduct[i].id %>" target="_blank">
+                    <div class="product_content">
 
-
-
-
-                <div class="product_content">
-                    <a class="item_image__server_render" href="/detail/user/<%= dataUser[i].id %>" target="_blank">
-                        <img src="image/product1.jpg" alt="" width="160px"></a>
-                    <div class="product_info">
-                        <div class="product_name">
-                            <a class="item_name__server_render" href="/detail/user/<%= dataUser[i].id %>"
-                                target="_blank">
+                        <img src="image/product1.jpg" alt="" width="160px">
+                        <div class="product_info">
+                            <div class="product_name">
                                 <p>
-                                    <%= dataUser[i].item_name %>
+                                    <%= dataProduct[i].item_name %>
                                 </p>
-                            </a>
-                        </div>
-                        <div class=" product_sub_info">
-                            <div class="product_price">
-                                <p>
-                                    <%= dataUser[i].price %>
-                                </p>
+
                             </div>
-                            <div class="product_saled">Đã bán 6k+ </div>
+                            <div class=" product_sub_info">
+                                <div class="product_price">
+                                    <p>
+                                        <%= dataProduct[i].price %>
+                                    </p>
+                                </div>
+                                <div class="product_saled">Đã bán 6k+ </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                </a>
 
 
 
                 <!--End Box render level 2-->
             </div>
+
             <% } %>
                 <!--End Box render level 1-->
     </div>
