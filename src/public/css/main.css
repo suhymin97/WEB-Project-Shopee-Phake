@@ -708,6 +708,7 @@ input {
 
 .product_content {
     width: 160px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -722,6 +723,7 @@ input {
     margin-top: 6px;
     min-height: 95px;
     padding: 4px;
+
 }
 
 .product_sub_info {
@@ -844,4 +846,33 @@ input {
 .close_btn:hover {
     background-color: #FA4F30;
     color: white;
+}
+
+.item_image__server_render {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item_name__server_render {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box_render_level_2 {
+    width: 200px;
+
+}
+
+.box_render_level_1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 12%;
 }

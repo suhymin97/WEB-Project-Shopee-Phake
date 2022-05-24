@@ -579,81 +579,63 @@
 
         </div>
 
-        <div class="top_products_container">
-            <div class="top_header">
-                <p>SẢN PHẨM HÀNG ĐẦU</p>
-            </div>
-            <div class="top_products">
-                <div class="product_box col6">
-                    <div class="top_product">
-                        <div class="product_content">
-                            <img src="image/product1.jpg" alt="" width="160px">
-                            <div class="product_info">
-                                <div class="product_name">Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69
-                                    Oversize</div>
-                                <div class="product_sub_info">
-                                    <div class="product_price">
-                                        <p>₫55.000</p>
-                                    </div>
-                                    <div class="product_saled">Đã bán 6k+ </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product_box col6">
-                    <div class="top_product">
-                        <div class="product_content">
-                            <img src="image/product1.jpg" alt="" width="160px">
-                            <div class="product_info">
-                                <div class="product_name">Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69
-                                    Oversize</div>
-                                <div class="product_sub_info">
-                                    <div class="product_price">
-                                        <p>₫55.000</p>
-                                    </div>
-                                    <div class="product_saled">Đã bán 6k+ </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product_box col6">
-                    <div class="top_product">
-                        <div class="product_content">
-                            <img src="image/product1.jpg" alt="" width="160px">
-                            <div class="product_info">
-                                <div class="product_name">
-                                    <%=dataUser%>
-                                </div>
-                                <div class=" product_sub_info">
-                                    <div class="product_price">
-                                        <p>₫55.000</p>
-                                    </div>
-                                    <div class="product_saled">Đã bán 6k+ </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-            </div>
-        </div>
 
 
     </div>
 
 
 
+    </div>
+    </div>
+
+
+    </div>
+
+    <!--Server Render san pham-->
+    <div class="box_render_level_1">
+        <!--Box render level 1-->
+        <% for(let i=0; i < dataUser.length; i++) { %>
+            <div class="box_render_level_2">
+                <!--Box render level 2-->
+
+
+
+
+                <div class="product_content">
+                    <a class="item_image__server_render" href="/detail/user/<%= dataUser[i].id %>" target="_blank">
+                        <img src="image/product1.jpg" alt="" width="160px"></a>
+                    <div class="product_info">
+                        <div class="product_name">
+                            <a class="item_name__server_render" href="/detail/user/<%= dataUser[i].id %>"
+                                target="_blank">
+                                <p>
+                                    <%= dataUser[i].item_name %>
+                                </p>
+                            </a>
+                        </div>
+                        <div class=" product_sub_info">
+                            <div class="product_price">
+                                <p>
+                                    <%= dataUser[i].price %>
+                                </p>
+                            </div>
+                            <div class="product_saled">Đã bán 6k+ </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!--End Box render level 2-->
+            </div>
+            <% } %>
+                <!--End Box render level 1-->
+    </div>
+    <!--End server render san pham-->
 
     <script src="/js/script.js"></script>
-    <script src="/js/showProduct.js"></script>
+    <!--<script src="/js/showProduct.js"></script> -->
 </body>
 
 </html>
