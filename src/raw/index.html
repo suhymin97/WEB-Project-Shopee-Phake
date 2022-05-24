@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee Phake</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <link rel="shortcut icon" href="./assets/img/spicon.png" type="image/x-icon" />
+
+</head>
+<body>
+    <div class="nav_bar">
+        <div class="container_nav_bar"> 
+            <div class="nav_bar_items">
+                <ul class="nav_bar_ul" type = 'none'>
+                    <li>Kênh Người Bán</li>
+                    <li>Trở thành Người bán Shopee</li>
+                    <li>Tải ứng dụng</li>
+                    <li>Kết nối
+                        <i class="ti-facebook"></i>
+                        <i class="ti-instagram"></i>
+                        
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav_bar_links">
+                <ul class="nav_bar_ul" type = 'none'>
+                    <li class="noti_link"><a class="nav_bar_a" href=""><i class="ti-bell"></i>Thông báo</a>
+                    <div class="notification">
+                        <div class="noti_header">
+                            <p>Thông báo mới nhận</p>
+                        </div>
+                        <div class="noti_container">
+                            <div class="request">
+                                <div class="signin_request">Đăng Nhập</div>
+                                <div class="signup_request">Đăng Ký</div>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li><a class="nav_bar_a" href=""><i class="ti-help-alt"></i> Hỗ trợ</a></li>
+                    <li  class="language_link"><a class="nav_bar_a" href=""><i class="ti-world"></i> Tiếng Việt</a>
+                        <div class="language_options">
+                            <p class="lang">Tiếng Anh</p>
+                            <p class="lang">Tiếng Nhật</p>
+                            <p class="lang">Tiếng Trung</p>
+                            
+                        </div>
+                    </li>
+                    <li class="signup" onclick="register()">Đăng Ký</li>
+                    <li class="signin">Đăng Nhập</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container_wrapper">
+            <div class="logo">
+                <img class="sp_logo" src="./assets/img/xóp pi logo.png" alt="">
+            </div>
+            <div>
+                <div class="search_bar">
+                    <input type="text">
+                    <div class="search_icon">
+                        <i style="color: white;" class="ti-search"></i>
+                    </div>        
+                </div>
+                <div class="suggestion">
+                    <p>Váy</p>
+                    <p>Dép</p>
+                    <p>Dép nữ</p>
+                    <p>Túi xách nữ</p>
+                    <p>Áo Croptop</p>
+                    <p>Chân váy</p>
+                    <p>Áo phông</p>
+                    <p>Giày cao gót</p>              
+                </div>
+            </div>
+            
+            <div class="cart">
+                <i style="font-size:32px;color:white" class="ti-shopping-cart"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider_container">
+        <div class="slider">
+            <div class="control_slider"><img src="./assets/img/slider1.png" onclick="changeImg()" alt="" class="left_slider"></div>
+            <div class="right_slider">
+                <!-- <div class="nextSlider"></div>
+                <div class="prevSlider"></div> -->
+                <img src="./assets/img/right_slide1.png" alt="" class="item1" width="400px" height="113px">
+                <img src="./assets/img/right_slide2.png" alt="" class="item2" width="400px" height="113px">
+            </div>    
+        </div>
+        <div class="special">
+            <div class="spe">
+                <img src="./assets/img/re.png" alt="" width="80px"><p>Gì Cũng Rẻ - Mua Là Freeship</p>
+            </div>
+
+            <div class="spe">
+                <img src="./assets/img/khunggiosale.png" alt="" width="80px"><p>Khung Giờ Săn Sale</p>
+            </div>
+
+            <div class="spe">
+                <img src="./assets/img/freeship.png" alt="" width="80px"><p>Miễn Phí Vận Chuyển</p>
+            </div>
+
+            <div class="spe">
+                <img src="./assets/img/hoantraxu.png" alt="" width="80px"><p>Hoàn Xu Lên Đến 300K</p>
+            </div>
+
+            <div class="spe">
+                <img src="./assets/img/hanghieu.png" alt="" width="80px"><p>Hàng Hiệu -50% - Deal 50%</p>
+            </div>
+
+            <div class="spe">
+                <img src="./assets/img/global.png" alt="" width="80px"><p>Hàng Quốc Tế</p>
+            </div>
+
+            <div class="spe">
+                <img src="./assets/img/napthedichvu.png" alt="" width="80px"><p>Nạp Thẻ & Dịch Vụ</p>
+            </div>
+
+            <div class="spe">
+                <img src="./assets/img/dealsoc1k.png" alt="" width="80px"><p>Deal Sốc Từ 1K</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="below_container">
+        <div class="category_section">
+            <div class="category_header">
+                <p>DANH MỤC</p>
+            </div>
+            
+            <div class="categories_cover">  
+
+                <div class="categories1">
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/aonam.png" alt="" width="80px"></a>
+                       <p>Thời Trang Nam</p></div>
+                    
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/dtpk.png" alt="" width="80px"></a>
+                    <p>Điện Thoại & Phụ Kiện</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="/assets/img/tbdt.png" alt="" width="80px"></a>
+                    <p>Thiết Bị Điện Tử</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/laptop.png" alt="" width="80px"></a>
+                    <p>Máy Tính & Laptop</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/camera.png" alt="" width="80px"></a>
+                    <p>Máy Ảnh & Máy Quay Phim</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/dongho.png" alt="" width="80px"></a>
+                    <p>Đồng Hồ</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/giaynam.png" alt="" width="80px"></a>
+                    <p>Giày Dép Nam</p></div>
+
+                    <div category class="cat col10">
+                        <a href=""><img src="./assets/img/tbgd.png" alt="" width="80px"></a>
+                    <p>Thiết Bị Gia Dụng</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/traibanh.png" alt="" width="80px"></a>
+                    <p>Thể Thao & Du Lịch</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/xemay.png" alt="" width="80px"></a>
+                    <p>Ô Tô & Xe Máy & Xe Đạp</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/balotuivinam.png" alt="" width="80px"></a>
+                    <p>Balo & Túi Ví Nam</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/dochoi.png" alt="" width="80px"></a>
+                    <p>Đồ Chơi Trẻ Em</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/cstc.png" alt="" width="80px"></a>
+                    <p>Chăm Sóc Thú Cưng</p></div>
+                </div>
+                <div class="btn">
+                    <button class="prevBtn" onclick="prev()"><i class="ti-angle-left"></i></button>
+                    <button class="nextBtn" onclick="next()"><i class="ti-angle-right"></i></button>
+                </div>
+    
+                <div class="categories1">
+                    <div categ class="cat col10">
+                        <a href=""><img src="./assets/img/aonu.png" alt="" width="80px"></a>
+                    <p>Thời Trang Nữ</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/mevabe.png" alt="" width="80px"></a>
+                    <p>Mẹ & Bé</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/cainoi.png" alt="" width="80px"></a>
+                    <p>Nhà Cửa & Đời Sống</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/sacdep.png" alt="" width="80px"></a>
+                    <p>Sắc Đẹp</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/suckhoe.png" alt="" width="80px"></a>
+                    <p>Sức Khỏe</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/giaynu.png" alt="" width="80px"></a>
+                    <p>Giày Dép Nữ</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/vinu.png" alt="" width="80px"></a>
+                    <p>Túi Ví Nữ</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/thatlung.png" alt="" width="80px"></a>
+                    <p>Phụ Kiện & Trang Sức Nữ</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/xicula.png" alt="" width="80px"></a>
+                    <p>Bách Hóa Online</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/sach.png" alt="" width="80px"></a>
+                    <p>Nhà Sách Online</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/ttte.png" alt="" width="80px"></a>
+                    <p>Thời Trang Trẻ Em</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/giatgiu.png" alt="" width="80px"></a>
+                    <p>Giặt Giũ & Chăm Sóc Nhà Cửa</p></div>
+
+                    <div class="cat col10">
+                        <a href=""><img src="./assets/img/vdv.png" alt="" width="80px"></a>
+                    <p>Voucher & Dịch Vụ</p></div>
+                </div>
+
+            </div>
+          
+            
+        </div>
+
+        <div class="flash_sale_section">
+            <div class="flash_sale_header">
+                <img src="./assets/img/flash_sale.png" alt="">
+                <div class="countdown">
+                    <div class="box_hours"></div>
+                    <div class="box_mins"></div>
+                    <div class="box_secs"></div>
+                </div>
+            </div>
+
+            <div class="flash_sale_products_1">
+                <div class="flash_sale_product col6">
+                    <div class="product">
+                        <div class="flash_sale_product_img">
+                            <img class="pro_img" src="./assets/img/item1.jpg" width="160px" alt="">
+                            <img class="frame" src="https://cf.shopee.vn/file/69f0262bfc7a38f979e7f4877fd1923f_tn" width="160px" alt="">
+                            <div class="sale">
+                                <p class="percent">27%</p>
+                                <p class="sale_title">GIẢM</p>
+                            </div>
+                        </div>
+                        <div class="price">₫1.279.000</div>
+                        <div class="progress width1"><p>ĐÃ BÁN 6k+ 1</p></div>
+                    </div>
+                </div>
+
+                
+
+                <div class="flash_sale_product col6">
+                    <div class="product">
+                        <div class="flash_sale_product_img">
+                            <img class="pro_img" src="./assets/img/item2.jpg" width="160px" alt="">
+                            <img class="frame" src="https://cf.shopee.vn/file/69f0262bfc7a38f979e7f4877fd1923f_tn" width="160px" alt="">
+                            <div class="sale">
+                                <p class="percent">70%</p>
+                                <p class="sale_title">GIẢM</p>
+                            </div>
+                        </div>
+                        <div class="price">₫777.000</div>
+                        <div class="progress width2"><p>ĐÃ BÁN 6k+ 0</p></div>
+                    </div>
+                </div>
+
+                <div class="flash_sale_product col6">
+                    <div class="product">
+                        <div class="flash_sale_product_img">
+                            <img class="pro_img" src="./assets/img/item3.jpg" width="160px" alt="">
+                            <img class="frame" src="https://cf.shopee.vn/file/69f0262bfc7a38f979e7f4877fd1923f_tn" width="160px" alt="">
+                            <div class="sale">
+                                <p class="percent">28%</p>
+                                <p class="sale_title">GIẢM</p>
+                            </div>
+                        </div>
+                        <div class="price">₫609.000</div>
+                        <div class="progress width3"><p>ĐÃ BÁN 6k+ 3</p></div>
+                    </div>
+                </div>
+
+                <div class="flash_sale_product col6">
+                    <div class="product">
+                        <div class="flash_sale_product_img">
+                            <img class="pro_img" src="./assets/img/item4.jpg" width="160px" alt="">
+                            <img class="frame" src="https://cf.shopee.vn/file/69f0262bfc7a38f979e7f4877fd1923f_tn" width="160px" alt="">
+                            <div class="sale">
+                                <p class="percent">50%</p>
+                                <p class="sale_title">GIẢM</p>
+                            </div>
+                        </div>
+                        <div class="price">₫599.000</div>
+                        <div class="progress width4"><p>ĐÃ BÁN 6k+ 2</p></div>
+                    </div>
+                </div>
+
+                <div class="flash_sale_product col6">
+                    <div class="product">
+                        <div class="flash_sale_product_img">
+                            <img class="pro_img" src="./assets/img/item5.jpg" width="160px" alt="">
+                            <img class="frame" src="https://cf.shopee.vn/file/69f0262bfc7a38f979e7f4877fd1923f_tn" width="160px" alt="">
+                            <div class="sale">
+                                <p class="percent">33%</p>
+                                <p class="sale_title">GIẢM</p>
+                            </div>
+                        </div>
+                        <div class="price">₫579.000</div>
+                        <div class="progress width5"><p>ĐÃ BÁN 6k+ 3</p></div>
+                    </div>
+                </div>
+
+                <div class="flash_sale_product col6">
+                    <div class="product">
+                        <div class="flash_sale_product_img">
+                            <img class="pro_img" src="./assets/img/item6.jpg" width="160px" alt="">
+                            <img class="frame" src="https://cf.shopee.vn/file/69f0262bfc7a38f979e7f4877fd1923f_tn" width="160px" alt="">
+                            <div class="sale">
+                                <p class="percent">47%</p>
+                                <p class="sale_title">GIẢM</p>
+                            </div>
+                        </div>
+                        <div class="price">₫445.000</div>
+                        <div class="progress width6"><p>ĐÃ BÁN 6k+ 5</p></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flash_sale_products_1">
+
+                <div class="flash_sale_product col6">
+                    <div class="product">
+                        <div class="flash_sale_product_img">
+                            <img class="pro_img" src="./assets/img/item7.jpg" width="160px" alt="">
+                            <img class="frame" src="https://cf.shopee.vn/file/69f0262bfc7a38f979e7f4877fd1923f_tn" width="160px" alt="">
+                            <div class="sale">
+                                <p class="percent">37%</p>
+                                <p class="sale_title">GIẢM</p>
+                            </div>
+                        </div>
+                        <div class="price">₫539.000</div>
+                        <div class="progress width7"><p>ĐÃ BÁN 6k+ 0</p></div>
+                    </div>
+                </div>
+
+                <div class="flash_sale_product col6">
+                    <div class="product">
+                        <div class="flash_sale_product_img">
+                            <img class="pro_img" src="./assets/img/item8.jpg" width="160px" alt="">
+                            <img class="frame" src="https://cf.shopee.vn/file/69f0262bfc7a38f979e7f4877fd1923f_tn" width="160px" alt="">
+                            <div class="sale">
+                                <p class="percent">32%</p>
+                                <p class="sale_title">GIẢM</p>
+                            </div>
+                        </div>
+                        <div class="price">₫2.842.000</div>
+                        <div class="progress width8"><p>ĐÃ BÁN 6k+ 0</p></div>
+                    </div>
+                </div>
+
+                <div class="flash_sale_product col6">
+                    <div class="product">
+                        <div class="flash_sale_product_img">
+                            <img class="pro_img" src="./assets/img/item9.jpg" width="160px" alt="">
+                            <img class="frame" src="https://cf.shopee.vn/file/69f0262bfc7a38f979e7f4877fd1923f_tn" width="160px" alt="">
+                            <div class="sale">
+                                <p class="percent">63%</p>
+                                <p class="sale_title">GIẢM</p>
+                            </div>
+                        </div>
+                        <div class="price">₫199.000</div>
+                        <div class="progress width9"><p>ĐÃ BÁN 6k+ 17</p></div>
+                    </div>
+                </div>
+
+                <div class="flash_sale_product col6">
+                    <div class="product">
+                        <div class="flash_sale_product_img">
+                            <img class="pro_img" src="./assets/img/item10.jpg" width="160px" alt="">
+                            <img class="frame" src="https://cf.shopee.vn/file/69f0262bfc7a38f979e7f4877fd1923f_tn" width="160px" alt="">
+                            <div class="sale">
+                                <p class="percent">51%</p>
+                                <p class="sale_title">GIẢM</p>
+                            </div>
+                        </div>
+                        <div class="price">₫230.000</div>
+                        <div class="progress width10"><p>ĐÃ BÁN 6k+ 7</p></div>
+                    </div>
+                </div>
+
+                <div class="flash_sale_product col6">
+                    <div class="product">
+                        <div class="flash_sale_product_img">
+                            <img class="pro_img" src="./assets/img/item11.jpg" width="160px" alt="">
+                            <img class="frame" src="https://cf.shopee.vn/file/69f0262bfc7a38f979e7f4877fd1923f_tn" width="160px" alt="">
+                            <div class="sale">
+                                <p class="percent">42%</p>
+                                <p class="sale_title">GIẢM</p>
+                            </div>
+                        </div>
+                        <div class="price">₫149.000</div>
+                        <div class="progress width11"><p>ĐÃ BÁN 6k+ 8</p></div>
+                    </div>
+                </div>
+
+                <div class="flash_sale_product col6">
+                    <div class="product">
+                        <div class="flash_sale_product_img">
+                            <img class="pro_img" src="./assets/img/item12.png" width="160px" alt="">
+                            <img class="frame" src="https://cf.shopee.vn/file/69f0262bfc7a38f979e7f4877fd1923f_tn" width="160px" alt="">
+                            <div class="sale">
+                                <p class="percent">53%</p>
+                                <p class="sale_title">GIẢM</p>
+                            </div>
+                        </div>
+                        <div class="price">₫75.000</div>
+                        <div class="progress width12"><p>ĐÃ BÁN 6k+ 10</p></div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+        <div class="voucher">
+            <img src="./assets/img/voucher.png" alt="">
+        </div>
+
+        <div class="top_searching">
+            <div class="top_searching_header">
+                <div class="header_title"><p>XU HƯỚNG TÌM KIẾM</p></div>
+                <div class="header_more"><i class="ti-reload"></i><a href="">Xem Thêm</a></div>
+            </div>
+            <div class="top_searching_items">
+                <div class="top_searching_item col5">
+                    <div class="text">
+                        <div class="title">Set Đồ Nữ</div>
+                        <div class="amount">6k+ sản phẩm</div>
+                    </div>
+                        <img src="./assets/img/setdonu.jpg" width="100px" alt="">
+                </div>
+    
+                <div class="top_searching_item col5">
+                    <div class="text">
+                        <div class="title">Túi xách</div>
+                        <div class="amount">6k+ sản phẩm</div>
+                    </div>
+                        <img src="./assets/img/tuixachnu.jpg" width="100px" alt="">
+                </div>
+    
+                <div class="top_searching_item col5">
+                    <div class="text">
+                        <div class="title">Áo Khoác</div>
+                        <div class="amount">6k+ sản phẩm</div>
+                    </div>
+                        <img src="./assets/img/aokhoac.jpg" width="100px" alt="">
+                </div>
+    
+                <div class="top_searching_item col5">
+                    <div class="text">
+                        <div class="title">Giày</div>
+                        <div class="amount">6k+ sản phẩm</div>
+                    </div>
+                        <img src="./assets/img/giay.jpg" width="100px" alt="">
+                </div>
+
+                <div class="top_searching_item col5">
+                    <div class="text">
+                        <div class="title">Son</div>
+                        <div class="amount">6k+ sản phẩm</div>
+                    </div>
+                        <img src="./assets/img/son.jpg" width="100px" alt="">
+                </div>
+            </div>
+            
+        </div>
+
+
+
+        <div class="top_products_container">
+            <div class="top_header"><p>SẢN PHẨM HÀNG ĐẦU</p> </div>
+            <div class="type">
+                <div category = 'all' class="typeBtn active">Tất cả</div>
+                <div category = 'm_shirt' class="typeBtn">Áo Nam</div>
+                <div category = 'f_shirt' class="typeBtn">Áo Nữ</div>
+                <div category = 'e_device' class="typeBtn">Đồ Điện Tử</div>
+                <div category = 'house_item' class="typeBtn">TB Gia Dụng</div>
+                <div category = 'pet' class="typeBtn">Thú Cưng</div>
+            </div>
+            <div class="top_products">
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 1</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 2</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'f_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 3</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'e_device' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 4</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'pet' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 5</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 6</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+           
+            <!-- <div class="top_products"> -->
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 7</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 8</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 9</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 10</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 11</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 12</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+            
+            <!-- <div class="top_products"> -->
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 13</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 14</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 15</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 16</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 17</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex 18</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- </div> -->
+            
+            <!-- <div class="top_products"> -->
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex xyz</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex xyz</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex xyz</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex xyz</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex xyz</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div category = 'm_shirt' class="product_box col6">
+                    <div class="top_product">
+                        <div class="product_content">
+                            <img src="./assets/img/product1.jpg" alt="" width="160px">
+                            <div class="product_info">
+                                <div class="product_name">Áo thun nam nữ unisex xyz</div>
+                                <div class="product_sub_info">
+                                    <div class="product_price"><p>₫55.000</p></div>
+                                    <div class="product_sold">Đã bán 6k+ </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- </div> -->
+
+               
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- <div class="show_product_modal">
+        <div class="modal_container">
+            <div class="img">
+                <img src="./assets/img/product1.jpg" alt="" width="450px" height="100%">
+            </div>
+            <div class="modal_info">
+                <div class="modal_name">Áo thun nam nữ unisex xyz</div>
+                <div class="modal_price">999.000</div>
+                <div class="free_ship">
+                    <p class="fr_title"><i class="ti-truck"></i> Miễn phí vận chuyển</p>
+                    <p class="fr_condi">Miễn phí vận chuyển cho đơn hàng trên ₫50.000</p>
+                </div>
+                <div class="quantity">
+                    <div class="quantity_title">Số lượng </div><input class="num" type="number" value="1" min="1" max="999">
+                </div>
+                <button class="add_to_cart">Thêm vào giỏ hàng</button>
+                <div class="note">
+                    <div class="note1"><i class="ti-back-left"></i> 7 ngày miễn phí trả hàng</div>
+                    <div class="note2"><i class="ti-thumb-up"></i> Hàng chính hãng 100%</div>
+                    <div class="note3"><i class="ti-check-box"></i> Miễn phí vận chuyển</div>
+                </div>
+            </div>
+           
+            <label class="close_btn" for="show_product_modal"><i class="ti-close"></i></label>
+        </div>
+    </div> -->
+    
+    <div class="footer">
+        <div class="footer_container">
+            <div class="footer_content">
+                <h1 class="footer_content_header">
+                    SHOPEE - GÌ CŨNG CÓ, MUA HẾT Ở SHOPEE
+                </h1>
+                <div class="footer_content_body">
+                    Shopee - ứng dụng mua sắm trực tuyến thú vị, tin cậy, an toàn và miễn phí! Shopee là nền tảng giao dịch trực tuyến hàng đầu ở Đông Nam Á, Việt Nam,<a href="">Singapore,Malaysia,Indonesia,Thái Lan, Philipin, Đài Loan</a> và <a href="">Brazil</a>. Với sự đảm bảo của Shopee, bạn sẽ mua hàng trực tuyến an tâm và nhanh chóng hơn bao giờ hết!
+                </div>
+
+                <h1 class="footer_content_header">
+                    MUA SẮM VÀ BÁN HÀNG ONLINE ĐƠN GIẢN, NHANH CHÓNG VÀ AN TOÀN
+                </h1>
+                <div class="footer_content_body">
+                    Nếu bạn đang tìm kiếm một trang web để mua và bán hàng trực tuyến thì Shopee.vn là một sự lựa chọn tuyệt vời dành cho bạn. Bản chất của Shopee là một social E-commerce platform - nền tảng trang web thương mại điện tử tích hợp mạng xã hội. Điều này cho phép người mua và người bán hàng dễ dàng tương tác, trao đổi thông tin về sản phẩm và chương trình khuyến mãi của shop. Nhờ nền tảng đó, việc mua bán trên Shopee trở nên nhanh chóng và đơn giản hơn. Bạn có thể trò chuyện trực tiếp với nhà bán hàng để hỏi trực tiếp về mặt hàng cần mua. Còn nếu bạn muốn tìm mua những dòng sản phẩm chính hãng, uy tín,<a href="">Shopee Mall</a> chính là sự lựa chọn lí tưởng dành cho bạn. Để bạn có thể dễ dàng khi tìm hiểu và sử dụng sản phẩm, <a href=""> Shopee Blog</a>- trang blog thông tin chính thức của Shopee - sẽ giúp bạn có thể tìm được cho mình các kiến thức về xu hướng thời trang, review công nghệ, mẹo làm đẹp, tin tức tiêu dùng và deal giá tốt bất ngờ.
+                </div>
+
+                <div class="more">
+                    <span>Xem Thêm</span>
+                    <i class="ti-angle-right"></i>
+                </div>
+
+                <div class="sub_footer">
+                    <div class="footer_content_body">
+                       <div>Đến với Shopee, cơ hội để trở thành một nhà bán hàng dễ dàng hơn bao giờ hết. Chỉ với vài thao tác trên ứng dụng, bạn đã có thể đăng bán ngay những sản phẩm của mình. Không những thế, các nhà bán hàng có thể tự <a href="">tạo chương trình khuyến mãi trên Shopee</a> để thu hút người mua với những sản phẩm có mức giá hấp dẫn. Khi đăng nhập tại Shopee Kênh người bán, bạn có thể dễ dàng phân loại sản phẩm, theo dõi đơn hàng, chăm sóc khách hàng và cập nhập ngay các hoạt động của shop.</div>
+                       <div>Shopee luôn cam kết mọi sản phẩm trên Shopee, đặc biệt là Shopee Mall đều là những sản phẩm chính hãng, đầy đủ tem nhãn, bảo hành từ nhà bán hàng. Ngoài ra, Shopee bảo vệ người mua và người bán bằng cách giữ số tiền giao dịch đến khi người mua xác nhận đồng ý với đơn hàng và không có yêu cầu khiếu nại, trả hàng hay hoàn tiền nào. Thanh toán sau đó sẽ được chuyển đến cho người bán. Đến với Shopee ngay hôm nay để mua hàng online giá rẻ và trải nghiệm dịch vụ chăm sóc khách hàng tuyệt vời tại đây. Đặc biệt khi mua sắm trên Shopee Mall, bạn sẽ được miễn phí vận chuyển, giao hàng tận nơi và 7 ngày miễn phí trả hàng. Ngoài ra, khách hàng có thể sử dụng Shopee Xu để đổi lấy mã giảm giá có giá trị cao và voucher dịch vụ hấp dẫn. Tiếp đến là Shopee Mum's Club, Shopee Beauty Club và Shopee Book Club với các ưu đãi độc quyền từ các thương hiệu lớn có những khách hàng đã đăng ký làm thành viên. Hãy truy cập ngay Shopee.vn hoặc tải ngay ứng dụng Shopee về điện thoại ngay hôm nay!</div>
+                    </div>
+                    <div class="footer_content_header">
+                        TẢI ỨNG DỤNG SHOPEE NGAY ĐỂ MUA BÁN ONLINE MỌI LÚC, MỌI NƠI
+                    </div>
+                    <div class="footer_content_body">
+                        <div>Ưu điểm của ứng dụng Shopee là cho phép bạn mua và bán hàng mọi lúc, mọi nơi. Bạn có thể tải ứng dụng Shopee cũng như đăng sản phẩm bán hàng một cách nhanh chóng và tiện lợi. Ngoài ra, ứng dụng Shopee còn có những ưu điểm sau:</div> 
+                            <ul class="footer_content_body_ul">
+                                <li>Giao diện thân thiện, đơn giản, dễ sử dụng. Bạn sẽ dễ dàng thấy được ngay những sản phẩm nổi bật cũng như dễ dàng tìm đến các ô tìm kiếm, giỏ hàng hoặc tính năng chat liền tay.</li>
+                                <li>Ứng dụng tích hợp công nghệ quản lý đơn mua và bán hàng tiện lợi trên cùng một tài khoản. Bạn sẽ vừa là người mua hàng, vừa là người bán hàng rất linh hoạt, dễ dàng.</li>
+                                <li>Cập nhập thông tin khuyến mãi,<a href="">Shopee flash sale</a>  nhanh chóng và liên tục.</li>
+                            </ul>
+                    </div>
+                    <div class="footer_content_body">
+                        <div>Tại Shopee, bạn có thể lấy các <a href="">mã giảm giá Shopee vàmã miễn phí vận chuyển toàn quốc</a>. Bên cạnh đó, Shopee cũng sẽ có những chiến dịch khuyến mãi lớn hằng năm như <a href="">Siêu hội tiêu dùng 15.3</a>,<a href="">Shopee 4.4 sale</a>,<a href="">Shopee 5.5 sale</a>,<a href="">Shopee 9.9 sale</a>,<a href="">Shopee 10.10 sale</a>,<a href="">Shopee 11.11 sale</a> ,<a href="">Shopee 12.12 sale</a>,<a href="">Shopee Tết Sale</a> . Đây là thời điểm để người mua hàng có thể nhanh tay chọn ngay cho mình những mặt hàng ưa thích với mức giá giảm kỉ lục.</div>
+                    </div>
+
+                    <div class="footer_content_header">
+                        MUA HÀNG HIỆU CAO CẤP GIÁ TỐT TẠI SHOPEE
+                    </div>
+                    <div class="footer_content_body">
+                        <div>Bên cạnh <a href="">Shopee Premium</a>, Shopee còn có rất nhiều khuyến mãi khủng cho <a href="">hàng hiệu giảm đến 50%</a>. Cộng với mã giao hàng miễn phí, Shopee cũng có các mã giảm giá được phân phối mỗi tháng từ rất nhiều gian hàng chính hãng tham gia chương trình khuyến mãi này. Bên cạnh đó, Shopee còn tập hợp rất nhiều thương hiệu đình đám được các nhà bán lẻ uy tín phân phối bán trên Shopee, <a href="">top sản phẩm hot deal cho bạn săn sale</a> luôn cập nhật mỗi giờ, mỗi ngày, đem đến cho bạn sự lựa chọn đa dạng, từ các hãng mỹ phẩm nổi tiếng hàng đầu như <a href="">Kiehl's, MAC, Foreo, SK-II, Estee Lauder</a>,... Đến những thương hiệu công nghệ nổi tiếng như <a href="">camera hành trình Gopro, máy ảnh Fuifilm, webcam Hikvision, máy đọc sách Kindle</a>,... Tại Shopee, bạn có thể dễ dàng tìm thấy các thương hiệu giày thể thao phổ biến hiện nay như: <a href="">Converse, New Balance, Nike, Vans, Crocs</a>,...</div>
+                    </div>
+
+                    <div class="footer_content_header">
+                        MUA HÀNG CHÍNH HÃNG TỪ CÁC THƯƠNG HIỆU LỚN VỚI SHOPEE
+                    </div>
+                    <div class="footer_content_body">
+                        <div>Mua hàng trên Shopee luôn là một trải nghiệm ấn tượng. Dù bạn đang có nhu cầu mua bất kỳ mặt hàng <a href="">thời trang nam, thời trang nữ, đồng hồ</a>, điện thoại,<a href="">nước rửa tay khô</a> hay <a href="">khẩu trang N95</a> thì Shopee cũng sẽ đảm bảo cung cấp cho bạn những sản phẩm ưng ý. Bên cạnh đó, Shopee cũng có sự tham gia của các thương hiệu hàng đầu thế giới ở đa dạng nhiều lĩnh vực khác nhau. Trong đó có thể kể đến Samsung, OPPO, Xiaomi, Innisfree, Unilever, P&G, Biti’s,...Các thương hiệu này hiện cũng đã có cửa hàng chính thức trên Shopee Mall với hàng trăm mặt hàng chính hãng, được cập nhập liên tục. Là một kênh bán hàng uy tín, Shopee luôn cam kết mang lại cho khách hàng những trải nghiệm mua sắm online giá rẻ, an toàn và tin cậy. Mọi thông tin về người bán và người mua đều được bảo mật tuyệt đối. Các hoạt động giao dịch thanh toán tại Shopee luôn được đảm bảo diễn ra nhanh chóng, an toàn. Một vấn đề nữa khiến cho các khách hàng luôn quan tâm đó chính là mua hàng trên Shopee có đảm bảo không.</div>
+                        <div>Shopee luôn cam kết mọi sản phẩm trên Shopee, đặc biệt là Shopee Mall đều là những sản phẩm chính hãng, đầy đủ tem nhãn, bảo hành từ nhà bán hàng. Ngoài ra, Shopee bảo vệ người mua và người bán bằng cách giữ số tiền giao dịch đến khi người mua xác nhận đồng ý với đơn hàng và không có yêu cầu khiếu nại, trả hàng hay hoàn tiền nào. Thanh toán sau đó sẽ được chuyển đến cho người bán. Đến với Shopee ngay hôm nay để mua hàng online giá rẻ và trải nghiệm dịch vụ chăm sóc khách hàng tuyệt vời tại đây. Đặc biệt khi mua sắm trên Shopee Mall, bạn sẽ được miễn phí vận chuyển, giao hàng tận nơi và 7 ngày miễn phí trả hàng. Ngoài ra, khách hàng có thể sử dụng <a href="">Shopee Xu</a> để đổi lấy mã giảm giá có giá trị cao và voucher dịch vụ hấp dẫn. Tiếp đến là <a href=""> Shopee Mum's Club, Shopee Beauty Club và Shopee Book Club</a> với các ưu đãi độc quyền từ các thương hiệu lớn có những khách hàng đã đăng ký làm thành viên. Hãy truy cập ngay Shopee.vn hoặc tải ngay ứng dụng Shopee về điện thoại ngay hôm nay!</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer_category">
+                <div class="footer_category_header">Danh Mục</div>
+                <div class="col_categories">
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                        
+                    </div>
+                    
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+
+                    <div class="col_category col5">
+                        <div class="col_category_header">THỜI TRANG NAM</div> 
+                        <p>Áo Khoác | Áo Vest và Blazer |</p>
+                        <p>Áo Hoodie, Áo Len & Áo Nỉ | Quần Jeans |</p>
+                        <p>Quần Dài/Quần Âu | Quần Short | Áo |</p>
+                        <p>Áo Ba Lỗ | Đồ Lót | Đồ Ngủ | Đồ Bộ |</p>
+                        <p>Vớ/Tất | Trang Phục Truyền Thống |</p>
+                        <p> Đồ Hóa Trang | Trang Phục Ngành Nghề |</p>
+                        <p>Khác | Trang Sức Nam | Kính Mắt Nam |</p>
+                        <p>Thắt Lưng Nam | Cà vạt & Nơ cổ |</p>
+                        <p>Phụ Kiện Nam</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="./showProduct.js"></script>
+</body>
+</html>
