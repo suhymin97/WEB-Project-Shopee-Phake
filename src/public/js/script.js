@@ -81,3 +81,41 @@ function prev() {
 //         log.innerText = `Xin chào ${update}`;
 //     }
 // }
+
+//filter 
+
+var topProd = document.querySelector('.top_products').children;
+var type = document.querySelector('.type').children;
+
+for (let i = 0; i < type.length; i++) {
+    type[i].onclick = function () {
+        for (let x = 0; x < type.length; x++) {
+            type[x].classList.remove('active');
+        }
+        this.classList.add('active');
+        const displayItems = this.getAttribute('category');
+        for (let z = 0; z < topProd.length; z++) {
+            topProd[z].style.transform = 'scale(0)';
+            setTimeout(() => {
+                topProd[z].style.display = 'none';
+            }, 200);
+
+            if ((topProd[z].getAttribute('category') == displayItems) || displayItems == 'all') {
+                topProd[z].style.transform = 'scale(1)';
+                setTimeout(() => {
+                    topProd[z].style.display = 'flex';
+                }, 200)
+            }
+
+        }
+    }
+}
+
+//footer
+const more = document.querySelector('.more')
+const subFooter = document.querySelector('.sub_footer')
+more.addEventListener('click', function () {
+    subFooter.style.display = 'block'
+    more.style.display = 'none'
+})
+
