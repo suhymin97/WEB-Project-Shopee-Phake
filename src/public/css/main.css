@@ -982,14 +982,14 @@ input {
 
 /* filer start here */
 .type {
-    width: 1200px;
+    width: 1300px;
     display: flex;
     justify-content: space-around;
     margin-bottom: 36px;
 }
 
 .typeBtn {
-    width: calc((100%/6));
+    width: calc((100%/7));
     text-align: center;
     padding: 8px 0;
     border-radius: 12px;

@@ -7,6 +7,7 @@ const initWebRoute = (app) => {
     router.get('/', homeController.getHomepage);
     router.get('/product/:id', homeController.getDetailProduct);
     router.get('/dangki', homeController.getDangKiPage);
+    router.get('/seller', homeController.getSellerPage);
 
 
     //more route
