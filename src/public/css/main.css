@@ -8,10 +8,11 @@
     text-decoration: none;
 }
 
-/* body {
-    height: 2000px;
+body {
+    position: relative;
+    min-width: 1300px;
     
-} */
+}
 
 i {
     margin-right: 4px;
@@ -982,7 +983,7 @@ input {
 
 /* filer start here */
 .type {
-    width: 1300px;
+    width: 1200px;
     display: flex;
     justify-content: space-around;
     margin-bottom: 36px;
