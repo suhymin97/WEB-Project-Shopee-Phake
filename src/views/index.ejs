@@ -582,61 +582,62 @@
         </div>
 
 
+        <div class="type">
+            <div category='all' class="typeBtn active">Tất cả</div>
+            <div category='m_shirt' class="typeBtn">Áo Nam</div>
+            <div category='f_shirt' class="typeBtn">Áo Nữ</div>
+            <div category='e_device' class="typeBtn">Đồ Điện Tử</div>
+            <div category='house_item' class="typeBtn">TB Gia Dụng</div>
+            <div category='pet' class="typeBtn">Thú Cưng</div>
+        </div>
 
-    </div>
+        <!--Server Render san pham start here-->
+        <div class="box_render_level_1">
+            <!--Box render level 1-->
+            <% for(let i=0; i < dataProduct.length; i++) { %>
+                <div class="box_render_level_2 col6">
+                    <!--Box render level 2-->
+                    <a class="item_image__server_render" href="/product/<%= dataProduct[i].id %>" target="_blank">
+                        <div class="product_content">
 
-
-
-    </div>
-    </div>
-
-
-    </div>
-    <div class="type">
-        <div category='all' class="typeBtn active">Tất cả</div>
-        <div category='m_shirt' class="typeBtn">Áo Nam</div>
-        <div category='f_shirt' class="typeBtn">Áo Nữ</div>
-        <div category='e_device' class="typeBtn">Đồ Điện Tử</div>
-        <div category='house_item' class="typeBtn">TB Gia Dụng</div>
-        <div category='pet' class="typeBtn">Thú Cưng</div>
-    </div>
-
-
-    <!--Server Render san pham start here-->
-    <div class="box_render_level_1">
-        <!--Box render level 1-->
-        <% for(let i=0; i < dataProduct.length; i++) { %>
-            <div class="box_render_level_2">
-                <!--Box render level 2-->
-                <a class="item_image__server_render" href="/product/<%= dataProduct[i].id %>" target="_blank">
-                    <div class="product_content">
-
-                        <img src="image/product1.jpg" alt="" width="160px">
-                        <div class="product_info">
-                            <div class="product_name">
-                                <p>
-                                    <%= dataProduct[i].item_name %>
-                                </p>
-
-                            </div>
-                            <div class=" product_sub_info">
-                                <div class="product_price">
+                            <!-- <img src="image/product/<%= dataProduct[i].id %>.jpg" -->
+                            <img src="image/product/1.jpg" alt="image has not been uploaded for this item"
+                                width="160px">
+                            <div class="product_info">
+                                <div class="product_name">
                                     <p>
-                                        <%= dataProduct[i].price %>
+                                        <%= dataProduct[i].item_name %>
                                     </p>
+
                                 </div>
-                                <div class="product_saled">Đã bán 6k+ </div>
+                                <div class=" product_sub_info">
+                                    <div class="product_price">
+                                        <p>
+                                            <%= dataProduct[i].price %>
+                                        </p>
+                                    </div>
+                                    <div class="product_saled">Đã bán 6k+ </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <!--End Box render level 2-->
-            </div>
+                    </a>
+                    <!--End Box render level 2-->
+                </div>
 
-            <% } %>
+                <% } %>
 
-                <!--End Box render level 1-->
+                    <!--End Box render level 1-->
+        </div>
+
     </div>
+
+
+
+
+
+
+
+
     <!--End server render san pham-->
     <!--Footer-->
 

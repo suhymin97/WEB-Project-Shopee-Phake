@@ -863,8 +863,10 @@ input {
     background: white;
     /* border-style: solid;
     border-width: 0.5px; */
-    margin: 8px;
+    margin-top: 32px;
+    margin: 8px 8px;
     transition: transform .2s;
+    min-height: 260px;
 }
 
 .box_render_level_2:hover {
@@ -873,12 +875,12 @@ input {
 }
 
 .box_render_level_1 {
-
     display: flex;
     flex-wrap: wrap;
     margin-left: 9%;
     margin-right: 9%;
     background: whitesmoke;
+    margin-bottom: 64px;
 }
 
 /* footer start here! */
@@ -979,15 +981,16 @@ input {
 
 /* filer start here */
 .type {
+    width: 1200px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 36px;
 }
 
 .typeBtn {
     width: calc((100%/6));
     text-align: center;
-    padding: 8px;
+    padding: 8px 0;
     border-radius: 12px;
     margin: 0 20px;
     background: #75757557;
@@ -996,4 +999,9 @@ input {
 
 .typeBtn:hover {
     background: #757575
+}
+
+.footer_content_body>a {
+    color: #1155cc;
+    text-decoration: underline;
 }
