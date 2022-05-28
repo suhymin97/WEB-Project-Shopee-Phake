@@ -875,6 +875,7 @@ input {
 }
 
 .box_render_level_1 {
+    width: 1200px;
     display: flex;
     flex-wrap: wrap;
     margin-left: 9%;
@@ -995,6 +996,14 @@ input {
     margin: 0 20px;
     background: #75757557;
     cursor: pointer;
+}
+
+.typeBtn:first-child {
+    margin-left: 0;
+}
+
+.typeBtn:last-child {
+    margin-right: 0;
 }
 
 .typeBtn:hover {
