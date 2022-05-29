@@ -84,7 +84,7 @@ function prev() {
 
 //filter 
 
-var topProd = document.querySelector('.top_products').children;
+var topProd = document.querySelector('.box_render_level_1').children;
 var type = document.querySelector('.type').children;
 
 for (let i = 0; i < type.length; i++) {

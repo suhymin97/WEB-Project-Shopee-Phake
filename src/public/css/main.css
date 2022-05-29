@@ -393,7 +393,6 @@ input {
 
 .col6 {
     width: calc(100%/6);
-    height: 25vh;
 }
 
 .col5 {
@@ -854,6 +853,7 @@ input {
     color: rgb(0, 0, 0);
     width: 160px;
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
 }
@@ -864,8 +864,7 @@ input {
     background: white;
     /* border-style: solid;
     border-width: 0.5px; */
-    margin-top: 32px;
-    margin: 8px 8px;
+    margin: 8px 20px;
     transition: transform .2s;
     min-height: 260px;
 }
@@ -876,11 +875,10 @@ input {
 }
 
 .box_render_level_1 {
+    margin: 0 80px;
     width: 1200px;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 9%;
-    margin-right: 9%;
     background: whitesmoke;
     margin-bottom: 64px;
 }
@@ -1009,6 +1007,11 @@ input {
 
 .typeBtn:hover {
     background: #757575
+}
+
+.active {
+    background: #FA4F30;
+    color: white;
 }
 
 .footer_content_body>a {

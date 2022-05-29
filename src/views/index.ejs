@@ -56,8 +56,8 @@
                     </li>
                     <li class="signin">Hello <%= loginUser %>
                     </li>
-                    <li class="signup"><a class="nutdangki" href="/dangki" target="_blank">Đăng Ký</a></li>
-                    <li class="signin"><a class="nutdangki" href="/login">Đăng Nhập</a></li>
+                    <!-- <li class="signup"><a class="nutdangki" href="/dangki" target="_blank">Đăng Ký</a></li>
+                    <li class="signin"><a class="nutdangki" href="/login">Đăng Nhập</a></li> -->
                     <li class="signin"><a class="nutdangki" href="/logout">Đăng Xuất</a></li>
                 </ul>
             </div>
@@ -587,8 +587,8 @@
 
         <div class="type">
             <div category='all' class="typeBtn active">Tất cả</div>
-            <div category='m_shirt' class="typeBtn">Áo Nam</div>
-            <div category='f_shirt' class="typeBtn">Áo Nữ</div>
+            <div category='ao_nam' class="typeBtn">Áo Nam</div>
+            <div category='ao_nu' class="typeBtn">Áo Nữ</div>
             <div category='e_device' class="typeBtn">Đồ Điện Tử</div>
             <div category='house_item' class="typeBtn">TB Gia Dụng</div>
             <div category='pet' class="typeBtn">Thú Cưng</div>
@@ -598,7 +598,7 @@
         <div class="box_render_level_1">
             <!--Box render level 1-->
             <% for(let i=0; i < dataProduct.length; i++) { %>
-                <div category='m_shirt' class="box_render_level_2 col6">
+                <div category= <%= dataProduct[i].category%> class="box_render_level_2">
                     <!--Box render level 2-->
                     <a class="item_image__server_render" href="/product/<%= dataProduct[i].id %>" target="_blank">
                         <div class="product_content">
