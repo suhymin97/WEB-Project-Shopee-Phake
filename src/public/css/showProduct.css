@@ -228,6 +228,10 @@ input {
     font-size: 14px;
 }
 
+.cart {
+    transform: translateY(-25%);
+}
+
 .suggestion {
     display: flex;
 }
