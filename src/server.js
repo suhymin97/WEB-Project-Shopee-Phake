@@ -2,9 +2,26 @@ import express from 'express'
 import configViewEngine from './configs/viewEngine'
 import initWebRoute from './route/web'
 require('dotenv').config()
+const path = require('path');
+
+const session = require('express-session');
 
 const app = express()
 const port = process.env.PORT || 8080;
+
+//define static folder
+app.use(express.static("public"));
+
+//create session
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
+
+//middleware to support send data from client to server
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //init viewEngine
 configViewEngine(app);

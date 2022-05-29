@@ -54,8 +54,11 @@
 
                         </div>
                     </li>
+                    <li class="signin">Hello <%= loginUser %>
+                    </li>
                     <li class="signup"><a class="nutdangki" href="/dangki" target="_blank">Đăng Ký</a></li>
-                    <li class="signin">Đăng Nhập</li>
+                    <li class="signin"><a class="nutdangki" href="/login">Đăng Nhập</a></li>
+                    <li class="signin"><a class="nutdangki" href="/logout">Đăng Xuất</a></li>
                 </ul>
             </div>
         </div>
@@ -601,8 +604,8 @@
                         <div class="product_content">
 
                             <!-- <img src="image/product/<%= dataProduct[i].id %>.jpg" -->
-                            <img src="image/product/1.jpg" alt="image has not been uploaded for this item"
-                                width="160px">
+                            <img src="image/product/<%= dataProduct[i].id %>.jpg"
+                                alt="image has not been uploaded for this item" width="160px">
                             <div class="product_info">
                                 <div class="product_name">
                                     <p>
@@ -639,8 +642,10 @@
 
 
     <!--End server render san pham-->
-    <!--Footer-->
 
+
+
+    <!--Footer-->
     <div class="footer">
         <div class="footer_container">
             <div class="footer_content">
@@ -973,7 +978,6 @@
             </div>
         </div>
     </div>
-
     <!--End footer-->
 
 

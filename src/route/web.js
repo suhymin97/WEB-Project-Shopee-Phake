@@ -2,14 +2,26 @@ import express from "express";
 import homeController from "../controller/homeController";
 let router = express.Router();
 
-const initWebRoute = (app) => {
 
-    router.get('/', homeController.getHomepage);
+//authentication check middleware
+function isAuthenticated(req, res, next) {
+    if (req.session.loggedin) next();
+    else return res.render('login.ejs');
+
+}
+
+const initWebRoute = (app) => {
+    //all routes
+    router.get('/', isAuthenticated, homeController.getHomepage);
     router.get('/product/:id', homeController.getDetailProduct);
     router.get('/dangki', homeController.getDangKiPage);
     router.get('/seller', homeController.getSellerPage);
-    router.get('/showProduct', homeController.getShowProductPage);
-    
+    //router.get('/showProduct', homeController.getShowProductPage); //just to test showProduct HTML --> use/prodct/:id instead
+    router.get('/login', homeController.getLoginPage);
+    router.get('/logout', homeController.getLogout);
+    router.post('/auth', homeController.getAuth);
+    router.get('/home', homeController.getHomepage);
+
 
 
     //more route
@@ -19,6 +31,4 @@ const initWebRoute = (app) => {
     return app.use('/', router)
 }
 
-//using one of below 
 export default initWebRoute;
-//module.exports = initWebRoute;

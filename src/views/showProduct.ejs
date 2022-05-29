@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="/css/showProduct.css">
     <link rel="stylesheet" href="/css/themify-icons/themify-icons.css">
@@ -7,8 +8,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chi tiết sản phẩm</title>
 </head>
+
 <body>
     <div class="nav_bar">
         <div class="container_nav_bar">
@@ -85,24 +87,30 @@
             </div>
         </div>
     </div>
-    
+
     <div class="show_product_container">
-        <div class="route_link"> <a href="">Shopee (sendback trang chính)</a> 
-        <i class="ti-angle-right"></i> tên category của sp
-        <i class="ti-angle-right"></i> tên sản phẩm</div>
+        <div class="route_link"> <a href="/home">Shopee (sendback trang chính)</a>
+            <i class="ti-angle-right"></i>
+            <%= infoProduct.category %>
+                <i class="ti-angle-right"></i>
+                <%= infoProduct.item_name %>
+        </div>
         <div class="show_product_box">
             <div class="show_product_box_cover">
-                <img src="https://dilavr.com.ua/image/catalog/empty-img.png" alt="">
+                <!-- <img src="image/product/<%= infoProduct.id %>.jpg" alt="lỗi hình ảnh"> -->
+                <img src="/image/product/<%= infoProduct.id %>.jpg" alt="lỗi hình ảnh hoặc ảnh chưa đc up" />
                 <div class="empty"></div>
                 <div class="show_product_info">
-                    <div class="product_title">TÊN SẢN PHẨM TÊN SẢN PHẨM TÊN SẢN PHẨM TÊN SẢN PHẨM TÊN SẢN PHẨM TÊN SẢN PHẨM</div>
+                    <div class="product_title">
+                        <%= infoProduct.item_name %>
+                    </div>
                     <div class="product_status">
-                        <div class="star"><span>4.8</span> 
+                        <div class="star"><span>4.8</span>
                             <i class="ti-star"></i>
                             <i class="ti-star"></i>
                             <i class="ti-star"></i>
                             <i class="ti-star"></i>
-                            <i class="ti-star"></i> 
+                            <i class="ti-star"></i>
                         </div>
                         <div class="evaluation"><span>1.7k</span> <span>đánh giá</span></div>
                         <div class="sold"><span>4.3k</span> <span>đã bán</span></div>
@@ -112,16 +120,19 @@
                             <img src="https://cf.shopee.vn/file/76b80c43b486023bb46bc0cec508431f" alt="">
                         </div>
                         <div class="product_price_cover">
-                            <div class="product_price">Giá ở đây</div>
+                            <div class="product_price">
+                                <%= infoProduct.price %>
+                            </div>
                             <div class="product_price_more">
                                 <img src="image/gicungre.png" alt="" width="50px">
                                 <div class="product_price_more_info">
                                     <div class="product_price_more_title">Gì Cũng Rẻ</div>
-                                    <div class="product_price_more_desc">Giá tốt nhất so với các sản phẩm còn lại trên Shopee!
+                                    <div class="product_price_more_desc">Giá tốt nhất so với các sản phẩm còn lại trên
+                                        Shopee!
                                         <i class="ti-help-alt"></i>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -130,8 +141,9 @@
                             <div class="product_benefit">
                                 <div class="ptitle">Mua Giá Bán Buôn/ Bán Sỉ</div>
                             </div>
-                            
-                            <div class="product_benefit pdesc">Mua (5 - 10) sản phẩm chỉ với ₫51.000, Mua (11 - 20) sản phẩm chỉ với ₫49.000
+
+                            <div class="product_benefit pdesc">Mua (5 - 10) sản phẩm chỉ với ₫51.000, Mua (11 - 20) sản
+                                phẩm chỉ với ₫49.000
                             </div>
                         </div>
                         <div class="product_ship_container">
@@ -142,35 +154,38 @@
                                 <i class="ti-truck"></i>
                                 <span>Vận chuyển tới</span>
                                 <div class="cus_position">
-                                <div class="user_position">
-                                    <div class="primary_position">
-                                        <span>Chọn vị trí</span>  
-                                        <i class="ti-angle-down"></i>
-                                        <div class="select_position">
-                                            <select class="select">
-                                                <option class="option" value="Tỉnh/Thành phố, Quận/Huyện, Phường/Xã">Tỉnh/Thành phố, Quận/Huyện, Phường/Xã</option>
-                                                <option class="option" value="Thành Phố Hồ Chí Minh">Thành Phố Hồ Chí Minh</option>
-                                                <option class="option" value="Hà Nội">Hà Nội</option class="option">
-                                                <option class="option" value="Huế">Huế</option>
-                                                <option class="option" value="Đà Nẵng">Đà Nẵng</option>
-                                            </select>
-                                        </div>        
+                                    <div class="user_position">
+                                        <div class="primary_position">
+                                            <span>Chọn vị trí</span>
+                                            <i class="ti-angle-down"></i>
+                                            <div class="select_position">
+                                                <select class="select">
+                                                    <option class="option"
+                                                        value="Tỉnh/Thành phố, Quận/Huyện, Phường/Xã">Tỉnh/Thành phố,
+                                                        Quận/Huyện, Phường/Xã</option>
+                                                    <option class="option" value="Thành Phố Hồ Chí Minh">Thành Phố Hồ
+                                                        Chí Minh</option>
+                                                    <option class="option" value="Hà Nội">Hà Nội</option class="option">
+                                                    <option class="option" value="Huế">Huế</option>
+                                                    <option class="option" value="Đà Nẵng">Đà Nẵng</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
-                            </div>    
+                            </div>
                         </div>
-              
+
                         <div class="product_amount_container">
                             <div class="product_amount ptitle">Số Lượng</div>
                             <input class="pdesc" type="number" value="1" min="1" max="99">
                         </div>
 
-                    <div class="btn">
-                        <button class="add">Thêm Vào Giỏ Hàng</button>
-                        <button class="buy">Mua Ngay</button>
-                    </div>
-                        
+                        <div class="btn">
+                            <button class="add">Thêm Vào Giỏ Hàng</button>
+                            <button class="buy">Mua Ngay</button>
+                        </div>
+
                     </div>
 
 
@@ -185,7 +200,9 @@
                 <img src="image/shop_logo.png" alt="" width="90px" height="90px">
             </div>
             <div class="shop_info shop_margin">
-                <p class="shop_name">tên shop</p>
+                <p class="shop_name">
+                    <%= infoProduct.seller %>
+                </p>
                 <p class="online">Online 41 phút trước</p>
                 <button class="chat_btn">
                     <i class="ti-email"></i>
@@ -194,17 +211,24 @@
         </div>
         <div class="shop_status">
             <div class="status_line">
-                <div>Đánh Giá</div> <p>87.6K</p>
-                <div>Tỉ Lệ Phản Hồi</div> <p>99%</p>
-                <div>Tham Gia</div> <p>6 năm trước</p>
+                <div>Đánh Giá</div>
+                <p>87.6K</p>
+                <div>Tỉ Lệ Phản Hồi</div>
+                <p>99%</p>
+                <div>Tham Gia</div>
+                <p>6 năm trước</p>
             </div>
             <div class="status_line">
-                <div>Sản Phẩm</div> <p>694</p>
-                <div>Thời Gian Phản Hồi</div> <p>trong vài giờ</p>
-                <div>Người Theo Dõi</div> <p>334.2K</p>
+                <div>Sản Phẩm</div>
+                <p>694</p>
+                <div>Thời Gian Phản Hồi</div>
+                <p>trong vài giờ</p>
+                <div>Người Theo Dõi</div>
+                <p>334.2K</p>
             </div>
         </div>
     </div>
     <script src="/js/showProduct.js"></script>
 </body>
+
 </html>
