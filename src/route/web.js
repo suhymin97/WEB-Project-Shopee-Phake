@@ -8,6 +8,8 @@ const initWebRoute = (app) => {
     router.get('/product/:id', homeController.getDetailProduct);
     router.get('/dangki', homeController.getDangKiPage);
     router.get('/seller', homeController.getSellerPage);
+    router.get('/showProduct', homeController.getShowProductPage);
+    
 
 
     //more route

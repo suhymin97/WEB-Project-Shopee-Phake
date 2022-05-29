@@ -27,3 +27,26 @@ function closeModal() {
         })
     })
 }
+
+//position
+
+const primary = document.querySelector('.primary_position span')
+const select = document.querySelector('select');
+const positions = select.querySelectorAll('option')
+
+// positions.forEach((position) => {
+//     position.addEventListener('change',() => {
+//         console.log('123')
+//     })
+// })
+
+select.addEventListener('change', () => {
+    positions.forEach((position) => {
+        if(position.selected) {
+           primary.innerText = position.value
+        } else if(positions[0].selected) {
+            primary.innerText = 'Chọn vị trí'
+        }
+
+    })
+})

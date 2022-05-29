@@ -21,6 +21,11 @@ let getSellerPage = async (req, res) => {
     return res.render('seller.ejs')
 }
 
+let getShowProductPage = async (req, res) => {
+    //logic
+    return res.render('showProduct.ejs')
+}
+
 module.exports = {
-    getHomepage, getDetailProduct, getDangKiPage, getSellerPage
+    getHomepage, getDetailProduct, getDangKiPage, getSellerPage, getShowProductPage
 }
