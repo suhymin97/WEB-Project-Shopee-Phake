@@ -15,8 +15,8 @@ const initWebRoute = (app) => {
     router.get('/', isAuthenticated, homeController.getHomepage);
     router.get('/product/:id', homeController.getDetailProduct);
     router.get('/dangki', homeController.getDangKiPage);
-    router.get('/seller', homeController.getSellerPage);
-    //router.get('/showProduct', homeController.getShowProductPage); //just to test showProduct HTML --> use/prodct/:id instead
+    router.get('/seller', isAuthenticated, homeController.getSellerPage);
+    //router.get('/showProduct', homeController.getShowProductPage); //this line just to test showProduct HTML --> use route /prodct/:id instead
     router.get('/login', homeController.getLoginPage);
     router.get('/logout', homeController.getLogout);
     router.post('/auth', homeController.getAuth);

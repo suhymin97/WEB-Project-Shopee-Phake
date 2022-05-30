@@ -19,7 +19,7 @@ let getDangKiPage = async (req, res) => {
 }
 let getSellerPage = async (req, res) => {
     //logic
-    return res.render('seller.ejs')
+    return res.render('seller.ejs', { loginUser: req.session.username })
 }
 let getLoginPage = async (req, res) => {
     //logic
