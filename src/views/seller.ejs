@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/themify-icons/themify-icons.css">
     <link rel="shortcut icon" href="/image/spicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -56,7 +58,8 @@
                     <li class="signin">
                         <% if(loginUser){ %>
                             Hello <%= loginUser %>
-                                <% } %>
+                                ID: <%= userId %>
+                                    <% } %>
                     </li>
                     <li class="signup"><a class="nutdangki" href="/dangki" target="_blank">Đăng Ký</a></li>
 
@@ -73,7 +76,7 @@
 
         <div class="container_wrapper">
             <div class="logo">
-                <img class="sp_logo" src="image/xóp pi logo.png" alt="">
+                <a href="/home"><img class="sp_logo" src="image/xóp pi logo.png" alt=""></a>
             </div>
             <div>
                 <div class="search_bar">
@@ -100,25 +103,61 @@
         </div>
     </div>
 
-    <div style="margin-top: 20%" class="form-item">
-        <form>
+    <div style="margin-top: 15%" class="form-item">
+        <form action="/upload-new-item-seller" method="POST">
+            <div><b>Thêm sản phẩm mới lên Shopee</b></div>
+            <div><label>Item Name: </label>
+                <input type="text" name="itemName" />
+            </div>
+            <div><label>Price: </label>
+                <input type="text" name="itemPrice" />
+            </div>
+            <div><label>Category: </label>
+                <input type="text" name="ItemCategory" />
+            </div>
             <div>
-                <label>Seller Name</label>
-                <input type="text" />
+                <input type="text" hidden value="<%=userId %>" name="userId" />
+                <input type="text" hidden value="<%=sellerName %>" name="sellerName" />
+                <button type="submit">Thêm sản phẩm</button>
             </div>
-            <div><label>Item Name</label>
-                <input type="text" />
-            </div>
-            <div><label>Price</label>
-                <input type="text" />
-            </div>
-            <div><label>Category</label>
-                <input type="text" />
-            </div>
-
-
-
         </form>
+    </div>
+
+    <div style="margin-top: 10px"><b>Sản phẩm hiện tại của bạn trên shop</b></div>
+    <div style="margin-top: 10px">
+        <table class="w3-table-all w3-hoverable">
+            <thead>
+                <tr class="w3-light-grey">
+                    <th>ID</th>
+                    <th>Item Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < dataProduct.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= dataProduct[i].Pid %>
+                        </td>
+                        <td>
+                            <%= dataProduct[i].item_name %>
+                        </td>
+                        <td>
+                            <%= dataProduct[i].price %>
+                        </td>
+                        <td>
+                            <%= dataProduct[i].category %>
+                        </td>
+                        <% } %>
+                    </tr>
+
+            </tbody>
+
+
+
+        </table>
+
     </div>
 
 </body>

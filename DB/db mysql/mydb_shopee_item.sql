@@ -23,13 +23,17 @@ DROP TABLE IF EXISTS `shopee_item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `shopee_item` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `Pid` int NOT NULL AUTO_INCREMENT,
   `item_name` varchar(255) DEFAULT NULL,
-  `seller` varchar(255) DEFAULT NULL,
   `price` varchar(255) DEFAULT NULL,
   `category` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `seller_name` varchar(255) DEFAULT NULL,
+  `seller_id` int DEFAULT NULL,
+  PRIMARY KEY (`Pid`),
+  KEY `seller_idx` (`Pid`),
+  KEY `id_idx` (`seller_id`,`seller_name`),
+  CONSTRAINT `Uid` FOREIGN KEY (`seller_id`) REFERENCES `accounts` (`Uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +42,7 @@ CREATE TABLE `shopee_item` (
 
 LOCK TABLES `shopee_item` WRITE;
 /*!40000 ALTER TABLE `shopee_item` DISABLE KEYS */;
-INSERT INTO `shopee_item` VALUES (1,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','chu shop 1','65000 VND','ao_nam'),(2,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','shop 2','196000 VND','ao_nam'),(3,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','shop 3','696969 VND','ao_nam'),(4,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','shop 3','250 VND','ao_nam'),(5,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','shop 6','90000VND','ao_nam'),(6,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','shop 5','60000 VND','a0_nam'),(7,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','shop 19','21000 VND','ao_nam'),(8,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','shop 4','50000 VND','ao_nam'),(9,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','shop 5','20000 VND','ao_nam');
+INSERT INTO `shopee_item` VALUES (1,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','65000 VND','ao_nam','seller 1',1),(2,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','196000 VND','ao_nam','seller 2',2),(3,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','696969 VND','ao_nam','seller 1',1),(4,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','250 VND','ao_nam','seller 2',2),(5,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','90000VND','ao_nam','seller 2',2),(6,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','60000 VND','ao_nam',NULL,NULL),(7,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','21000 VND','ao_nam',NULL,NULL),(8,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','50000 VND','ao_nam',NULL,NULL),(9,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize','20000 VND','ao_nam',NULL,NULL),(10,'test add item number 10','69420 VND','ao_nam','seller 1',1);
 /*!40000 ALTER TABLE `shopee_item` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-29 21:54:11
+-- Dump completed on 2022-05-30 15:57:25

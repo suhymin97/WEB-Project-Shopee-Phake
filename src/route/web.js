@@ -1,7 +1,37 @@
 import express from "express";
 import homeController from "../controller/homeController";
+import path from 'path'
+import multer from 'multer'
+var appRoot = require('app-root-path');
 let router = express.Router();
 
+
+//----------------------------middleware for upload image------------------------------
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        console.log('>>> check approot: ', appRoot)
+        cb(null, appRoot + '/src/public/image/product/');
+    },
+
+    // By default, multer removes file extensions so let's add them back
+    filename: function (req, file, cb) {
+        cb(null, req.session.currentSelectItem + path.extname(file.originalname));
+    }
+});
+const imageFilter = function (req, file, cb) {
+    // Accept images only
+    if (!file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
+        req.fileValidationError = 'Only image files are allowed!';
+        return cb(new Error('Only image files are allowed!'), false);
+    }
+    cb(null, true);
+};
+// init middleware
+let upload = multer({ storage: storage, fileFilter: imageFilter });
+//let uploadMultipleFiles = multer({ storage: storage, fileFilter: imageFilter }).array('multiple_images', 3);
+
+
+//----------------------------End middleware for upload image------------------------------
 
 //authentication check middleware
 function isAuthenticated(req, res, next) {
@@ -21,6 +51,9 @@ const initWebRoute = (app) => {
     router.get('/logout', homeController.getLogout);
     router.post('/auth', homeController.getAuth);
     router.get('/home', homeController.getHomepage);
+    router.post('/upload-new-item-seller', homeController.addNewItemSeller);//carefull here: upload or addNew notation
+    router.get('/upload-image-item-page', homeController.getUploadImageItemPage);
+    router.get('/handle-upload-image-item', upload.single('item_image'), homeController.handleUploadItemImage);
 
 
 

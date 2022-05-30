@@ -2,13 +2,13 @@ import pool from "../configs/connectDB";
 let getHomepage = async (req, res) => {
     //logic
     const [rows, fields] = await pool.execute('SELECT * FROM `shopee_item`');
-    return res.render('index.ejs', { dataProduct: rows, loginUser: req.session.username })
+    return res.render('index.ejs', { dataProduct: rows, loginUser: req.session.username, userId: req.session.userid })
 }
 
 let getDetailProduct = async (req, res) => {
     //logic
     let productId = req.params.id;
-    let [product] = await pool.execute(`SELECT * FROM shopee_item WHERE id = ?`, [productId]);
+    let [product] = await pool.execute(`SELECT * FROM shopee_item WHERE Pid = ?`, [productId]);
     //return res.send(JSON.stringify(product));
     return res.render('showProduct.ejs', { infoProduct: product[0] })
 }
@@ -19,7 +19,10 @@ let getDangKiPage = async (req, res) => {
 }
 let getSellerPage = async (req, res) => {
     //logic
-    return res.render('seller.ejs', { loginUser: req.session.username })
+    let sellerId = req.session.userid;
+    //console.log(sellerId);
+    const [rows] = await pool.execute(`SELECT * FROM shopee_item WHERE seller_id = ?`, [sellerId]);
+    return res.render('seller.ejs', { dataProduct: rows, loginUser: req.session.username, userId: req.session.userid, sellerName: req.session.seller })
 }
 let getLoginPage = async (req, res) => {
     //logic
@@ -38,6 +41,8 @@ let getAuth = async (req, res) => {
         if (results.length > 0) {
             req.session.loggedin = true;
             req.session.username = username;
+            req.session.seller = results[0].seller_branch_name;
+            req.session.userid = results[0].Uid;
             res.redirect('/home');
         } else {
             res.send('Incorrect Username and/or Password!');
@@ -74,6 +79,52 @@ let getShowProductPage = async (req, res) => {
     return res.render('showProduct.ejs',)
 }
 
+let addNewItemSeller = async (req, res) => {
+    //console.log("check request: ", req.body);
+
+    let { userId, itemName, itemPrice, ItemCategory, sellerName } = req.body; //get para from form & destructure the object
+    //or
+    //let firstName = req.body.firstName //like 4 times
+
+    //add item to db
+    await pool.execute('insert into shopee_item(seller_id, item_name, price, category, seller_name) values(?, ?, ?, ?, ?)', [userId, itemName, itemPrice, ItemCategory, sellerName]);
+    // //add seller name to that item in db
+    //await pool.execute(' UPDATE shopee_item t1, accounts t2 SET WHERE t1.seller_id = t2.Uid AND t1.Pid = ?', );
+    return res.redirect('/seller');
+}
+let getUploadImageItemPage = async (req, res) => {
+    return res.render('upload_Item_img.ejs', { testSession: req.session.userId })
+}
+
+let handleUploadItemImage = async (req, res) => {
+    // 'profile_pic' is the name of our file input field in the HTML form
+
+    //console.log(req.file);//check file
+
+
+    // req.file contains information of uploaded file
+    // req.body contains information of text fields, if there were any
+
+    if (req.fileValidationError) {
+        return res.send(req.fileValidationError);
+    }
+    else if (!req.file) {
+        return res.send('Please select an image to upload');
+    }
+    // else if (err instanceof multer.MulterError) {
+    //     return res.send(err);
+    // }
+    // else if (err) {
+    //     return res.send(err);
+    // }    //multer has already handle the error at client
+
+    // Display uploaded image for user validation
+    res.send(`You have uploaded this image: <hr/><img src="/image/product/${req.file.filename}" width="500"><hr /><a href="/seller">Return to seller page</a>`);
+
+
+}
+
 module.exports = {
-    getHomepage, getDetailProduct, getDangKiPage, getSellerPage, getLoginPage, getAuth, getLogout, getShowProductPage
+    getHomepage, getDetailProduct, getDangKiPage, getSellerPage, getLoginPage, getAuth, getLogout,
+    getShowProductPage, addNewItemSeller, getUploadImageItemPage, handleUploadItemImage
 }
