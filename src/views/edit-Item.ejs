@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Item</title>
+</head>
+
+<body>
+    <div>Edit product: <%= dataProduct.item_name %>
+    </div>
+    <div>Seller name: <%= dataProduct.seller_name %>
+    </div>
+    <div>
+        <form action="/update-item" method="POST">
+            <div>
+                <label>Item name: </label>
+                <input name="itemName" value="<%= dataProduct.item_name %>" />
+            </div>
+            <div>
+                <label>Price: </label>
+                <input name="price" value="<%= dataProduct.price%>" />
+            </div>
+            <div>
+                <label>Category: </label>
+                <input name="category" value="<%= dataProduct.category %>" />
+            </div>
+            <input type="text" value="<%= dataProduct.Pid %>" hidden name="Pid" />
+            <div>
+                <button type="submit">Save</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -28,11 +28,11 @@ body {
     align-items: center;
 }
 
-.left_obj > .logo {
+.left_obj>.logo {
     margin-right: 8px;
 }
 
-.left_obj > .nav_title {
+.left_obj>.nav_title {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
 }
@@ -53,7 +53,7 @@ body {
 }
 
 .noti {
-    font-size: 20px ;
+    font-size: 20px;
 }
 
 .help_btn {
@@ -71,7 +71,7 @@ body {
 }
 
 .add_form_box {
-    width: 80%;
+    width: 100%;
     min-height: 250px;
     background-color: #fff;
     padding-bottom: 40px;
@@ -94,7 +94,7 @@ label {
     margin: 16px 0;
 }
 
-label > span {
+label>span {
     display: inline-block;
     font-size: 14px;
     color: #757575;
@@ -102,40 +102,40 @@ label > span {
     height: 100%;
 }
 
-label > input {
+label>input {
     transform: translateY(4%);
     width: 80%;
     height: 35px;
     border: 1px solid #ccb6b6;
 }
 
-label > input:focus {
+label>input:focus {
     outline: 1px solid #ee4d2d;
 }
 
-label > select {
+label>select {
     color: rgba(0, 0, 0, 0.658);
     padding: 4px 0;
     border: 1px solid #ccb6b6;
 }
 
-label > select:focus {
+label>select:focus {
     outline: none;
 }
 
-label > textarea {
+label>textarea {
     width: 80%;
 }
 
-label > textarea:focus {
+label>textarea:focus {
     outline: 1px solid #ee4d2d;
 }
 
-.spe > span {
+.spe>span {
     transform: translateY(-380%);
 }
 
-.spe > textarea {
+.spe>textarea {
     border: 1px solid #ccb6b6;
     resize: none;
 }
@@ -148,7 +148,7 @@ label > textarea:focus {
 }
 
 .active {
-    background-color:#ee4d2d !important; 
+    background-color: #ee4d2d !important;
 }
 
 .map_item {
@@ -157,7 +157,9 @@ label > textarea:focus {
     margin-bottom: 8px;
 }
 
-.col1,.col2,.col3 {
+.col1,
+.col2,
+.col3 {
     margin-right: 8px;
     width: 12px;
     height: 48px;
@@ -171,8 +173,8 @@ label > textarea:focus {
 }
 
 .new {
-   padding-bottom: 0;
-   margin-bottom: 80px;
+    padding-bottom: 0;
+    margin-bottom: 80px;
 }
 
 .add_btn {

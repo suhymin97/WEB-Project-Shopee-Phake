@@ -9,13 +9,14 @@ let router = express.Router();
 //----------------------------middleware for upload image------------------------------
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        console.log('>>> check approot: ', appRoot)
+        // console.log('>>> check approot: ', appRoot)
         cb(null, appRoot + '/src/public/image/product/');
     },
 
     // By default, multer removes file extensions so let's add them back
     filename: function (req, file, cb) {
-        cb(null, req.session.currentSelectItem + path.extname(file.originalname));
+        //cb(null, req.session.currentImgPid + path.extname(file.originalname));
+        cb(null, req.session.currentImgPid + '.jpg');
     }
 });
 const imageFilter = function (req, file, cb) {
@@ -52,8 +53,12 @@ const initWebRoute = (app) => {
     router.post('/auth', homeController.getAuth);
     router.get('/home', homeController.getHomepage);
     router.post('/upload-new-item-seller', homeController.addNewItemSeller);//carefull here: upload or addNew notation
-    router.get('/upload-image-item-page', homeController.getUploadImageItemPage);
-    router.get('/handle-upload-image-item', upload.single('item_image'), homeController.handleUploadItemImage);
+    router.get('/upload-item-image/:id', homeController.getUploadImageItemPage);
+    router.post('/handle-upload-item-image', upload.single('item_image'), homeController.handleUploadItemImage);
+    router.post('/delete-item', homeController.deleteItem);
+    router.get('/edit-item/:id', homeController.getEditItemPage);
+    router.post('/update-item', homeController.handleUpdateItem);
+
 
 
 

@@ -8,24 +8,23 @@
 </head>
 
 <body>
-    <div>Hello <%= userId %>
+    <div>Hello: <%= userId %>
     </div>
     <div>
         <a href="/home">Home</a>
-        <!-- <a href="/upload">Upload file</a> -->
     </div>
     <div>
         <a href="/seller">Seller Page</a>
-        <!-- <a href="/upload">Upload file</a> -->
     </div>
 
     <div>
-        <form method="POST" action="/handle-upload-image-item" enctype="multipart/form-data">
+        <form method="POST" action="/handle-upload-item-image" enctype="multipart/form-data">
             <div>
                 <label>Item image:</label>
                 <input type="file" name="item_image" />
             </div>
             <div>
+
                 <button type="submit">Upload files</button>
             </div>
 

@@ -93,7 +93,9 @@ let addNewItemSeller = async (req, res) => {
     return res.redirect('/seller');
 }
 let getUploadImageItemPage = async (req, res) => {
-    return res.render('upload_Item_img.ejs', { testSession: req.session.userId })
+    let productId = req.params.id;
+    req.session.currentImgPid = productId;
+    return res.render('upload_Item_img.ejs', { userId: req.session.userid })
 }
 
 let handleUploadItemImage = async (req, res) => {
@@ -123,8 +125,29 @@ let handleUploadItemImage = async (req, res) => {
 
 
 }
+let deleteItem = async (req, res) => {
+    let productId = req.body.productId;
+    await pool.execute('delete from shopee_item where Pid = ?', [productId]);
+    return res.redirect('/seller');
+}
+let getEditItemPage = async (req, res) => {
+    let id = req.params.id;
+    let [product] = await pool.execute('select * from shopee_item where Pid = ?', [id]);
+    return res.render('edit-Item.ejs', { dataProduct: product[0] });
+}
+let handleUpdateItem = async (req, res) => {
+    let { itemName, price, category, Pid } = req.body;
+
+    await pool.execute('update shopee_item set item_name = ?, price= ?, category = ? where Pid = ?',
+        [itemName, price, category, Pid]);
+
+    return res.redirect('/seller');
+}
+
+
 
 module.exports = {
     getHomepage, getDetailProduct, getDangKiPage, getSellerPage, getLoginPage, getAuth, getLogout,
-    getShowProductPage, addNewItemSeller, getUploadImageItemPage, handleUploadItemImage
+    getShowProductPage, addNewItemSeller, getUploadImageItemPage, handleUploadItemImage, deleteItem,
+    getEditItemPage, handleUpdateItem
 }
