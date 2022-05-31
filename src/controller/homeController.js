@@ -82,12 +82,15 @@ let getShowProductPage = async (req, res) => {
 let addNewItemSeller = async (req, res) => {
     //console.log("check request: ", req.body);
 
-    let { userId, itemName, itemPrice, ItemCategory, sellerName } = req.body; //get para from form & destructure the object
+    let { userId, itemName, itemDescription, itemCategory, itemManufactor, itemShopName,
+        itemPrice, itemStorageName, itemClasify, sellerName } = req.body; //get para from form & destructure the object
     //or
     //let firstName = req.body.firstName //like 4 times
 
     //add item to db
-    await pool.execute('insert into shopee_item(seller_id, item_name, price, category, seller_name) values(?, ?, ?, ?, ?)', [userId, itemName, itemPrice, ItemCategory, sellerName]);
+    await pool.execute('insert into shopee_item(seller_id, item_name, description, category, manufactor, shop_name, price, storage_name, product_classify, seller_name) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        [userId, itemName, itemDescription, itemCategory, itemManufactor, itemShopName,
+            itemPrice, itemStorageName, itemClasify, sellerName]);
     // //add seller name to that item in db
     //await pool.execute(' UPDATE shopee_item t1, accounts t2 SET WHERE t1.seller_id = t2.Uid AND t1.Pid = ?', );
     return res.redirect('/seller');
@@ -136,10 +139,10 @@ let getEditItemPage = async (req, res) => {
     return res.render('edit-Item.ejs', { dataProduct: product[0] });
 }
 let handleUpdateItem = async (req, res) => {
-    let { itemName, price, category, Pid } = req.body;
+    let { itemName, itemDescription, itemCategory, itemManufactor, itemShopName, itemPrice, itemStorageName, itemClasify, Pid } = req.body;
 
-    await pool.execute('update shopee_item set item_name = ?, price= ?, category = ? where Pid = ?',
-        [itemName, price, category, Pid]);
+    await pool.execute('update shopee_item set item_name = ?, description = ?, category = ?, manufactor = ?, shop_name = ?, price = ?, storage_name = ?, product_classify = ? where Pid = ?',
+        [itemName, itemDescription, itemCategory, itemManufactor, itemShopName, itemPrice, itemStorageName, itemClasify, Pid]);
 
     return res.redirect('/seller');
 }

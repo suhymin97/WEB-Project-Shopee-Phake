@@ -9,26 +9,60 @@
 </head>
 
 <body>
-    <div>Edit product: <%= dataProduct.item_name %>
+    <div>Edit product name: <%= dataProduct.item_name %>
     </div>
     <div>Seller name: <%= dataProduct.seller_name %>
     </div>
     <div>
         <form action="/update-item" method="POST">
             <div>
-                <label>Item name: </label>
+                <label>Item name - Tên sản phẩm: </label>
                 <input name="itemName" value="<%= dataProduct.item_name %>" />
             </div>
+
             <div>
-                <label>Price: </label>
-                <input name="price" value="<%= dataProduct.price%>" />
+                <label>Description - Mô tả: </label>
+                <textarea name="itemDescription" value="<%= dataProduct.description %>" rows="4" cols="50"></textarea>
+            </div>
+
+            <div>
+                <label for=""><span>Category - Danh mục</span>
+                    <select name="itemCategory" value="<%= dataProduct.category %>">
+                        <option value="Áo nam">Áo nam</option>
+                        <option value="Áo nữ">Áo nữ</option>
+                        <option value="Đồ điện tử">Đồ điện tử</option>
+                        <option value="Thiết bị gia dụng">Thiết bị gia dụng</option>
+                        <option value="Thú cưng">Thú cưng</option>
+                    </select>
+                    <!-- <input type="text" name="ItemCategory" /> -->
+                </label>
+            </div>
+
+            <div>
+                <label>Item Manufactor - Thương hiệu: </label>
+                <input name="itemManufactor" value="<%= dataProduct.manufactor%>" />
             </div>
             <div>
-                <label>Category: </label>
-                <input name="category" value="<%= dataProduct.category %>" />
+                <label>Shop name - Tên cửa hàng: </label>
+                <input name="itemShopName" value="<%= dataProduct.shop_name%>" />
             </div>
-            <input type="text" value="<%= dataProduct.Pid %>" hidden name="Pid" />
             <div>
+                <label>Price - Giá: </label>
+                <input name="itemPrice" value="<%= dataProduct.price%>" />
+            </div>
+            <div>
+                <label>Storage - Kho hàng: </label>
+                <input name="itemStorageName" value="<%= dataProduct.storage_name%>" />
+            </div>
+            <div>
+                <label>Product classify - Phân loại hàng: </label>
+                <input name="itemClasify" value="<%= dataProduct.product_classify%>" />
+            </div>
+
+
+
+            <div>
+                <input type="text" value="<%= dataProduct.Pid %>" hidden name="Pid" />
                 <button type="submit">Save</button>
             </div>
 

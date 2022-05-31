@@ -17,9 +17,9 @@
 
     <nav class="nav_bar">
         <div class="left_obj">
-            <div class="logo"> 
+            <div class="logo">
                 <a href="/home">
-                <img src="/image/shop_logo.png" alt="" width="60px">
+                    <img src="/image/shop_logo.png" alt="" width="60px">
                 </a>
             </div>
             <div class="nav_title">Thêm 1 sản phẩm mới</div>
@@ -50,11 +50,11 @@
                     </label>
                     <!-- <br> -->
                     <label class="spe" for=""><span>* Mô tả</span>
-                        <textarea rows="4" cols="50"></textarea>
+                        <textarea name="itemDescription" rows="4" cols="50"></textarea>
                     </label>
                     <!-- <br> -->
                     <label for=""><span>* Danh mục</span>
-                        <select name="ItemCategory">
+                        <select name="itemCategory">
                             <option value="Áo nam">Áo nam</option>
                             <option value="Áo nữ">Áo nữ</option>
                             <option value="Đồ điện tử">Đồ điện tử</option>
@@ -65,11 +65,11 @@
                     </label>
                     <!-- <br> -->
                     <label for=""><span>* Thương hiệu</span>
-                        <input type="text">
+                        <input type="text" name="itemManufactor">
                     </label>
                     <!-- <br> -->
                     <label for=""><span>* Tên cửa hàng</span>
-                        <input type="text">
+                        <input type="text" name="itemShopName">
                     </label>
                 </div>
             </div>
@@ -103,12 +103,12 @@
                     </label>
                     <!-- <br> -->
                     <label for=""><span>* Kho hàng</span>
-                        <input type="text">
+                        <input type="text" name="itemStorageName">
                     </label>
 
                     <!-- <br> -->
                     <label for=""><span>* Phân loại hàng</span>
-                        <input type="text">
+                        <input type="text" name="itemClasify">
                     </label>
                 </div>
             </div>
@@ -142,30 +142,41 @@
                             <% for(let i=0; i < dataProduct.length; i++) { %>
                                 <tr>
                                     <td>
-                                        <img src="" alt="" width="40px">
+                                        <img src="image/product/<%= dataProduct[i].Pid %>.jpg" alt="NoIMG" width="40px">
                                     </td>
                                     <td>
-                                        <p><%= dataProduct[i].Pid %></p>
+                                        <p>
+                                            <%= dataProduct[i].Pid %>
+                                        </p>
                                     </td>
                                     <td>
-                                        <p><%= dataProduct[i].item_name %></p>
+                                        <p>
+                                            <%= dataProduct[i].item_name %>
+                                        </p>
                                     </td>
                                     <td>
-                                        <p><%= dataProduct[i].price %></p>
+                                        <p>
+                                            <%= dataProduct[i].price %>
+                                        </p>
                                     </td>
                                     <td>
-                                        <p><%= dataProduct[i].category %></p>
+                                        <p>
+                                            <%= dataProduct[i].category %>
+                                        </p>
                                     </td>
                                     <td style="display: flex;">
-                                        <a class="up_img" href="">Upload IMG</a>
+                                        <a class="up_img" href="upload-item-image/<%= dataProduct[i].Pid %>">Upload
+                                            IMG</a>
                                         <div class="control">
-                                            <form action="" method="">
+                                            <form action="/edit-item/<%= dataProduct[i].Pid %>" method="GET">
                                                 <button class="control_btn" type="submit">Edit</button>
                                             </form>
-                                            <form action="" method="">
+                                            <form action="/delete-item" method="POST">
+                                                <input type="text" hidden value="<%= dataProduct[i].Pid %>"
+                                                    name="productId" />
                                                 <button class="control_btn" type="submit">Delete</button>
                                             </form>
-                                        </div>                                 
+                                        </div>
                                     </td>
                                     <% } %>
                                 </tr>
