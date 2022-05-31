@@ -61,7 +61,11 @@
                                 ID: <%= userId %>
                                     <% } %>
                     </li>
-                    <li class="signup"><a class="nutdangki" href="/dangki" target="_blank">Đăng Ký</a></li>
+                    <li class="signup"><a class="nutdangki" href="/dangki" target="_blank">
+                            <% if(!loginUser){ %>
+                                Đăng Ký
+                                <% } %>
+                        </a></li>
 
                     <li class="signin"><a class="nutdangki" href="/login">
                             <% if(!loginUser){ %>
@@ -69,7 +73,11 @@
                                 <% } %>
                         </a></li>
 
-                    <li class="signin"><a class="nutdangki" href="/logout">Đăng Xuất</a></li>
+                    <li class="signin"><a class="nutdangki" href="/logout">
+                            <% if(loginUser){ %>
+                                Đăng Xuất
+                                <% } %>
+                        </a></li>
                 </ul>
             </div>
         </div>
@@ -598,50 +606,50 @@
 
         <div class="type">
             <div category='all' class="typeBtn active">Tất cả</div>
-            <div category='Áo nam' class="typeBtn">Áo Nam</div>
-            <div category='Áo nữ' class="typeBtn">Áo Nữ</div>
+            <div category='ao_nam' class="typeBtn">Áo Nam</div>
+            <div category='ao_nu' class="typeBtn">Áo Nữ</div>
             <div category='Đồ điện tử' class="typeBtn">Đồ Điện Tử</div>
-            <div category='Thiết bị gia dụng' class="typeBtn">TB Gia Dụng</div>
+            <div category='Thiết' class="typeBtn">TB Gia Dụng</div>
             <div category='Thú cưng' class="typeBtn">Thú Cưng</div>
         </div>
 
         <!--Server Render san pham start here-->
         <div class="box_render_cover">
             <div class="box_render_level_1">
-            <!--Box render level 1-->
-            <% for(let i=0; i < dataProduct.length; i++) { %>
-                <div category=<%= dataProduct[i].category%> class="box_render_level_2">
-                    <!--Box render level 2-->
-                    <a class="item_image__server_render" href="/product/<%= dataProduct[i].Pid %>" target="_blank">
-                        <div class="product_content">
+                <!--Box render level 1-->
+                <% for(let i=0; i < dataProduct.length; i++) { %>
+                    <div category=<%=dataProduct[i].category %> class="box_render_level_2">
+                        <!--Box render level 2-->
+                        <a class="item_image__server_render" href="/product/<%= dataProduct[i].Pid %>" target="_blank">
+                            <div class="product_content">
 
-                            <!-- <img src="image/product/<%= dataProduct[i].id %>.jpg" -->
-                            <img src="image/product/<%= dataProduct[i].Pid %>.jpg"
-                                alt="image has not been uploaded for this item" width="160px">
-                            <div class="product_info">
-                                <div class="product_name">
-                                    <p>
-                                        <%= dataProduct[i].item_name %>
-                                    </p>
-
-                                </div>
-                                <div class=" product_sub_info">
-                                    <div class="product_price">
+                                <!-- <img src="image/product/<%= dataProduct[i].id %>.jpg" -->
+                                <img src="image/product/<%= dataProduct[i].Pid %>.jpg"
+                                    alt="image has not been uploaded for this item" width="160px">
+                                <div class="product_info">
+                                    <div class="product_name">
                                         <p>
-                                            <%= dataProduct[i].price %>
+                                            <%= dataProduct[i].item_name %>
                                         </p>
+
                                     </div>
-                                    <div class="product_saled">Đã bán 6k+ </div>
+                                    <div class=" product_sub_info">
+                                        <div class="product_price">
+                                            <p>
+                                                <%= dataProduct[i].price %>
+                                            </p>
+                                        </div>
+                                        <div class="product_saled">Đã bán 6k+ </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                    <!--End Box render level 2-->
-                </div>
+                        </a>
+                        <!--End Box render level 2-->
+                    </div>
 
-                <% } %>
+                    <% } %>
 
-                    <!--End Box render level 1-->
+                        <!--End Box render level 1-->
             </div>
         </div>
 
