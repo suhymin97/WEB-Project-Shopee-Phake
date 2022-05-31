@@ -600,13 +600,14 @@
             <div category='all' class="typeBtn active">Tất cả</div>
             <div category='ao_nam' class="typeBtn">Áo Nam</div>
             <div category='ao_nu' class="typeBtn">Áo Nữ</div>
-            <div category='e_device' class="typeBtn">Đồ Điện Tử</div>
-            <div category='house_item' class="typeBtn">TB Gia Dụng</div>
-            <div category='pet' class="typeBtn">Thú Cưng</div>
+            <div category='Đồ điện tử' class="typeBtn">Đồ Điện Tử</div>
+            <div category='Thiết' class="typeBtn">TB Gia Dụng</div>
+            <div category='Thú cưng' class="typeBtn">Thú Cưng</div>
         </div>
 
         <!--Server Render san pham start here-->
-        <div class="box_render_level_1">
+        <div class="box_render_cover">
+            <div class="box_render_level_1">
             <!--Box render level 1-->
             <% for(let i=0; i < dataProduct.length; i++) { %>
                 <div category=<%=dataProduct[i].category%> class="box_render_level_2">
@@ -641,6 +642,7 @@
                 <% } %>
 
                     <!--End Box render level 1-->
+            </div>
         </div>
 
     </div>

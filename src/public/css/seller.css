@@ -71,7 +71,7 @@ body {
 }
 
 .add_form_box {
-    width: 100%;
+    width: 80%;
     min-height: 250px;
     background-color: #fff;
     padding-bottom: 40px;
@@ -191,6 +191,39 @@ label>textarea:focus {
     border: 1px solid #ee4d2d;
     background: #ee4d2d;
     color: #F5F5F5;
+}
+
+td {
+ display: flex;
+ align-items: center;
+}
+
+.up_img {
+    text-align: center;
+    text-decoration: none;
+    color: #ee4d2d;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.up_img:hover {
+    transform: scale(1.1);
+}
+
+.control_btn {
+    font-size: 14px;
+    min-width: 64px;
+    margin: 4px 0;
+    border: #ee4d2d 1px solid;
+    color: #ee4d2d;
+    border-radius: 4px;
+}
+
+.control_btn:hover {
+    border: #ee4d2d 1px solid;
+    background: #ee4d2d;
+    color: white;
 }
 
 .footer {
