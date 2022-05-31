@@ -58,6 +58,8 @@ const initWebRoute = (app) => {
     router.post('/delete-item', homeController.deleteItem);
     router.get('/edit-item/:id', homeController.getEditItemPage);
     router.post('/update-item', homeController.handleUpdateItem);
+    router.post('/register-new-user', homeController.registerNewUser);
+    router.get('/successRegiter', homeController.getSuccessRegiterPage);
 
 
 

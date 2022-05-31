@@ -15,7 +15,7 @@ let getDetailProduct = async (req, res) => {
 
 let getDangKiPage = async (req, res) => {
     //logic
-    return res.render('form.ejs')
+    return res.render('form.ejs', { errMsg: '' })
 }
 let getSellerPage = async (req, res) => {
     //logic
@@ -143,11 +143,40 @@ let handleUpdateItem = async (req, res) => {
 
     return res.redirect('/seller');
 }
+let registerNewUser = async (req, res) => {
+    // var count = Object.keys(req.body).length
+    // console.log(count)
+    // console.log(req.body)
+    // if (count < 6) {
+    //     return res.render('form.ejs', { errMsg: 'not enough info' });
+    // }
+    // else {
+    let { username, fullname, email, password, sellerBranch } = req.body;
+    if (username == '' || password == '') {
+        return res.render('form.ejs', { errMsg: 'You have not enter Username OR/AND Password' });
+    }
+    else {
+        const [rows] = await pool.execute('SELECT username FROM `accounts` where username = ?', [username]);
+        if (!rows[0]) {
+            await pool.execute('insert into accounts(username, fullname, email, password, seller_branch_name) values(?, ?, ?, ?, ?)',
+                [username, fullname, email, password, sellerBranch]);
+            return res.redirect('/successRegiter');
+        }
+        else {
+            return res.render('form.ejs', { errMsg: 'Duplicate username, please choose another username' });
+        }
 
+    }
+}
+
+// }
+let getSuccessRegiterPage = async (req, res) => {
+    return res.render('sucessRegister.ejs');
+}
 
 
 module.exports = {
     getHomepage, getDetailProduct, getDangKiPage, getSellerPage, getLoginPage, getAuth, getLogout,
     getShowProductPage, addNewItemSeller, getUploadImageItemPage, handleUploadItemImage, deleteItem,
-    getEditItemPage, handleUpdateItem
+    getEditItemPage, handleUpdateItem, registerNewUser, getSuccessRegiterPage
 }
