@@ -11,6 +11,7 @@ const port = process.env.PORT || 8080;
 
 //define static folder
 app.use(express.static("public"));
+//app.use(express.static(path.join(__dirname, 'public')));
 
 //create session
 app.use(session({

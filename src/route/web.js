@@ -6,6 +6,8 @@ var appRoot = require('app-root-path');
 let router = express.Router();
 
 
+
+
 //----------------------------middleware for upload image------------------------------
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -43,11 +45,11 @@ function isAuthenticated(req, res, next) {
 
 const initWebRoute = (app) => {
     //all routes
-    router.get('/', isAuthenticated, homeController.getHomepage);
+    //router.get('/', isAuthenticated, homeController.getHomepage);
+    router.get('/', homeController.getHomepage);
     router.get('/product/:id', homeController.getDetailProduct);
     router.get('/dangki', homeController.getDangKiPage);
     router.get('/seller', isAuthenticated, homeController.getSellerPage);
-    //router.get('/showProduct', homeController.getShowProductPage); //this line just to test showProduct HTML --> use route /prodct/:id instead
     router.get('/login', homeController.getLoginPage);
     router.get('/logout', homeController.getLogout);
     router.post('/auth', homeController.getAuth);
@@ -60,6 +62,8 @@ const initWebRoute = (app) => {
     router.post('/update-item', homeController.handleUpdateItem);
     router.post('/register-new-user', homeController.registerNewUser);
     router.get('/successRegiter', homeController.getSuccessRegiterPage);
+    //router.get('/buyNow/:uid/:pid/:quantity', isAuthenticated, homeController.getBuyNowPage);
+    router.get('/buyNow', isAuthenticated, homeController.getBuyNowPage);
 
 
 

@@ -1,7 +1,7 @@
 import pool from "../configs/connectDB";
 let getHomepage = async (req, res) => {
     //logic
-    const [rows, fields] = await pool.execute('SELECT * FROM `shopee_item`');
+    const [rows] = await pool.execute('SELECT * FROM `shopee_item`');
     return res.render('index.ejs', { dataProduct: rows, loginUser: req.session.username, userId: req.session.userid })
 }
 
@@ -10,7 +10,7 @@ let getDetailProduct = async (req, res) => {
     let productId = req.params.id;
     let [product] = await pool.execute(`SELECT * FROM shopee_item WHERE Pid = ?`, [productId]);
     //return res.send(JSON.stringify(product));
-    return res.render('showProduct.ejs', { infoProduct: product[0] })
+    return res.render('showProduct.ejs', { infoProduct: product[0], loginUser: req.session.username, userId: req.session.userid })
 }
 
 let getDangKiPage = async (req, res) => {
@@ -74,10 +74,6 @@ let getLogout = async (req, res) => {
 }
 
 
-let getShowProductPage = async (req, res) => {
-    //logic
-    return res.render('showProduct.ejs',)
-}
 
 let addNewItemSeller = async (req, res) => {
     //console.log("check request: ", req.body);
@@ -176,10 +172,13 @@ let registerNewUser = async (req, res) => {
 let getSuccessRegiterPage = async (req, res) => {
     return res.render('sucessRegister.ejs');
 }
+let getBuyNowPage = async (req, res) => {
+    return res.render('buyNow.ejs');
+}
 
 
 module.exports = {
     getHomepage, getDetailProduct, getDangKiPage, getSellerPage, getLoginPage, getAuth, getLogout,
-    getShowProductPage, addNewItemSeller, getUploadImageItemPage, handleUploadItemImage, deleteItem,
-    getEditItemPage, handleUpdateItem, registerNewUser, getSuccessRegiterPage
+    addNewItemSeller, getUploadImageItemPage, handleUploadItemImage, deleteItem, getEditItemPage,
+    handleUpdateItem, registerNewUser, getSuccessRegiterPage, getBuyNowPage
 }
