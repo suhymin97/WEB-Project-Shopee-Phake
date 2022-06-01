@@ -55,26 +55,32 @@
 
                         </div>
                     </li>
+
+                    <% if(loginUser){ %>
                     <li class="signin">
-                        <% if(loginUser){ %>
+                        
                             Hello <%= loginUser %>
                                 ID: <%= userId %>
                                     <% } %>
                     </li>
+
+                    <% if(!loginUser){ %>
                     <li class="signup"><a class="nutdangki" href="/dangki" target="_blank">
-                            <% if(!loginUser){ %>
+                            
                                 Đăng Ký
                                 <% } %>
                         </a></li>
 
+                    <% if(!loginUser){ %>
                     <li class="signin"><a class="nutdangki" href="/login">
-                            <% if(!loginUser){ %>
+                            
                                 Đăng Nhập
                                 <% } %>
                         </a></li>
 
+                    <% if(loginUser){ %>
                     <li class="signin"><a class="nutdangki" href="/logout">
-                            <% if(loginUser){ %>
+                            
                                 Đăng Xuất
                                 <% } %>
                         </a></li>
