@@ -9,7 +9,65 @@
 
 <body>
 
-    Hellu its buy now
+    <h1>Your Order - Đơn hàng:</h1>
+
+    <div>
+        User ID: <%= Uid %>
+    </div>
+    <div>
+        Item name: <%= productInfo.item_name %>
+    </div>
+    <div>
+        Product ID: <%= productInfo.Pid %>
+    </div>
+    <div>
+        Product price: <%= productInfo.price %> đ
+    </div>
+    <div>
+        Order quantity: <%= quantity %>
+    </div>
+    <div>
+        Total payment: <%= total %> VND
+    </div>
+    <div>
+        Ship to: <%= orderLocation %>
+    </div>
+
+    <form action="/handleOrder" method="POST">
+        <div>
+            <label for="">Ship to address: </label>
+            <input type="text" name="orderAddress">
+        </div>
+        <div>
+            <label for="">Contact number: </label>
+            <input type="text" name="contactNumber">
+        </div>
+        <div>
+            <Div>Payment method - Phương thức thanh toán: </Div>
+            <input type="radio" name="payMethod" value="Cash - Tiền mặt">
+            <label>Cash - Tiền mặt</label><br>
+            <input type="radio" name="payMethod" value="Transfer - Chuyển khoản">
+            <label>Transfer - Chuyển khoản</label><br>
+        </div>
+        <div>
+            <input type="text" hidden value="<%= Uid %>" name="Uid" />
+            <input type="text" hidden value="<%= productInfo.item_name %>" name="itemName" />
+            <input type="text" hidden value="<%= productInfo.Pid %>" name="Pid" />
+            <input type="text" hidden value="<%= productInfo.price %>" name="itemPrice" />
+            <input type="text" hidden value="<%= quantity %>" name="quantity" />
+            <input type="text" hidden value="<%= total %>" name="totalPayment" />
+            <input type="text" hidden value="<%= orderLocation %>" name="orderLocation" />
+
+            <button type="submit">Order - Đặt hàng</button>
+        </div>
+
+    </form>
+
+
+
+
+
+
 
 
 </body>

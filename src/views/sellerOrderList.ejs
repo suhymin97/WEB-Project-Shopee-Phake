@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller order list</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+
+
+    <div class="w3-container">
+        <% if(loginUser){ %>
+            Hello <%= loginUser %>
+                ID: <%= userId %>
+                    <% } %>
+                        <h2>Your Order list from customer</h2>
+
+                        <table class="w3-table-all w3-hoverable">
+                            <thead>
+                                <tr class="w3-light-grey">
+                                    <th>Order ID</th>
+                                    <th>Item name</th>
+                                    <th>Item ID</th>
+                                    <th>Item price</th>
+                                    <th>Quantity</th>
+                                    <th>Total payment</th>
+                                    <th>Pay method</th>
+                                    <th>Address</th>
+                                    <th>Location</th>
+                                    <th>Contact Number</th>
+                                    <th>Day&Time order</th>
+                                    <th>Delivery date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(let i=0; i < dataPurchase.length; i++) { %>
+                                    <tr>
+                                        <td>
+                                            <%= dataPurchase[i].Order_id %>
+                                        </td>
+                                        <td>
+                                            <%= dataPurchase[i].Item_name %>
+                                        </td>
+                                        <td>
+                                            <%= dataPurchase[i].Pid %>
+                                        </td>
+                                        <td>
+                                            <%= dataPurchase[i].price %>
+                                        </td>
+                                        <td>
+                                            <%= dataPurchase[i].quantity %>
+                                        </td>
+                                        <td>
+                                            <%= dataPurchase[i].total %>
+                                        </td>
+                                        <td>
+                                            <%= dataPurchase[i].pay_method %>
+                                        </td>
+                                        <td>
+                                            <%= dataPurchase[i].address %>
+                                        </td>
+                                        <td>
+                                            <%= dataPurchase[i].location %>
+                                        </td>
+                                        <td>
+                                            <%= dataPurchase[i].contact_num %>
+                                        </td>
+                                        <td>
+                                            <%= dataPurchase[i].date_time_order %>
+                                        </td>
+                                        <td>
+                                            <%= dataPurchase[i].date_time_delivery %>
+                                        </td>
+                                        <td>
+                                            <%= dataPurchase[i].status %>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+
+
+                        </table>
+    </div>
+
+</body>
+
+</html>

@@ -17,7 +17,7 @@
             <div class="nav_bar_items">
                 <ul type='none'>
                     <li><a class="nutdangki" href="/seller" target="_blank">Kênh Người Bán</a></li>
-                    <li>Trở thành Người bán Shopee</li>
+                    <li><a class="nutdangki" href="/buyer/PurchaseList" target="_blank">Kênh người Mua</a></li>
                     <li>Tải ứng dụng</li>
                     <li>Kết nối
                         <i class="ti-facebook"></i>
@@ -54,36 +54,42 @@
 
                         </div>
                     </li>
-                    <li class="signin">
-                        <% if(loginUser){ %>
+
+                    <% if(loginUser){ %>
+                        <li class="signin">
+
                             Hello <%= loginUser %>
                                 ID: <%= userId %>
                                     <% } %>
-                    </li>
-                    <li class="signup"><a class="nutdangki" href="/dangki" target="_blank">
-                            <% if(!loginUser){ %>
-                                Đăng Ký
-                                <% } %>
-                        </a></li>
+                        </li>
 
-                    <li class="signin"><a class="nutdangki" href="/login">
-                            <% if(!loginUser){ %>
-                                Đăng Nhập
-                                <% } %>
-                        </a></li>
+                        <% if(!loginUser){ %>
+                            <li class="signup"><a class="nutdangki" href="/dangki" target="_blank">
 
-                    <li class="signin"><a class="nutdangki" href="/logout">
-                            <% if(loginUser){ %>
-                                Đăng Xuất
-                                <% } %>
-                        </a></li>
+                                    Đăng Ký
+                                    <% } %>
+                                </a></li>
+
+                            <% if(!loginUser){ %>
+                                <li class="signin"><a class="nutdangki" href="/login">
+
+                                        Đăng Nhập
+                                        <% } %>
+                                    </a></li>
+
+                                <% if(loginUser){ %>
+                                    <li class="signin"><a class="nutdangki" href="/logout">
+
+                                            Đăng Xuất
+                                            <% } %>
+                                        </a></li>
                 </ul>
             </div>
         </div>
 
         <div class="container_wrapper">
             <div class="logo">
-                <a href="/home"><img class="sp_logo" src="/image/xóp pi logo.png" alt="???"></a>
+                <a href="/home"><img class="sp_logo" src="/image/xóp pi logo.png" alt=""></a>
             </div>
             <div>
                 <div class="search_bar">
@@ -143,7 +149,7 @@
                         </div>
                         <div class="product_price_cover">
                             <div class="product_price">
-                                <%= infoProduct.price %>
+                                <%= infoProduct.price %> đ
                             </div>
                             <div class="product_price_more">
                                 <img src="/image/gicungre.png" alt="" width="50px">
@@ -168,52 +174,60 @@
                                 phẩm chỉ với ₫49.000
                             </div>
                         </div>
-                       
-                    <form action="" method="">
 
-                        <div class="product_ship_container">
-                            <div class="product_ship_title">
-                                <div class="ptitle">Vận Chuyển</div>
-                            </div>
-                            <div class="product_ship pdesc">
-                                <i class="ti-truck"></i>
-                                <span>Vận chuyển tới</span>
-                                <div class="cus_position">
-                                    <div class="user_position">
-                                        <div class="primary_position">
-                                            <span>Chọn vị trí</span>
-                                            <i class="ti-angle-down"></i>
-                                            <div class="select_position">
-                                                <select class="select">
-                                                    <option class="option"
-                                                        value="Tỉnh/Thành phố, Quận/Huyện, Phường/Xã">Tỉnh/Thành phố,
-                                                        Quận/Huyện, Phường/Xã</option>
-                                                    <option class="option" value="Thành Phố Hồ Chí Minh">Thành Phố Hồ
-                                                        Chí Minh</option>
-                                                    <option class="option" value="Hà Nội">Hà Nội</option class="option">
-                                                    <option class="option" value="Huế">Huế</option>
-                                                    <option class="option" value="Đà Nẵng">Đà Nẵng</option>
-                                                </select>
+                        <form action="/buyNow" method="post">
+
+                            <div class="product_ship_container">
+                                <div class="product_ship_title">
+                                    <div class="ptitle">Vận Chuyển</div>
+                                </div>
+                                <div class="product_ship pdesc">
+                                    <i class="ti-truck"></i>
+                                    <span>Vận chuyển tới</span>
+                                    <div class="cus_position">
+                                        <div class="user_position">
+                                            <div class="primary_position">
+                                                <span>Chọn vị trí</span>
+                                                <i class="ti-angle-down"></i>
+                                                <div class="select_position">
+                                                    <select class="select" name="orderLocation">
+                                                        <option class="option"
+                                                            value="Tỉnh/Thành phố, Quận/Huyện, Phường/Xã">Tỉnh/Thành
+                                                            phố,
+                                                            Quận/Huyện, Phường/Xã</option>
+                                                        <option class="option" value="Thành Phố Hồ Chí Minh">Thành Phố
+                                                            Hồ
+                                                            Chí Minh</option>
+                                                        <option class="option" value="Hà Nội">Hà Nội</option
+                                                            class="option">
+                                                        <option class="option" value="Huế">Huế</option>
+                                                        <option class="option" value="Đà Nẵng">Đà Nẵng</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="product_amount_container">
-                            <div class="product_amount ptitle">Số Lượng</div>
-                            <input class="pdesc" type="number" value="1" min="1" max="99">
-                        </div>
+                            <div class="product_amount_container">
+                                <div class="product_amount ptitle">Số Lượng</div>
+                                <input class="pdesc" type="number" value="1" min="1" max="99" name="quantity">
+                            </div>
 
-                        <div class="btn">
-                            <button class="buy"><a href="/buyNow">Mua Ngay</a></button>
-                        </div>
-                    </form>
-                        
+                            <div class="btn">
+                                <!-- <button class="buy" type="submit"><a href="/buyNow">Mua Ngay</a></button> -->
+                                <% if(loginUser){ %>
+                                    <input type="text" hidden value="<%= userId %>" name="Uid" />
+                                    <% } %>
+                                        <input type="text" hidden value="<%= infoProduct.Pid %>" name="Pid" />
+                                        <button class="buy" type="submit">Mua Ngay</button>
+                            </div>
+                        </form>
+
                         <div class="btn-1">
                             <button class="add">Thêm Vào Giỏ Hàng</button>
-                        
+
                         </div>
 
 

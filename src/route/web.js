@@ -39,7 +39,9 @@ let upload = multer({ storage: storage, fileFilter: imageFilter });
 //authentication check middleware
 function isAuthenticated(req, res, next) {
     if (req.session.loggedin) next();
-    else return res.render('login.ejs');
+    else
+        // return res.render('login.ejs');
+        return res.redirect('/login');
 
 }
 
@@ -61,9 +63,13 @@ const initWebRoute = (app) => {
     router.get('/edit-item/:id', homeController.getEditItemPage);
     router.post('/update-item', homeController.handleUpdateItem);
     router.post('/register-new-user', homeController.registerNewUser);
-    router.get('/successRegiter', homeController.getSuccessRegiterPage);
+    router.get('/successRegister', homeController.getSuccessRegisterPage);
     //router.get('/buyNow/:uid/:pid/:quantity', isAuthenticated, homeController.getBuyNowPage);
-    router.get('/buyNow', isAuthenticated, homeController.getBuyNowPage);
+    router.post('/buyNow', isAuthenticated, homeController.getBuyNowPage);
+    router.post('/handleOrder', homeController.handleOrder);
+    router.get('/successOrder', homeController.getSuccessOrderPage);
+    router.get('/buyer/PurchaseList', isAuthenticated, homeController.getBuyerPurchasePage);
+    router.get('/seller/OrderList', isAuthenticated, homeController.getSellerOrderPage);
 
 
 

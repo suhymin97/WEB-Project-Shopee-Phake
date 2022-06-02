@@ -1,4 +1,5 @@
 import pool from "../configs/connectDB";
+
 let getHomepage = async (req, res) => {
     //logic
     const [rows] = await pool.execute('SELECT * FROM `shopee_item`');
@@ -159,7 +160,7 @@ let registerNewUser = async (req, res) => {
         if (!rows[0]) {
             await pool.execute('insert into accounts(username, fullname, email, password, seller_branch_name) values(?, ?, ?, ?, ?)',
                 [username, fullname, email, password, sellerBranch]);
-            return res.redirect('/successRegiter');
+            return res.redirect('/successRegister');
         }
         else {
             return res.render('form.ejs', { errMsg: 'Duplicate username, please choose another username' });
@@ -169,16 +170,64 @@ let registerNewUser = async (req, res) => {
 }
 
 // }
-let getSuccessRegiterPage = async (req, res) => {
+let getSuccessRegisterPage = async (req, res) => {
     return res.render('sucessRegister.ejs');
 }
 let getBuyNowPage = async (req, res) => {
-    return res.render('buyNow.ejs');
+    //console.log(req.body);
+    let { Uid, Pid, quantity, orderLocation } = req.body;
+    //console.log(Uid, Pid, quantity, orderLocation);
+    let [product] = await pool.execute(`SELECT Pid, price, seller_id, item_name FROM shopee_item WHERE Pid = ?`, [Pid]);
+    let total = quantity * product[0].price;
+
+    return res.render('buyNow.ejs', { Uid, total, orderLocation, productInfo: product[0], quantity });
+}
+let handleOrder = async (req, res) => {
+    //set status
+    let status = 'processing';
+    //set date & time
+    let orderDate = new Date();
+    orderDate = orderDate.toLocaleString();
+    let { Uid, itemName, Pid, itemPrice, quantity, totalPayment, orderLocation, orderAddress, contactNumber, payMethod } = req.body;
+    //console.log(req.body);
+    let [sellerId] = await pool.execute(`SELECT seller_id FROM shopee_item WHERE Pid = ?`, [Pid]);
+    // console.log('>>>Checking...')
+    // console.log(sellerId[0]);
+    // console.log(sellerId);
+    // console.log(sellerId.seller_id);
+    // console.log(sellerId[0].seller_id);
+    // console.log(JSON.stringify(sellerId));
+    // console.log(JSON.stringify(sellerId[0]));
+    // console.log(JSON.stringify(sellerId.seller_id));
+    // console.log(JSON.stringify(sellerId[0].seller_id));
+    // console.log('>>>Checking end...')
+
+    await pool.execute('insert into orders(Buyer_id, Item_name, Pid, Seller_id, price, quantity, total, location, address, contact_num, pay_method, status, date_time_order ) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        [Uid, itemName, Pid, sellerId[0].seller_id, itemPrice, quantity, totalPayment, orderLocation, orderAddress, contactNumber, payMethod, status, orderDate]);
+    return res.redirect('/successOrder');
+}
+let getSuccessOrderPage = async (req, res) => {
+    return res.render('successOrder.ejs');
+}
+let getBuyerPurchasePage = async (req, res) => {
+    let buyerId = req.session.userid;
+
+    const [rows] = await pool.execute(`SELECT * FROM orders WHERE Buyer_id = ?`, [buyerId]);
+    return res.render('buyerPurchaseList.ejs', { dataPurchase: rows, loginUser: req.session.username, userId: req.session.userid })
+
+}
+let getSellerOrderPage = async (req, res) => {
+    let sellerId = req.session.userid;
+
+    const [rows] = await pool.execute(`SELECT * FROM orders WHERE Seller_id = ?`, [sellerId]);
+    return res.render('sellerOrderList.ejs', { dataPurchase: rows, loginUser: req.session.username, userId: req.session.userid })
+
 }
 
 
 module.exports = {
     getHomepage, getDetailProduct, getDangKiPage, getSellerPage, getLoginPage, getAuth, getLogout,
     addNewItemSeller, getUploadImageItemPage, handleUploadItemImage, deleteItem, getEditItemPage,
-    handleUpdateItem, registerNewUser, getSuccessRegiterPage, getBuyNowPage
+    handleUpdateItem, registerNewUser, getSuccessRegisterPage, getBuyNowPage, handleOrder, getSuccessOrderPage,
+    getBuyerPurchasePage, getSellerOrderPage
 }

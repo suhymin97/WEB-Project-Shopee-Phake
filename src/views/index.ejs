@@ -18,7 +18,7 @@
             <div class="nav_bar_items">
                 <ul type='none'>
                     <li><a class="nutdangki" href="/seller" target="_blank">Kênh Người Bán</a></li>
-                    <li>Trở thành Người bán Shopee</li>
+                    <li><a class="nutdangki" href="/buyer/PurchaseList" target="_blank">Kênh người Mua</a></li>
                     <li>Tải ứng dụng</li>
                     <li>Kết nối
                         <i class="ti-facebook"></i>
@@ -57,33 +57,33 @@
                     </li>
 
                     <% if(loginUser){ %>
-                    <li class="signin">
-                        
+                        <li class="signin">
+
                             Hello <%= loginUser %>
                                 ID: <%= userId %>
                                     <% } %>
-                    </li>
+                        </li>
 
-                    <% if(!loginUser){ %>
-                    <li class="signup"><a class="nutdangki" href="/dangki" target="_blank">
-                            
-                                Đăng Ký
-                                <% } %>
-                        </a></li>
+                        <% if(!loginUser){ %>
+                            <li class="signup"><a class="nutdangki" href="/dangki" target="_blank">
 
-                    <% if(!loginUser){ %>
-                    <li class="signin"><a class="nutdangki" href="/login">
-                            
-                                Đăng Nhập
-                                <% } %>
-                        </a></li>
+                                    Đăng Ký
+                                    <% } %>
+                                </a></li>
 
-                    <% if(loginUser){ %>
-                    <li class="signin"><a class="nutdangki" href="/logout">
-                            
-                                Đăng Xuất
-                                <% } %>
-                        </a></li>
+                            <% if(!loginUser){ %>
+                                <li class="signin"><a class="nutdangki" href="/login">
+
+                                        Đăng Nhập
+                                        <% } %>
+                                    </a></li>
+
+                                <% if(loginUser){ %>
+                                    <li class="signin"><a class="nutdangki" href="/logout">
+
+                                            Đăng Xuất
+                                            <% } %>
+                                        </a></li>
                 </ul>
             </div>
         </div>
@@ -642,7 +642,7 @@
                                     <div class=" product_sub_info">
                                         <div class="product_price">
                                             <p>
-                                                <%= dataProduct[i].price %>
+                                                <%= dataProduct[i].price %> đ
                                             </p>
                                         </div>
                                         <div class="product_saled">Đã bán 6k+ </div>

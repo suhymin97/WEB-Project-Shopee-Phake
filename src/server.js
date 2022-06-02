@@ -1,6 +1,7 @@
 import express from 'express'
 import configViewEngine from './configs/viewEngine'
 import initWebRoute from './route/web'
+
 require('dotenv').config()
 const path = require('path');
 
@@ -23,6 +24,7 @@ app.use(session({
 //middleware to support send data from client to server
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 //init viewEngine
 configViewEngine(app);
