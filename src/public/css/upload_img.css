@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    position: relative;
+    min-width: 1300px;
+    min-height: 700px;
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+}
+
+.nav_bar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 60px;
+    background-color: #fff;
+    box-shadow: 0 0 1px rgb(95, 95, 95);
+}
+
+.left_obj {
+    margin-left: 16px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.left_obj>.logo {
+    margin-right: 8px;
+}
+
+.left_obj>.nav_title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.right_obj {
+    margin-right: 16px;
+    height: 60px;
+    width: 25%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.user {
+    font-size: 16px;
+    color: #5a5a5a;
+}
+
+.noti {
+    font-size: 20px;
+}
+
+.help_btn {
+    color: #5a5a5a;
+    padding: 6px 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    background: white;
+    border-radius: 50px;
+    border: 1px solid #757575;
+}
+
+.upload_img_box {
+    position: relative;
+    width: 400px;
+    margin: auto;
+    margin-top: 64px;
+    height: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 16px rgb(95, 95, 95);
+    border-radius: 8px;
+
+}
+
+.upload_img_box > img {
+    border-radius: 8px;
+    opacity: 1;
+}
+
+.up_input {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.up_btn {
+    border: 1px solid #39B549;
+    background: #39B549;
+    color: white;
+}
+
+.btn {
+    margin-top: 16px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.back_btn {
+    margin-top: 8px;
+    border: 1px solid #ee4d2d;
+    background: #ee4d2d;
+    color: white;
+}
+
+.back_btn > i {
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.back_btn > p {
+    transform: translateX(-1%);
+}

@@ -11,7 +11,6 @@
 body {
     position: relative;
     min-width: 1300px;
-    
 }
 
 i {
@@ -882,9 +881,9 @@ input {
     background: white;
     /* border-style: solid;
     border-width: 0.5px; */
-    margin: 8px 20px;
+    margin: 16px 20px;
     transition: transform .2s;
-    min-height: 260px;
+    min-height: 230px;
     box-shadow: 0 0 2px rgb(95, 95, 95);
 }
 
@@ -1001,12 +1000,13 @@ input {
     font-size: 12px;
 }
 
+
 /* filer start here */
 .type {
     width: 1200px;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 36px;
+    margin-top: 12px;
 }
 
 .typeBtn {
