@@ -96,7 +96,7 @@
 
                 <div class="tag">
                     <label for=""><span>* Giá</span>
-                        <input type="text" name="itemPrice" />
+                        <input class="itemPrice" type="text" name="itemPrice" />
                     </label>
                     <!-- <br> -->
                     </label>
@@ -205,6 +205,36 @@
                 col1[1].classList.remove('active')
             }
         })
+
+        const errMsg = '  Vui Lòng Chỉ Nhập Số'
+
+        const btn = document.querySelector('.add_btn')
+        const price =  document.querySelector('.itemPrice')
+
+        price.addEventListener('focus', (e)=> {
+            e.target.value = null
+        })
+
+        price.addEventListener('blur', () => {
+                price.style.border = '1px solid #ccb6b6'
+            })
+
+        const handleCheck = (e) => {
+            e.preventDefault();
+            price.value = errMsg
+            price.style.border = '1px solid #ee4d2d'
+            
+        }
+
+        price.addEventListener('change', (e) => {
+            if(isNaN(e.target.value)) {
+                btn.addEventListener('click', handleCheck) 
+        
+            } else {
+                btn.removeEventListener('click', handleCheck)
+            }
+        })
+        
 
 
     </script>

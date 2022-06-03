@@ -4,70 +4,168 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/css/edit_item.css">
+    <link rel="stylesheet" href="/css/themify-icons/themify-icons.css">
+    <link rel="shortcut icon" href="/image/spicon.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Item</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Edit Item</title>
 </head>
 
 <body>
-    <div>Edit product name: <%= dataProduct.item_name %>
-    </div>
-    <div>Seller name: <%= dataProduct.seller_name %>
-    </div>
-    <div>
-        <form action="/update-item" method="POST">
-            <div>
-                <label>Item name - Tên sản phẩm: </label>
-                <input name="itemName" value="<%= dataProduct.item_name %>" />
+    <nav class="nav_bar">
+        <div class="left_obj">
+            <div class="logo">
+                <a href="/home">
+                    <img src="/image/shop_logo.png" alt="" width="60px">
+                </a>
+            </div>
+            <div class="nav_title">Chỉnh sửa thông tin sản phẩm <span
+                style="font-weight: 600"><%= dataProduct.item_name %></span></div>
+        </div>
+
+        <div class="right_obj">
+            <div class="user">
+                <i class="ti-user"></i>
+                <span>
+                    <%= dataProduct.seller_name %>
+                </span>
+            </div>
+            <div class="noti">
+                <i class="ti-bell"></i>
+            </div>
+            <button class="help_btn">Trung Tâm Trợ Giúp</button>
+        </div>
+    </nav>
+
+    <form action="/update-item" method="POST">
+        <div class="add_form_container">
+            <div class="add_form_box">
+                <h4 class="header">Thông tin cơ bản</h4>
+
+                <div class="tag">
+                    <label for=""><span>* Tên sản phẩm</span>
+                        <input type="text" name="itemName" value="<%= dataProduct.item_name %>" />
+                        <i class="ti-pencil"></i>
+                        <i style="margin-left: 16px" class="ti-trash"></i>
+                    </label>
+                    <!-- <br> -->
+                    <label class="spe" for=""><span>* Mô tả</span>
+                        <textarea style="border-width: 0" name="itemDescription" rows="4" cols="10"><%= dataProduct.description %></textarea>
+                        <i class="ti-pencil"></i>
+                        <i style="margin-left: 16px" class="ti-trash"></i>
+                    </label>
+                    <!-- <br> -->
+                    <label for=""><span>* Danh mục</span>
+                        <select name="itemCategory">
+                            <option value="Áo nam">Áo nam</option>
+                            <option value="Áo nữ">Áo nữ</option>
+                            <option value="Đồ điện tử">Đồ điện tử</option>
+                            <option value="Thiết bị gia dụng">Thiết bị gia dụng</option>
+                            <option value="Thú cưng">Thú cưng</option>
+                        </select>
+                        <!-- <input type="text" name="ItemCategory" /> -->
+                    </label>
+                    <!-- <br> -->
+                    <label for=""><span>* Thương hiệu</span>
+                        <input type="text" name="itemManufactor" value="<%= dataProduct.manufactor%>">
+                        <i class="ti-pencil"></i>
+                        <i style="margin-left: 16px" class="ti-trash"></i>
+                    </label>
+                    <!-- <br> -->
+                    <label for=""><span>* Tên cửa hàng</span>
+                        <input type="text" name="itemShopName" value="<%= dataProduct.shop_name%>">
+                        <i class="ti-pencil"></i>
+                        <i style="margin-left: 16px" class="ti-trash"></i>
+                    </label>
+                </div>
             </div>
 
-            <div>
-                <label>Description - Mô tả: </label>
-                <textarea name="itemDescription" rows="4" cols="50"><%= dataProduct.description %></textarea>
-            </div>
+        </div>
 
-            <div>
-                <label for=""><span>Category - Danh mục</span>
-                    <select name="itemCategory" value="<%= dataProduct.category %>">
-                        <option value="Áo nam">Áo nam</option>
-                        <option value="Áo nữ">Áo nữ</option>
-                        <option value="Đồ điện tử">Đồ điện tử</option>
-                        <option value="Thiết bị gia dụng">Thiết bị gia dụng</option>
-                        <option value="Thú cưng">Thú cưng</option>
-                    </select>
-                    <!-- <input type="text" name="ItemCategory" /> -->
-                </label>
-            </div>
+        <div class="add_form_container">
+            <div class="add_form_box">
+                <h4 class="header">Thông tin bán hàng</h4>
 
-            <div>
-                <label>Item Manufactor - Thương hiệu: </label>
-                <input name="itemManufactor" value="<%= dataProduct.manufactor%>" />
-            </div>
-            <div>
-                <label>Shop name - Tên cửa hàng: </label>
-                <input name="itemShopName" value="<%= dataProduct.shop_name%>" />
-            </div>
-            <div>
-                <label>Price - Giá: </label>
-                <input name="itemPrice" value="<%= dataProduct.price%>" />
-            </div>
-            <div>
-                <label>Storage - Kho hàng: </label>
-                <input name="itemStorageName" value="<%= dataProduct.storage_name%>" />
-            </div>
-            <div>
-                <label>Product classify - Phân loại hàng: </label>
-                <input name="itemClasify" value="<%= dataProduct.product_classify%>" />
-            </div>
+                <div class="tag">
+                    <label for=""><span>* Giá</span>
+                        <input class="itemPrice" type="text" name="itemPrice" value="<%= dataProduct.price%>" />
+                        <i class="ti-pencil"></i>
+                        <i style="margin-left: 16px" class="ti-trash"></i>
+                    </label>
+                    <!-- <br> -->
+                    </label>
+                    <!-- <br> -->
+                    <label for=""><span>* Kho hàng</span>
+                        <input type="text" name="itemStorageName" value="<%= dataProduct.storage_name%>">
+                        <i class="ti-pencil"></i>
+                        <i style="margin-left: 16px" class="ti-trash"></i>
+                    </label>
 
-
-
-            <div>
-                <input type="text" value="<%= dataProduct.Pid %>" hidden name="Pid" />
-                <button type="submit">Save</button>
+                    <!-- <br> -->
+                    <label for=""><span>* Phân loại hàng</span>
+                        <input type="text" name="itemClasify" value="<%= dataProduct.product_classify%>">
+                        <i class="ti-pencil"></i>
+                        <i style="margin-left: 16px" class="ti-trash"></i>
+                    </label>
+                </div>
             </div>
+        </div>
+        <div class="add_form_container">
+            <input type="text" value="<%= dataProduct.Pid %>" hidden name="Pid" />
+                <button class="up_btn" type="submit">Cập Nhật Sản Phẩm</button>
+        </div>
+    </form>
+    
+    <script>
+            const errMsg = '  Vui Lòng Chỉ Nhập Số'
 
-        </form>
-    </div>
+            const btn = document.querySelector('.up_btn')
+            const price =  document.querySelector('.itemPrice')
+            const pencils = document.querySelectorAll('.ti-pencil')
+            const trashes = document.querySelectorAll('.ti-trash')
+
+            price.addEventListener('focus', (e)=> {
+                e.target.value = null
+            })
+
+            price.addEventListener('blur', () => {
+                    price.style.border = 'none'
+            })
+
+            pencils.forEach((pencil) => {
+                const cover = pencil.parentElement
+                const input = cover.querySelector('input') || cover.querySelector('textarea')
+                pencil.addEventListener('click', () => {
+                    input.focus()
+                })
+            })
+
+            trashes.forEach((trash) => {
+                const cover = trash.parentElement
+                const input = cover.querySelector('input') || cover.querySelector('textarea')
+                trash.addEventListener('click', () => {
+                    input.value = null
+                    input.focus()
+                })
+            })
+
+            const handleCheck = (e) => {
+                e.preventDefault();
+                price.value = errMsg
+                price.style.border = '1px solid #ee4d2d'
+                
+            }
+
+            price.addEventListener('change', (e) => {
+                if(isNaN(e.target.value)) {
+                    btn.addEventListener('click', handleCheck) 
+
+                } else {
+                    btn.removeEventListener('click', handleCheck)
+                }
+            })
+    </script>
 
 </body>
 
