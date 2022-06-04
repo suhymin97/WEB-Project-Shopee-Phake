@@ -30,6 +30,8 @@ app.use(express.urlencoded({ extended: true }));
 configViewEngine(app);
 //init route
 initWebRoute(app);
+//init time zone - Mil
+process.env.TZ = 'Asia/Saigon';
 
 
 app.listen(port, () => {
