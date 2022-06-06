@@ -4,7 +4,7 @@
 
 - Đặng Nguyễn Nam Anh - ITITIU19076
 - Nguyễn Hữu Luân - ITITIU19027
-- Vũ Minh Tú - ITITIU15093
+- Vũ Minh Tú Anh - ITITIU15093
 
 **Topic:**
 
