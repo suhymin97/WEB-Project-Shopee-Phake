@@ -84,6 +84,6 @@ Features that are incomplete or that to be developed further after the course:
 - Not enough time to work on more technology/stack
 
 # III. Result and Conclusion
-Overall, we complete making a web application that can work as an e-commerce site, though it just has very simple functions and features. All we want to do and already achieved is that be able to work and understand how to made a web application with some technology/stack that we interest while learning WAD course at the university.   
+Overall, we completed making a web application that can work as an e-commerce site, though it just has very simple functions and features. All we want to do and already achieved is that be able to work and understand how to made a web application with some technology/stack that we interest while learning WAD course at the university.   
 
 For the future work, it is surely that we will continue to work on and improve the project as we learn further.
