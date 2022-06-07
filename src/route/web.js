@@ -1,5 +1,6 @@
 import express from "express";
 import homeController from "../controller/homeController";
+import cartController from "../controller/cartController"; //Mill
 import path from 'path'
 import multer from 'multer'
 var appRoot = require('app-root-path');
@@ -70,6 +71,9 @@ const initWebRoute = (app) => {
     router.get('/successOrder', homeController.getSuccessOrderPage);
     router.get('/buyer/PurchaseList', isAuthenticated, homeController.getBuyerPurchasePage);
     router.get('/seller/OrderList', isAuthenticated, homeController.getSellerOrderPage);
+    /* Cart section */
+    // router.get('/userCart', cartController.getCart);
+    router.post('/addCart', isAuthenticated, cartController.addCart);
 
 
 
