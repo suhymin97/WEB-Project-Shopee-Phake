@@ -17,7 +17,7 @@ A project for our team to learn and practice on web application, specifically HT
 **Task allocation for each team member:**
 - Nam Anh: front-end 
 - Hữu Luân: back-end 
-- Minh Tú: back-end 
+- Tú Anh: back-end 
 # II. Main Contents
 ## 1. Technology stack selection 
 
@@ -35,7 +35,12 @@ A project for our team to learn and practice on web application, specifically HT
 ![example img](/Report-Img/exampleImg.jpg) 
 
 ### Sequence diagram  
-![example img](/Report-Img/exampleImg.jpg) 
+- Load homepage.
+![example img](/Report-Img/WAD%20Project%20Sequence1%20-%20Homepage.jpg) 
+- Order a product throught 'Buy Now' function.
+![example img](/Report-Img/WAD%20Project%20Sequence2%20-%20Order.jpg) 
+- Seller add new product.
+![example img](/Report-Img/WAD%20Project%20Sequence3%20-%20Add%20New%20Product.jpg) 
 
 ### Database diagram - ERD
 <!-- <a href="https://dbdiagram.io/d/62886fe4f040f104c16c2b8a">Database Structure Diagram:</a>   -->
@@ -49,27 +54,27 @@ An e-commerce site will have the seller user account and buyer/customer user acc
 
 **a. User - Customer:**
 - Create new account, Login, Logout.
-  ![example img](/Report-Img/exampleImg.jpg) 
+  <!-- ![example img](/Report-Img/exampleImg.jpg)  -->
 - Browse the website for products, see the detail of a product.
-  ![example img](/Report-Img/exampleImg.jpg) 
+  <!-- ![example img](/Report-Img/exampleImg.jpg)  -->
 - Buy a product through 'Buy Now' feature.
-  ![example img](/Report-Img/exampleImg.jpg) 
+  <!-- ![example img](/Report-Img/exampleImg.jpg)  -->
 - Checking the purchase list/history.
-  ![example img](/Report-Img/exampleImg.jpg) 
+  <!-- ![example img](/Report-Img/exampleImg.jpg)  -->
 - Have all the functions & features to be able to operate as a seller account.
 
 **b. User - Seller:**
 - Have all the same functions of customer.
 - View/Edit/Delete/Add New the products to the web application.
-  ![example img](/Report-Img/exampleImg.jpg) 
+  <!-- ![example img](/Report-Img/exampleImg.jpg)  -->
 - Checking the order list/history from customers
-  ![example img](/Report-Img/exampleImg.jpg) 
+  <!-- ![example img](/Report-Img/exampleImg.jpg)  -->
 
 ## 4. Functions & Features (incompleted ones)
 Features that are incomplete or that to be developed further after the course:
 - Buy product through 'Cart' function.
 - Search/Filter products properly.
-- Functions to handle the processes after the customers has ordered the products.
+- Functions to handle the processes after the customer has ordered the products.
 - Review/Comment/Rate functions for products.
 - Proper authentication application to handle the user accounts.
 - More function on interacting with user account: forget password, edit info, upload avatar, etc...
@@ -79,6 +84,6 @@ Features that are incomplete or that to be developed further after the course:
 - Not enough time to work on more technology/stack
 
 # III. Result and Conclusion
-Overall, we complete making a web application that can work as an e-commerce site, though it just has very simple functions and features. All we want to do and already achieved is that be able to work and understand how to made a web application with some technology/stack that we interest while learning WAD course at the university.   
+Overall, we completed making a web application that can work as an e-commerce site, though it just has very simple functions and features. All we want to do and already achieved is that be able to work and understand how to made a web application with some technology/stack that we interest while learning WAD course at the university.   
 
 For the future work, it is surely that we will continue to work on and improve the project as we learn further.
