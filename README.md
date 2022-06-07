@@ -74,7 +74,7 @@ An e-commerce site will have the seller user account and buyer/customer user acc
 Features that are incomplete or that to be developed further after the course:
 - Buy product through 'Cart' function.
 - Search/Filter products properly.
-- Functions to handle the processes after the customers has ordered the products.
+- Functions to handle the processes after the customer has ordered the products.
 - Review/Comment/Rate functions for products.
 - Proper authentication application to handle the user accounts.
 - More function on interacting with user account: forget password, edit info, upload avatar, etc...
