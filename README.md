@@ -23,7 +23,7 @@ A project for our team to learn and practice on web application, specifically HT
 
 - **Front-end**: *HTML, CSS, JavaScript*.  
   - HTML, CSS: To build the website user interface.
-  - JavaScript: To build some simple animation on the website.
+  - JavaScript: To build some simple animation on the website and check the validation of some forms.
 - **Back-end**: *NodeJS - Express framework, EJS, MySQL*, along with some supportive libraries.
   - NodeJS - Express framework: A framework to write JavaScript at back-end side.
   - EJS: A JavaScript template to generate HTML pages with plain JavaScript.

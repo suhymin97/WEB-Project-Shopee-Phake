@@ -180,7 +180,7 @@ let getBuyNowPage = async (req, res) => {
     let [product] = await pool.execute(`SELECT Pid, price, seller_id, item_name FROM shopee_item WHERE Pid = ?`, [Pid]);
     let total = quantity * product[0].price;
 
-    return res.render('buyNow.ejs', { Uid, total, orderLocation, productInfo: product[0], quantity });
+    return res.render('buyNow.ejs', {loginUser: req.session.username, userId: req.session.userid, Uid, total, orderLocation, productInfo: product[0], quantity });
 }
 let handleOrder = async (req, res) => {
     //set status

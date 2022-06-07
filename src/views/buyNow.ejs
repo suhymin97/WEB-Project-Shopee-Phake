@@ -3,12 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/css/buyNow.css">
+    <link rel="stylesheet" href="/css/themify-icons/themify-icons.css">
+    <link rel="shortcut icon" href="/image/spicon.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đặt hàng nhanh sản phẩm</title>
 </head>
 
 <body>
+    <div class="nav_bar">
+        <div class="container_nav_bar">
+            <div class="nav_bar_items">
+                <ul type='none'>
+                    <li><a class="nutdangki" href="/seller" target="_blank">Kênh Người Bán</a></li>
+                    <li><a class="nutdangki" href="/buyer/PurchaseList" target="_blank">Kênh người Mua</a></li>
+                    <li>Tải ứng dụng</li>
+                    <li>Kết nối
+                        <i class="ti-facebook"></i>
+                        <i class="ti-instagram"></i>
 
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav_bar_links">
+                <ul type='none'>
+                    <li class="noti_link"><a href=""><i class="ti-bell"></i>Thông báo</a>
+                        <div class="notification">
+                            <div class="noti_header">
+                                <p>Thông báo mới nhận</p>
+                            </div>
+                            <div class="noti_container">
+                                <div class="request">
+                                    <div class="signin_request"><a class="item_image__server_render" href="/login">Đăng
+                                            Nhập</a></div>
+                                    <div class="signup_request"><a class="item_image__server_render" href="/dangki"
+                                            target="_blank">Đăng
+                                            Ký</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href=""><i class="ti-help-alt"></i> Hỗ trợ</a></li>
+                    <li class="language_link"><a href=""><i class="ti-world"></i> Tiếng Việt</a>
+                        <div class="language_options">
+                            <p class="lang">Tiếng Anh</p>
+                            <p class="lang">Tiếng Nhật</p>
+                            <p class="lang">Tiếng Trung</p>
+
+                        </div>
+                    </li>
+
+                    <% if(loginUser){ %>
+                        <li class="signin">
+
+                            Hello <%= loginUser %>
+                                ID: <%= userId %>
+                                    <% } %>
+                        </li>
+
+                        <% if(!loginUser){ %>
+                            <li class="signup"><a class="nutdangki" href="/dangki" target="_blank">
+
+                                    Đăng Ký
+                                    <% } %>
+                                </a></li>
+
+                            <% if(!loginUser){ %>
+                                <li class="signin"><a class="nutdangki" href="/login">
+
+                                        Đăng Nhập
+                                        <% } %>
+                                    </a></li>
+
+                                <% if(loginUser){ %>
+                                    <li class="signin"><a class="nutdangki" href="/logout">
+
+                                            Đăng Xuất
+                                            <% } %>
+                                        </a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="nav_bar_wrapper">
+            <div class="left_item">
+                <div class="logo">
+                    <a href="/home"><img class="sp_logo" src="image/icon shopee red.png"></a>
+                </div>
+                <div class="wrapper_title">Đơn hàng của bạn</div>
+            </div>
+            <div class="right_item">
+                <div class="search_bar">
+                    <input placeholder="TÌM KIẾM Ở ĐÂY" type="text">
+                    <div class="search_icon">
+                        <i style="color: white;" class="ti-search"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="below_container">
+        <div class="free_ship">
+            <i class="ti-truck"></i>
+            <span>Nhấn vào mục Mã giảm giá ở cuối trang để hưởng miễn phí vận chuyển bạn nhé!</span>
+        </div>
+
+        <div class="header_order">
+            <div class="id_order">Mã sản phẩm</div>
+            <div class="title_order">Sản phẩm</div>
+            <div class="payment_order">Giá</div>
+            <div class="amount_order">Số lượng</div>
+            <div class="total_payment_order">Tổng cộng</div>
+        </div>
+
+        <div class="user_order">
+        <div class="user_order_cover">
+            <div class="id_order"><%= productInfo.Pid %></div>
+            <div class="title_order"><%= productInfo.item_name %></div>
+            <div class="payment_order"><%= productInfo.price %></div>
+            <div class="amount_order"><%= quantity %></div>
+            <div class="total_payment_order"><%= total %></div>
+        </div>
+            <div class="voucher">
+                <i class="ti-ticket"></i>
+                <span>Thêm mã giảm giá của Shop</span>
+            </div>
+            <div class="ship">
+                <i class="ti-truck"></i>
+                <span>Giảm ₫25.000 phí vận chuyển đơn tối thiểu ₫50.000  
+                    <span class="more">Tìm hiểu thêm
+                        <div class="more_pop_up">
+                            <div class="more_pop_up_cover">
+                            <div class="sale_off_header">Khuyến mãi vận chuyển</div>
+                            <div class="sale_off_details">
+                                <div>Đơn hàng tối thiểu
+                                    <p>₫50.000</p>
+                                </div>
+                                <div>Ưu đãi
+                                    <p>&nbsp;</p>
+                                    <p>₫25.000</p>
+                                </div>
+                                <div>Phương thức vận chuyển
+                                    <p>&nbsp;</p>
+                                    <p>Nhanh</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </span>
+                </span>
+            </div>
+            </div>
+
+            <div class="bill">
+                <div class="bill_voucher">
+                    <div class="bill_voucher_header">
+                        <i class="ti-ticket"></i>
+                        <span>Shopee Voucher</span>
+                    </div>
+                    <div class="voucher_select">
+                        <a href="">Chọn Hoặc Nhập Mã</a>
+                    </div>
+                </div>
+
+                <form action="/handleOrder" method="POST">
+                    <div class="user_address">
+                    <div class="enter_phone_number">
+                        <label for="">Contact number: </label>
+                        <input type="text" name="contactNumber">
+                    </div>
+
+                        <div class="enter_address">
+                            <label for="">Ship to address: </label>
+                            <input type="text" name="orderAddress">
+                        </div>
+                    
+                    <div class="location">
+                        <label for="">Ship to address: </label>
+                        <span class="loc"><%= orderLocation %></span>
+                    </div>
+                    </div>
+
+                    <div class="bill_confirm">
+                        <div class="total">
+                            <div class="pay_method">
+                                <div>Phương thức thanh toán: </div>
+                                <div class="method_select">
+                                    <div><input style="margin-right: 8px" type="radio" name="payMethod" value="Tiền mặt">Tiền mặt</div>
+                                    <div><input style="margin-right: 8px" type="radio" name="payMethod" value="Chuyển khoản">Chuyển khoản</div>
+                                </div>
+                            </div>
+                            <span style="font-size: 14px;">Tổng thanh toán (<%= quantity %> Sản Phẩm): ₫<%= total %></span>
+                            <div class="order_btn">
+                                <input type="text" hidden value="<%= Uid %>" name="Uid" />
+                                <input type="text" hidden value="<%= productInfo.item_name %>" name="itemName" />
+                                <input type="text" hidden value="<%= productInfo.Pid %>" name="Pid" />
+                                <input type="text" hidden value="<%= productInfo.price %>" name="itemPrice" />
+                                <input type="text" hidden value="<%= quantity %>" name="quantity" />
+                                <input type="text" hidden value="<%= total %>" name="totalPayment" />
+                                <input type="text" hidden value="<%= orderLocation %>" name="orderLocation" />
+                                <button class="btn" type="submit">Đặt hàng</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+    </div>
+
+    
+</body>
+<script>
+
+</script>
+</html>
+
+<!-- 
     <h1>Your Order - Đơn hàng:</h1>
 
     <div>
@@ -50,13 +263,13 @@
             <label>Transfer - Chuyển khoản</label><br>
         </div>
         <div>
-            <input type="text" hidden value="<%= Uid %>" name="Uid" />
-            <input type="text" hidden value="<%= productInfo.item_name %>" name="itemName" />
-            <input type="text" hidden value="<%= productInfo.Pid %>" name="Pid" />
-            <input type="text" hidden value="<%= productInfo.price %>" name="itemPrice" />
-            <input type="text" hidden value="<%= quantity %>" name="quantity" />
-            <input type="text" hidden value="<%= total %>" name="totalPayment" />
-            <input type="text" hidden value="<%= orderLocation %>" name="orderLocation" />
+                <input type="text" hidden value="<%= Uid %>" name="Uid" />
+                <input type="text" hidden value="<%= productInfo.item_name %>" name="itemName" />
+                <input type="text" hidden value="<%= productInfo.Pid %>" name="Pid" />
+                <input type="text" hidden value="<%= productInfo.price %>" name="itemPrice" />
+                <input type="text" hidden value="<%= quantity %>" name="quantity" />
+                <input type="text" hidden value="<%= total %>" name="totalPayment" />
+                <input type="text" hidden value="<%= orderLocation %>" name="orderLocation" />
 
             <button type="submit">Order - Đặt hàng</button>
         </div>
@@ -68,8 +281,4 @@
 
 
 
-
-
-</body>
-
-</html>
+ -->

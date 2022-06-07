@@ -126,3 +126,37 @@ body {
 .back_btn > p {
     transform: translateX(-1%);
 }
+
+
+.noti_modal {
+    position: absolute;
+    top: 12%;
+    right: 1%;
+    display: none;
+    align-items: center;
+    width: 240px;
+    min-height: 70px;
+    background-color: #39B549;
+    border-radius: 6px;
+}
+
+
+
+.ti-check {
+    font-size: 32px;
+    color: white;
+}
+
+.icon_noti {
+    margin: 8px;
+    padding-left: 8px;
+}
+
+.main_noti {
+    margin: 16px;
+    color: white;
+}
+
+.body_noti {
+    font-size: 14px;
+}
