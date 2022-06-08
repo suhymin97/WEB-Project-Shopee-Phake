@@ -141,7 +141,12 @@
                             <% for(let i=0; i < dataProduct.length; i++) { %>
                                 <tr>
                                     <td>
-                                        <img src="image/product/<%= dataProduct[i].Pid %>.jpg" alt="NoIMG" width="40px">
+                                        <a class="item_image__server_render" href="/product/<%= dataProduct[i].Pid %>"
+                                            target="_blank">
+                                            <img src="image/product/<%= dataProduct[i].Pid %>.jpg" alt="NoIMG"
+                                                width="40px">
+                                        </a>
+                                        <!-- <img src="image/product/<%= dataProduct[i].Pid %>.jpg" alt="NoIMG" width="40px"> -->
                                     </td>
                                     <td>
                                         <p>
@@ -209,32 +214,32 @@
         const errMsg = '  Vui Lòng Chỉ Nhập Số'
 
         const btn = document.querySelector('.add_btn')
-        const price =  document.querySelector('.itemPrice')
+        const price = document.querySelector('.itemPrice')
 
-        price.addEventListener('focus', (e)=> {
+        price.addEventListener('focus', (e) => {
             e.target.value = null
         })
 
         price.addEventListener('blur', () => {
-                price.style.border = '1px solid #ccb6b6'
-            })
+            price.style.border = '1px solid #ccb6b6'
+        })
 
         const handleCheck = (e) => {
             e.preventDefault();
             price.value = errMsg
             price.style.border = '1px solid #ee4d2d'
-            
+
         }
 
         price.addEventListener('change', (e) => {
-            if(isNaN(e.target.value)) {
-                btn.addEventListener('click', handleCheck) 
-        
+            if (isNaN(e.target.value)) {
+                btn.addEventListener('click', handleCheck)
+
             } else {
                 btn.removeEventListener('click', handleCheck)
             }
         })
-        
+
 
 
     </script>

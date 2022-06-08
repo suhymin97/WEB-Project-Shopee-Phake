@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="shortcut icon" href="/image/spicon.png" type="image/x-icon" />
     <title>Document</title>
 </head>
+
 <body>
     <nav class="nav_bar">
         <div class="left_obj">
@@ -35,74 +37,75 @@
     </nav>
 
     <div class="upload_img_box">
-        <img class="no_img" src="https://miro.medium.com/max/250/1*DSNfSDcOe33E2Aup1Sww2w.jpeg" alt="" width="400px" height="400px">
-            <form method="POST" action="/handle-upload-item-image" enctype="multipart/form-data">
-                <div>
-                    <input class="up_input" style="width:100%; height: 400px;" type="file" name="item_image" />
-                </div>
-                <div>
-                    <button class="up_btn btn" type="submit">
-                        <p>
-                            <i class="ti-cloud-up"></i>
-                            Lưu ảnh
-                        </p>
-                    </button>
-                </div>
-            </form>
-            <a href="/seller">
-                <button class="back_btn btn" type="submit">
+        <img class="no_img" src="https://miro.medium.com/max/250/1*DSNfSDcOe33E2Aup1Sww2w.jpeg" alt="" width="400px"
+            height="400px">
+        <form method="POST" action="/handle-upload-item-image" enctype="multipart/form-data">
+            <div>
+                <input class="up_input" style="width:100%; height: 400px;" type="file" name="item_image" />
+            </div>
+            <div>
+                <button class="up_btn btn" type="submit">
                     <p>
-                        <i class="ti-arrow-left"></i>
-                        Trở lại
+                        <i class="ti-cloud-up"></i>
+                        Lưu ảnh
                     </p>
                 </button>
-            </a>
-            <div class="test"></div>
+            </div>
+        </form>
+        <a href="/seller">
+            <button class="back_btn btn" type="submit">
+                <p>
+                    <i class="ti-arrow-left"></i>
+                    Trở lại
+                </p>
+            </button>
+        </a>
+        <div class="test"></div>
     </div>
 
     <div class="noti_modal">
         <div class="icon_noti">
-            <i class="ti-check"></i></div>
+            <i class="ti-check"></i>
+        </div>
         <div class="main_noti">
             <div class="header_noti"><strong>Xác Nhận</strong></div>
             <div class="body_noti">Tải ảnh thành công!</div>
         </div>
-    
+
     </div>
 
     <script>
-      
-    const imgFile = document.querySelector('.up_input')
-    const modal = document.querySelector('.noti_modal')
-    const test = document.querySelector('.test')
-     
 
-    const show = () => {
-        modal.style.display = 'flex'
-    }
+        const imgFile = document.querySelector('.up_input')
+        const modal = document.querySelector('.noti_modal')
+        const test = document.querySelector('.test')
 
-    const close = () => {
-        modal.style.display = 'none'
-    }
 
-    const check = () => {
-        if(imgFile.value === "") {
+        const show = () => {
+            modal.style.display = 'flex'
+        }
+
+        const close = () => {
+            modal.style.display = 'none'
+        }
+
+        const check = () => {
+            if (imgFile.value === "") {
                 close()
             } else {
                 show()
             }
-      }  
+        }
 
-    imgFile.onchange = () => {
-        check()
-    }
+        imgFile.onchange = () => {
+            check()
+        }
 
-    window.onclick = () => {
-        close()
-    }
+        window.onclick = () => {
+            close()
+        }
 
     </script>
 </body>
-</html>
 
-    
+</html>
