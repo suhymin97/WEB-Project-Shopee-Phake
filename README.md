@@ -58,7 +58,7 @@ A project for our team to learn and practice on web application, specifically HT
 
 ![example img](/Report-Img/WAD%20Project%20Sequence3%20-%20Add%20New%20Product.jpg) 
 
-### Database diagram - ERD
+### Database - MySql
 <!-- <a href="https://dbdiagram.io/d/62886fe4f040f104c16c2b8a">Database Structure Diagram:</a>   -->
   
 
