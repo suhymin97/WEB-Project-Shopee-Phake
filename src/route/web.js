@@ -72,7 +72,7 @@ const initWebRoute = (app) => {
     router.get('/buyer/PurchaseList', isAuthenticated, homeController.getBuyerPurchasePage);
     router.get('/seller/OrderList', isAuthenticated, homeController.getSellerOrderPage);
     /* Cart section */
-    // router.get('/userCart', cartController.getCart);
+    router.get('/cart', isAuthenticated, cartController.getCart);
     router.post('/addCart', isAuthenticated, cartController.addCart);
 
 

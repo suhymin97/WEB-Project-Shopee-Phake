@@ -10,6 +10,7 @@ let getDetailProduct = async (req, res) => {
     //logic
     let productId = req.params.id;
     let [product] = await pool.execute(`SELECT * FROM shopee_item WHERE Pid = ?`, [productId]);
+    req.session.redirectTo = `/product/${productId}`;
     //return res.send(JSON.stringify(product));
     return res.render('showProduct.ejs', { infoProduct: product[0], loginUser: req.session.username, userId: req.session.userid })
 }
@@ -32,6 +33,10 @@ let getLoginPage = async (req, res) => {
 let getAuth = async (req, res) => {
     //login logic
     //console.log(">>>>Connecting, a user is logging in...");
+    /* redirect Page start */
+    var redirectTo = req.session.redirectTo || '/home';
+    delete req.session.redirectTo;
+    /* redirect Page end*/ 
     // Capture the input fields
     let username = req.body.username;
     let password = req.body.password;
@@ -44,7 +49,7 @@ let getAuth = async (req, res) => {
             req.session.username = username;
             req.session.seller = results[0].seller_branch_name;
             req.session.userid = results[0].Uid;
-            res.redirect('/home');
+            res.redirect(redirectTo); //req previous
         } else {
             res.send('Incorrect Username and/or Password!');
         }
