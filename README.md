@@ -32,7 +32,12 @@ A project for our team to learn and practice on web application, specifically HT
 ## 2. Diagrams
 
 ### Use case diagram 
-![example img](/Report-Img/exampleImg.jpg) 
+- Summary goal use case
+  ![example img](/Report-Img/WAD%20Project%20UC1%20-%20Summary.jpg)
+- Use cases for seller
+  ![example img](/Report-Img/WAD%20Project%20UC2%20-%20Seller.jpg) 
+- Use cases for buyer
+  ![example img](/Report-Img/WAD%20Project%20UC3%20-%20Buyer.jpg)  
 
 ### Sequence diagram  
 - Load homepage.
@@ -45,7 +50,7 @@ A project for our team to learn and practice on web application, specifically HT
 ### Database diagram - ERD
 <!-- <a href="https://dbdiagram.io/d/62886fe4f040f104c16c2b8a">Database Structure Diagram:</a>   -->
 
-![example img](/Report-Img/exampleImg.jpg) 
+![example img](/Report-Img/WAD%20Project%20ERD.jpg) 
 
 ## 3. Functions & Features (completed)
 An e-commerce site will have the seller user account and buyer/customer user account, each go along with its functions and features.  
