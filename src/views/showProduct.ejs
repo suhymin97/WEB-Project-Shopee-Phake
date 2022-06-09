@@ -17,9 +17,33 @@
     <div class="nav_bar">
         <div class="container_nav_bar">
             <div class="nav_bar_items">
-                <ul type='none'>
-                    <li><a class="nutdangki" href="/seller" target="_blank">Kênh Người Bán</a></li>
-                    <li><a class="nutdangki" href="/buyer/PurchaseList" target="_blank">Kênh người Mua</a></li>
+                <ul class="left_nav" type='none'>
+                    <li class="seller">Kênh Người Bán
+                    <div class="seller_container">
+                        <ul type="none">
+                        <li class="manage_products ">
+                            <a class="sub_nav_hover" href="/seller" target="_blank">Quản Lý Sản Phẩm</a>
+                        </li>
+
+                        <li class="manage_orders ">
+                            <a class="sub_nav_hover" href="/seller/orderlist" target="_blank">Quản Lý Đơn Hàng</a>
+                        </li>
+
+                        </ul>
+                        
+                    </div>
+                    </li>
+                    <!-- <li><a class="nutdangki" href="/buyer/PurchaseList" target="_blank">Kênh người Mua</a></li> -->
+                    <li class="buyer">Kênh Người Mua
+                        <div class="buyer_container">
+                            <ul type="none">
+                            <li class="manage_bills ">
+                                <a class="sub_nav_hover" href="/buyer/PurchaseList" target="_blank">Quản Lý Đơn Mua</a>
+                            </li>
+                            </ul>
+                            
+                        </div>
+                        </li>
                     <li>Tải ứng dụng</li>
                     <li>Kết nối
                         <i class="ti-facebook"></i>
@@ -30,7 +54,7 @@
             </div>
 
             <div class="nav_bar_links">
-                <ul type='none'>
+                <ul class="right_nav" type='none'>
                     <li class="noti_link"><a href=""><i class="ti-bell"></i>Thông báo</a>
                         <div class="notification">
                             <div class="noti_header">
@@ -117,7 +141,6 @@
             </div>
         </div>
     </div>
-
     <div class="show_product_container">
         <div class="route_link"> <a href="/home">Shopee (sendback trang chính)</a>
             <i class="ti-angle-right"></i>

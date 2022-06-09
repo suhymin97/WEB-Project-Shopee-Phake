@@ -5,19 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buyer Home Page</title>
+    <link rel="stylesheet" href="/css/buyerPurchaseList.css">
+    <link rel="stylesheet" href="/css/themify-icons/themify-icons.css">
+    <link rel="shortcut icon" href="/image/spicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
 
+    <nav class="nav_bar">
+        <div class="left_obj">
+            <div class="logo">
+                <a href="/home">
+                    <img src="/image/shop_logo.png" alt="" width="60px">
+                </a>
+            </div>
+            <div class="nav_title">Đơn Mua Của Bạn</div>
+        </div>
+
+        <div class="right_obj">
+            <div class="user">
+                <i class="ti-user"></i>
+                <span>
+                    <% if(loginUser){ %>
+                        Hello <%= loginUser %>
+                            ID: <%= userId %>
+                                <% } %>
+                </span>
+            </div>
+            <div class="noti">
+                <i class="ti-bell"></i>
+            </div>
+            <button class="help_btn">Trung Tâm Trợ Giúp</button>
+        </div>
+    </nav>
 
     <div class="w3-container">
-        <% if(loginUser){ %>
-            Hello <%= loginUser %>
-                ID: <%= userId %>
-                    <% } %>
-                        <h2>Your purchase list</h2>
-
                         <table class="w3-table-all w3-hoverable">
                             <thead>
                                 <tr class="w3-light-grey">

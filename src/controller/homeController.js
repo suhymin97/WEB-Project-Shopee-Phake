@@ -189,7 +189,7 @@ let getBuyNowPage = async (req, res) => {
 }
 let handleOrder = async (req, res) => {
     //set status
-    let status = 'processing';
+    let status = 'Đang chờ vận chuyển';
     //set date & time
     let orderDate = new Date();
     orderDate = orderDate.toLocaleString();
