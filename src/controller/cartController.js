@@ -2,10 +2,11 @@ import DateTime, { masks } from "../libs/DateTime";
 import pool from "../configs/connectDB";
 import req from "express/lib/request";
 
-let getCart = async(reg, res) => { //AVu7 for future change
+let getCart = async(req, res) => { //AVu7 for future change
     let uid = req.session.userid;
-    const [rows] = await pool.execute(`SELECT * FROM orders WHERE Seller_id = ?`, [sellerId]);
-    return res.render('sellerOrderList.ejs', { dataPurchase: rows, loginUser: req.session.username, userId: req.session.userid })
+    const [rows] = await pool.execute(`SELECT C.UID, C.MERCHANT, C.MID, C.PID, C.quantity, C.item_name, C.price, C.EFFDATE
+        FROM VCART C WHERE UID = ?`, [uid]);
+    return res.render('cart.ejs', { products: rows, loginUser: req.session.username, userId: req.session.userid });
 }
 
  //Mill cart
