@@ -1,0 +1,74 @@
+<%- include('./parts/_headera.ejs') %>
+<link rel="stylesheet" href="/css/cart.css">
+<%- include('./parts/_headerb1.ejs') %>
+
+<div class="shop"></div>
+<% var curShop = '';
+var mid = '';
+var imagepath = '';
+for(let i=0; i < products.length; i++) {
+    mid = products[i].MID;
+    imagepath = "/image/product/"+products[i].Pid+".jpg";
+    if (curShop != mid) { %>
+        <% if (i>0) { %> 
+    </div>
+        <% } %>
+    <div class="shop">
+        <!--shop name start-->
+        <div class="shopname">  <!-- wijCjS, _17ffUV-->
+            <div class="checkbox"> <!--Check box _3o7bbN -->
+                <label class="stardust-checkbox">
+                    <input class="stardust-checkbox__input" type="checkbox" value="<%=products[i].Pid%>">
+                    <div class="stardust-checkbox__box"></div> 
+                </label>
+            </div><!--Check box close -->
+            <a class="name" href="">
+                <span style="margin-left: 10px;"><%=products[i].MERCHANT%></span>
+            </a>
+        </div>
+        <!--"shop name end-->
+        <% curShop = mid;
+    }  %>
+        <!--product start-->
+        <div class="_1row">
+        <div class="product">
+            <input type="text" hidden value="<%= products[i].Pid %>" name="Pid" id="Pid"/>  
+            <div class="checkbox"> <!--Check box -->
+                <label class="stardust-checkbox">
+                    <input class="stardust-checkbox__input" type="checkbox">
+                    <div class="stardust-checkbox__box"></div>
+                </label>
+            </div><!--Check box close -->
+            <div class ="productname">
+                <a>
+                    <div class="_2pic" style="background-image: 
+                        url('/image/product/<%=products[i].PID%>.jpg');"></div>
+                </a>
+                <a class="name _3text" title="<%= products[i].item_name %>" href="/product/<%= products[i].PID %>"><%= products[i].item_name %></a>
+            </div>
+            <span class="otherdetail _3price">₫<%=products[i].price%></span>
+            <div class="otherdetail _3quantity">
+                <div class="_3he7rw shopee-input-quantity">
+                    <button class="_3Ell0h">
+                        <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon">
+                            <polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5"></polygon>
+                        </svg>
+                    </button>
+                    <input class="_3Ell0h _37H5-t" type="text" role="spinbutton" aria-valuenow="2" value="<%=products[i].quantity%>">
+                    <button class="_3Ell0h">
+                        <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon icon-plus-sign">
+                            <polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="otherdetail _3del">
+                <button class="btdel">Xóa</button>
+            </div>
+        </div>
+        </div>
+        <!--product end-->
+<% } %>
+</div>
+
+<%- include('./parts/_footer.ejs') %>
