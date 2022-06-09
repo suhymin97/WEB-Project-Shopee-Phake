@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    
+
     <nav class="nav_bar">
         <div class="left_obj">
             <div class="logo">
@@ -42,72 +42,76 @@
 
 
     <div class="w3-container">
-                        <table class="w3-table-all w3-hoverable">
-                            <thead>
-                                <tr class="w3-light-grey">
-                                    <th>Order ID</th>
-                                    <th>Item name</th>
-                                    <th>Item ID</th>
-                                    <th>Item price</th>
-                                    <th>Quantity</th>
-                                    <th>Total payment</th>
-                                    <th>Pay method</th>
-                                    <th>Address</th>
-                                    <th>Location</th>
-                                    <th>Contact Number</th>
-                                    <th>Day&Time order</th>
-                                    <th>Delivery date</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% for(let i=0; i < dataPurchase.length; i++) { %>
-                                    <tr>
-                                        <td>
-                                            <%= dataPurchase[i].Order_id %>
-                                        </td>
-                                        <td>
-                                            <%= dataPurchase[i].Item_name %>
-                                        </td>
-                                        <td>
-                                            <%= dataPurchase[i].Pid %>
-                                        </td>
-                                        <td>
-                                            <%= dataPurchase[i].price %>
-                                        </td>
-                                        <td>
-                                            <%= dataPurchase[i].quantity %>
-                                        </td>
-                                        <td>
-                                            <%= dataPurchase[i].total %>
-                                        </td>
-                                        <td>
-                                            <%= dataPurchase[i].pay_method %>
-                                        </td>
-                                        <td>
-                                            <%= dataPurchase[i].address %>
-                                        </td>
-                                        <td>
-                                            <%= dataPurchase[i].location %>
-                                        </td>
-                                        <td>
-                                            <%= dataPurchase[i].contact_num %>
-                                        </td>
-                                        <td>
-                                            <%= dataPurchase[i].date_time_order %>
-                                        </td>
-                                        <td>
-                                            <%= dataPurchase[i].date_time_delivery %>
-                                        </td>
-                                        <td>
-                                            <%= dataPurchase[i].status %>
-                                        </td>
-                                    </tr>
-                                    <% } %>
-                            </tbody>
+        <table class="w3-table-all w3-hoverable">
+            <thead>
+                <tr class="w3-light-grey">
+                    <th>Order ID</th>
+                    <th>Item name</th>
+                    <th>Item ID</th>
+                    <th>Item price</th>
+                    <th>Quantity</th>
+                    <th>Total payment</th>
+                    <th>Pay method</th>
+                    <th>Address</th>
+                    <th>Location</th>
+                    <th>Contact Number</th>
+                    <th>Day&Time order</th>
+                    <th>Delivery date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < dataPurchase.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= dataPurchase[i].Order_id %>
+                        </td>
+                        <td>
+                            <a class="item_image__server_render" href="/product/<%= dataPurchase[i].Pid %> "
+                                target="_blank" style="text-decoration: none">
+                                <%= dataPurchase[i].Item_name %>
+                            </a>
+
+                        </td>
+                        <td>
+                            <%= dataPurchase[i].Pid %>
+                        </td>
+                        <td>
+                            <%= dataPurchase[i].price %>
+                        </td>
+                        <td>
+                            <%= dataPurchase[i].quantity %>
+                        </td>
+                        <td>
+                            <%= dataPurchase[i].total %>
+                        </td>
+                        <td>
+                            <%= dataPurchase[i].pay_method %>
+                        </td>
+                        <td>
+                            <%= dataPurchase[i].address %>
+                        </td>
+                        <td>
+                            <%= dataPurchase[i].location %>
+                        </td>
+                        <td>
+                            <%= dataPurchase[i].contact_num %>
+                        </td>
+                        <td>
+                            <%= dataPurchase[i].date_time_order %>
+                        </td>
+                        <td>
+                            <%= dataPurchase[i].date_time_delivery %>
+                        </td>
+                        <td>
+                            <%= dataPurchase[i].status %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
 
 
-                        </table>
+        </table>
     </div>
 
 </body>
