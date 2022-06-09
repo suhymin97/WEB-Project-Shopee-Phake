@@ -1,18 +1,21 @@
 <%- include('./parts/_headera.ejs') %>
 <link rel="stylesheet" href="/css/showProduct.css">
 <%- include('./parts/_headerb1.ejs') %>
-
-    <div class="show_product_container">
-        <div class="route_link"> <a href="/home">Shopee (sendback trang chính)</a>
+    <div class="route_link_container" style="display: contents;">
+        <div class="route_link">
+            <a href="/home">Shopee (sendback trang chính)</a>
             <i class="ti-angle-right"></i>
             <%= infoProduct.category %>
                 <i class="ti-angle-right"></i>
                 <%= infoProduct.item_name %>
         </div>
+    </div>
+    <div class="show_product_container">
+        
         <div class="show_product_box">
             <div class="show_product_box_cover">
                 <!-- <img src="image/product/<%= infoProduct.id %>.jpg" alt="lỗi hình ảnh"> -->
-                <img src="/image/product/<%= infoProduct.Pid %>.jpg" alt="lỗi hình ảnh hoặc ảnh chưa đc up" />
+                <img class="product_pic" src="/image/product/<%= infoProduct.Pid %>.jpg" alt="lỗi hình ảnh hoặc ảnh chưa đc up" />
                 <div class="empty"></div>
                 <div class="show_product_info">
                     <div class="product_title">
@@ -250,6 +253,5 @@
         }
 
         </script>
-</body>
-
-</html>
+        
+<%- include('./parts/_footer.ejs') %>
