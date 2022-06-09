@@ -101,15 +101,23 @@ for (let i = 0; i < type.length; i++) {
             }, 200);
 
             if ((topProd[z].getAttribute('category') == displayItems) || displayItems == 'all') {
-                topProd[z].style.transform = 'scale(1)';
                 setTimeout(() => {
+                    topProd[z].style.transform = 'scale(1)';
                     topProd[z].style.display = 'flex';
+                    // topProd[z].style.transition = 'all 0.2s ease-in-out'
                 }, 200)
+                topProd[z].addEventListener('mouseover', (e) => {
+                    topProd[z].style.transform = 'scale(1.1)';
+                })
+                topProd[z].addEventListener('mouseout', (e) => {
+                    topProd[z].style.transform = 'scale(1)';
+                })
             }
 
         }
     }
 }
+ 
 
 //footer
 const more = document.querySelector('.more')
