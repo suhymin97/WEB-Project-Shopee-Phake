@@ -36,7 +36,7 @@ let getAuth = async (req, res) => {
     /* redirect Page start */
     var redirectTo = req.session.redirectTo || '/home';
     delete req.session.redirectTo;
-    /* redirect Page end*/ 
+    /* redirect Page end*/
     // Capture the input fields
     let username = req.body.username;
     let password = req.body.password;
@@ -185,11 +185,11 @@ let getBuyNowPage = async (req, res) => {
     let [product] = await pool.execute(`SELECT Pid, price, seller_id, item_name FROM shopee_item WHERE Pid = ?`, [Pid]);
     let total = quantity * product[0].price;
 
-    return res.render('buyNow.ejs', {loginUser: req.session.username, userId: req.session.userid, Uid, total, orderLocation, productInfo: product[0], quantity });
+    return res.render('buyNow.ejs', { loginUser: req.session.username, userId: req.session.userid, Uid, total, orderLocation, productInfo: product[0], quantity });
 }
 let handleOrder = async (req, res) => {
     //set status
-    let status = 'Đang chờ vận chuyển';
+    let status = 'Đang chờ xử lý';
     //set date & time
     let orderDate = new Date();
     orderDate = orderDate.toLocaleString();
