@@ -248,3 +248,9 @@ button {
     height: 10px;
     flex-shrink: 0;
 }
+.checkall_label {
+    width: 70%;
+    align-items: left;
+    display: flex;
+}
+

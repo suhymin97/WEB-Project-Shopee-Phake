@@ -1,6 +1,6 @@
 <%- include('./parts/_headera.ejs') %>
 <link rel="stylesheet" href="/css/cart.css">
-<%- include('./parts/_headerb1.ejs') %>
+<%- include('./parts/_headerb2.ejs') %>
 
 <div class="shop"></div>
 <% var curShop = '';
@@ -18,7 +18,7 @@ for(let i=0; i < products.length; i++) {
         <div class="shopname">  <!-- wijCjS, _17ffUV-->
             <div class="checkbox"> <!--Check box _3o7bbN -->
                 <label class="stardust-checkbox">
-                    <input class="stardust-checkbox__input" type="checkbox" value="<%=products[i].Pid%>">
+                    <input class="stardust-checkbox__input" type="checkbox" value="<%=products[i].mid%>" id="shopcheckbox">
                     <div class="stardust-checkbox__box"></div> 
                 </label>
             </div><!--Check box close -->
@@ -32,10 +32,10 @@ for(let i=0; i < products.length; i++) {
         <!--product start-->
         <div class="_1row">
         <div class="product">
-            <input type="text" hidden value="<%= products[i].Pid %>" name="Pid" id="Pid"/>  
+            <input type="text" hidden value="<%= products[i].Pid %>" name="products[i].mid" id="Pid"/>  
             <div class="checkbox"> <!--Check box -->
                 <label class="stardust-checkbox">
-                    <input class="stardust-checkbox__input" type="checkbox">
+                    <input class="stardust-checkbox__input" type="checkbox" id="productcheckbox">
                     <div class="stardust-checkbox__box"></div>
                 </label>
             </div><!--Check box close -->
@@ -47,21 +47,22 @@ for(let i=0; i < products.length; i++) {
                 <a class="name _3text" title="<%= products[i].item_name %>" href="/product/<%= products[i].PID %>"><%= products[i].item_name %></a>
             </div>
             <span class="otherdetail _3price">₫<%=products[i].price%></span>
-            <div class="otherdetail _3quantity">
+            <div class="otherdetail _3quantity"> <!--quantity start -->
                 <div class="_3he7rw shopee-input-quantity">
-                    <button class="_3Ell0h">
+                    <button class="_3Ell0h" id="add" onclick="$(this).prev()[0].stepUp()">
                         <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon">
                             <polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5"></polygon>
                         </svg>
                     </button>
-                    <input class="_3Ell0h _37H5-t" type="text" role="spinbutton" aria-valuenow="2" value="<%=products[i].quantity%>">
-                    <button class="_3Ell0h">
+                    <input class="_3Ell0h _37H5-t" type="number" role="spinbutton" aria-valuenow="2"
+                        value="<%=products[i].quantity%>" min ="1" max="99" id="quantity" name="<%=products[i].pid%>">
+                    <button class="_3Ell0h" id="minus">
                         <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon icon-plus-sign">
                             <polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5"></polygon>
                         </svg>
                     </button>
                 </div>
-            </div>
+            </div> <!--quantity  end -->
             <div class="otherdetail _3del">
                 <button class="btdel">Xóa</button>
             </div>
@@ -70,5 +71,115 @@ for(let i=0; i < products.length; i++) {
         <!--product end-->
 <% } %>
 </div>
+<div class="bill">
+    <div class="bill_voucher">
+        <div class="checkall_label">
+            <div class="checkbox checkboxall"> <!--Check box -->
+                <label class="stardust-checkbox">
+                    <input class="stardust-checkbox__input" type="checkbox" id="checkAll">
+                    <div class="stardust-checkbox__box"></div>
+                </label>
+            </div><!--Check box close -->
+            <span style="margin-left: 10px;">Chọn tất cả</span>
+        </div>
+        <div class="bill_voucher_header">
+            <i class="ti-ticket"></i>
+            <span>Shopee Voucher</span>
+        </div>
+        <div class="voucher_select">
+            <a href="">Chọn Hoặc Nhập Mã</a>
+        </div>
+    </div>
+
+    <form action="/handleOrder" method="POST">
+        <div class="user_address">
+        <div class="enter_phone_number">
+            <label for="">Contact number: </label>
+            <input type="text" name="contactNumber" id="contactNumber">
+        </div>
+
+            <div class="enter_address">
+                <label for="">Ship to address: </label>
+                <input type="text" name="orderAddress" id="location">
+            </div>
+        
+        <div class="location">
+            <label for="">Ship to address: </label>
+            <span class="loc" id="location"></span>
+        </div>
+        </div>
+
+        <div class="bill_confirm">
+            <div class="total">
+                <div class="pay_method">
+                    <div>Phương thức thanh toán: </div>
+                    <div class="method_select">
+                        <div><input style="margin-right: 8px" type="radio" name="payMethod" value="Tiền mặt">Tiền mặt</div>
+                        <div><input style="margin-right: 8px" type="radio" name="payMethod" value="Chuyển khoản">Chuyển khoản</div>
+                    </div>
+                </div>
+                <span style="font-size: 14px;">Tổng thanh toán (Sản Phẩm): ₫</span>
+                <div class="order_btn">
+                    
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+<script>
+    $(document).ready(function () {
+  jQuery('<div class="quantity-nav"><button class="quantity-button quantity-up">&#xf106;</button><button class="quantity-button quantity-down">&#xf107</button></div>').insertAfter('.quantity input');
+  jQuery('.quantity').each(function () {
+    var spinner = jQuery(this),
+        input = spinner.find('input[type="number"]'),
+        btnUp = spinner.find('.quantity-up'),
+        btnDown = spinner.find('.quantity-down'),
+        min = input.attr('min'),
+        max = input.attr('max');
+
+    btnUp.click(function () {
+      var oldValue = parseFloat(input.val());
+      if (oldValue >= max) {
+        var newVal = oldValue;
+      } else {
+        var newVal = oldValue + 1;
+      }
+      spinner.find("input").val(newVal);
+      spinner.find("input").trigger("change");
+    });
+
+    btnDown.click(function () {
+      var oldValue = parseFloat(input.val());
+      if (oldValue <= min) {
+        var newVal = oldValue;
+      } else {
+        var newVal = oldValue - 1;
+      }
+      spinner.find("input").val(newVal);
+      spinner.find("input").trigger("change");
+    });
+
+  });
+});
+    $('#checkAll').click(function () {
+        var users = $('input[name="username[]"]').map(function(){ 
+            return this.value; 
+        }).get();
+
+        var mid = $('.stardust-checkbox__input:checked').val();    
+        $(':checkbox.stardust-checkbox__input').prop('checked', this.checked);  
+        var total = $('#')  
+    });
+    $('#add').click(function () {
+        var users = $('input[name="username[]"]').map(function(){ 
+            return this.value; 
+        }).get();
+        var pid = $('#add:clicked').
+        var mid = $('.stardust-checkbox__input:checked').name();    
+        $(':checkbox.stardust-checkbox__input').prop('checked', this.checked);  
+        var total = $('#')  
+    });
+</script>
 
 <%- include('./parts/_footer.ejs') %>
