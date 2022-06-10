@@ -1,4 +1,5 @@
 <%- include('./parts/_headera.ejs') %>
+<link rel="stylesheet" href="/css/button.css">
 <link rel="stylesheet" href="/css/cart.css">
 <%- include('./parts/_headerb2.ejs') %>
 
@@ -49,18 +50,8 @@ for(let i=0; i < products.length; i++) {
             <span class="otherdetail _3price">₫<%=products[i].price%></span>
             <div class="otherdetail _3quantity"> <!--quantity start -->
                 <div class="_3he7rw shopee-input-quantity">
-                    <button class="_3Ell0h" id="add" onclick="$(this).prev()[0].stepUp()">
-                        <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon">
-                            <polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5"></polygon>
-                        </svg>
-                    </button>
                     <input class="_3Ell0h _37H5-t" type="number" role="spinbutton" aria-valuenow="2"
                         value="<%=products[i].quantity%>" min ="1" max="99" id="quantity" name="<%=products[i].pid%>">
-                    <button class="_3Ell0h" id="minus">
-                        <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon icon-plus-sign">
-                            <polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5"></polygon>
-                        </svg>
-                    </button>
                 </div>
             </div> <!--quantity  end -->
             <div class="otherdetail _3del">
@@ -71,97 +62,64 @@ for(let i=0; i < products.length; i++) {
         <!--product end-->
 <% } %>
 </div>
-<!-- <div class="bill">
-    <div class="bill_voucher">
-        <div class="checkall_label">
-            <div class="checkbox checkboxall">
+<div class="bill">
+    <div class="bill_voucher1 footer">
+        <div class="checkall_label grid-item">
+            <div class="checkbox checkboxall grid-item"> <!--Check box -->
                 <label class="stardust-checkbox">
                     <input class="stardust-checkbox__input" type="checkbox" id="checkAll">
                     <div class="stardust-checkbox__box"></div>
                 </label>
-            </div>
+            </div><!--Check box close -->
             <span style="margin-left: 10px;">Chọn tất cả</span>
         </div>
-        <div class="bill_voucher_header">
-            <i class="ti-ticket"></i>
-            <span>Shopee Voucher</span>
+        <div style="width: 60%; display: flex;">
+            <div class="bill_voucher_header">
+                <i class="ti-ticket"></i>
+                <span>Shopee Voucher</span>
+            </div>
+            <div class="voucher_select">
+                <a href="">Chọn Hoặc Nhập Mã</a>
+            </div>
         </div>
-        <div class="voucher_select">
-            <a href="">Chọn Hoặc Nhập Mã</a>
-        </div>
-    </div> -->
+    </div>
 
-    <!-- <form action="/handleOrder" method="POST">
-        <div class="user_address">
-        <div class="enter_phone_number">
-            <label for="">Contact number: </label>
-            <input type="text" name="contactNumber" id="contactNumber">
-        </div>
+    <form action="/handleOrder" method="POST">
+        <div class="user_address footer">
+            <div class="enter_phone_number grid-item">
+                <label for="">Contact number: </label>
+                <input type="text" name="contactNumber" id="contactNumber">
+            </div>
 
-            <div class="enter_address">
+            <div class="enter_address grid-item">
                 <label for="">Ship to address: </label>
                 <input type="text" name="orderAddress" id="location">
             </div>
         
-        <div class="location">
-            <label for="">Ship to address: </label>
-            <span class="loc" id="location"></span>
-        </div>
+            <div class="update grid-item" style="display: flex; align-items: center; position: relative;">
+                <button class="btn btn-inline btn-tinted btn--l GfiOwy RT2b7v" aria-disabled="false">Cập nhật giỏ hàng</button>
+            </div>
         </div>
 
-        <div class="bill_confirm">
+        <div class="bill_confirm footer">
             <div class="total">
-                <div class="pay_method">
+                <div class="pay_method grid-item">
                     <div>Phương thức thanh toán: </div>
                     <div class="method_select">
                         <div><input style="margin-right: 8px" type="radio" name="payMethod" value="Tiền mặt">Tiền mặt</div>
                         <div><input style="margin-right: 8px" type="radio" name="payMethod" value="Chuyển khoản">Chuyển khoản</div>
                     </div>
                 </div>
-                <span style="font-size: 14px;">Tổng thanh toán (Sản Phẩm): ₫</span>
-                <div class="order_btn">
-                    
+                <span  class="grid-item" style="font-size: 14px;">Tổng thanh toán (Sản Phẩm): ₫</span>
+                <div class="order_btn grid-item">
+                    <button class="btn btn-inline btn-solid-primary btn--l GfiOwy" type="submit">Đặt hàng</button>
                 </div>
             </div>
         </div>
-    </form> -->
+    </form>
 
 </div>
 <script>
-    $(document).ready(function () {
-  jQuery('<div class="quantity-nav"><button class="quantity-button quantity-up">&#xf106;</button><button class="quantity-button quantity-down">&#xf107</button></div>').insertAfter('.quantity input');
-  jQuery('.quantity').each(function () {
-    var spinner = jQuery(this),
-        input = spinner.find('input[type="number"]'),
-        btnUp = spinner.find('.quantity-up'),
-        btnDown = spinner.find('.quantity-down'),
-        min = input.attr('min'),
-        max = input.attr('max');
-
-    btnUp.click(function () {
-      var oldValue = parseFloat(input.val());
-      if (oldValue >= max) {
-        var newVal = oldValue;
-      } else {
-        var newVal = oldValue + 1;
-      }
-      spinner.find("input").val(newVal);
-      spinner.find("input").trigger("change");
-    });
-
-    btnDown.click(function () {
-      var oldValue = parseFloat(input.val());
-      if (oldValue <= min) {
-        var newVal = oldValue;
-      } else {
-        var newVal = oldValue - 1;
-      }
-      spinner.find("input").val(newVal);
-      spinner.find("input").trigger("change");
-    });
-
-  });
-});
     $('#checkAll').click(function () {
         var users = $('input[name="username[]"]').map(function(){ 
             return this.value; 
@@ -172,13 +130,54 @@ for(let i=0; i < products.length; i++) {
         var total = $('#')  
     });
     $('#add').click(function () {
-        var users = $('input[name="username[]"]').map(function(){ 
+        var users = $('input[vlue="username[]"]').map(function(){ 
             return this.value; 
         }).get();
-        var pid = $('#add:clicked').
         var mid = $('.stardust-checkbox__input:checked').name();    
         $(':checkbox.stardust-checkbox__input').prop('checked', this.checked);  
         var total = $('#')  
+    });
+    $(document).ready(function () {
+        jQuery('<button class="_3Ell0h quantity-down">'+
+                        '<svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon">'+
+                            '<polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5"></polygon>'+
+                        '</svg>'+
+                    '</button>').insertBefore('.shopee-input-quantity input');
+        jQuery('<button class="_3Ell0h quantity-up">'+
+                        '<svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon icon-plus-sign">'+
+                            '<polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5"></polygon>'+
+                        '</svg>'+
+                    '</button>').insertAfter('.shopee-input-quantity input');
+        jQuery('.shopee-input-quantity').each(function () {
+            var spinner = jQuery(this),
+            input = spinner.find('input[type="number"]'),
+            btnUp = spinner.find('.quantity-up'),
+            btnDown = spinner.find('.quantity-down'),
+            min = input.attr('min'),
+            max = input.attr('max');
+
+            btnUp.click(function () {
+                var oldValue = parseFloat(input.val());
+                if (oldValue >= max) {
+                    var newVal = oldValue;
+                } else {
+                    var newVal = oldValue + 1;
+                }
+                spinner.find("input").val(newVal);
+                spinner.find("input").trigger("change");
+            });
+
+            btnDown.click(function () {
+                var oldValue = parseFloat(input.val());
+                if (oldValue <= min) {
+                    var newVal = oldValue;
+                } else {
+                    var newVal = oldValue - 1;
+                }
+                spinner.find("input").val(newVal);
+                spinner.find("input").trigger("change");
+            });
+        });
     });
 </script>
 
