@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: localhost    Database: mydb
+-- Host: 127.0.0.1    Database: mydb
 -- ------------------------------------------------------
--- Server version	8.0.28
+-- Server version	8.0.29
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +31,7 @@ CREATE TABLE `accounts` (
   `seller_branch_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Uid`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `accounts` (
 
 LOCK TABLES `accounts` WRITE;
 /*!40000 ALTER TABLE `accounts` DISABLE KEYS */;
-INSERT INTO `accounts` VALUES (1,'user1','123456',NULL,NULL,'I sell everything'),(2,'user2','123456',NULL,NULL,'I sell everything but no2'),(3,'user3','123456789','user3@gmail.com','I am user 3','seller no3'),(9,'user5','123456','u5@gmail.com','name1',''),(10,'user22','123456','u22@gmail.com','user 22','shop 22'),(11,'user23','123456','u23@gmail.com','user 23','shop 23'),(12,'user4','123456','u1@gmai.com','name1','shop 4'),(13,'user7','123456','u7@gmail.com','name7',''),(14,'user8','123456','u8@gmail.com','name8',''),(15,'user9','123456','u9@gmail.com','u9',''),(16,'user10','123456','u10@gmail.com','u10','u10 shop'),(18,'seller6822','123456','seller6822@gmail.com','Sel Ler6822','Shop uy tín 6822');
+INSERT INTO `accounts` VALUES (1,'user1','123456',NULL,NULL,'seller 1'),(2,'user2','123456',NULL,NULL,'seller 2'),(3,'user3','123456789','user3@gmail.com','I am user 3','seller no3'),(9,'user5','123456','u5@gmail.com','name1',''),(10,'user22','123456','u22@gmail.com','user 22','shop 22'),(11,'user23','123456','u23@gmail.com','user 23','shop 23'),(12,'user4','123456','u1@gmai.com','name1','shop 4'),(13,'user7','123456','u7@gmail.com','name7',''),(14,'user8','123456','u8@gmail.com','name8',''),(15,'user9','123456','u9@gmail.com','u9',''),(16,'user10','123456','u10@gmail.com','u10','u10 shop');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -55,7 +55,7 @@ CREATE TABLE `cart` (
   `UID` int NOT NULL,
   `PID` int NOT NULL,
   `QUANTITY` int DEFAULT NULL,
-  `EFFDATE` char(17) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `EFFDATE` char(17) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`UID`,`PID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -66,7 +66,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (2,21,1,'20220608224228388'),(3,12,3,'20220607222419394'),(3,19,3,'20220607222249735');
+INSERT INTO `cart` VALUES (1,1,2,'20220604141011001'),(1,2,3,'20220609122644594'),(1,3,2,'20220604151011002'),(1,4,1,'20220609013940170'),(1,9,2,'20220609013838654'),(1,10,1,'20220609013949018'),(1,12,1,'20220609113550725'),(1,20,4,'20220609013903821'),(2,1,2,'20220604141011001'),(2,2,2,'20220604151011001'),(2,3,2,'20220604151011002');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ CREATE TABLE `orders` (
   `date_time_order` varchar(255) DEFAULT NULL,
   `date_time_delivery` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +128,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,2,'Iphone 13 Vip Pro',19,1,23000000,2,46000000,'Thành Phố Hồ Chí Minh','test address 12','0905512345','Cash - Tiền mặt','đang xử lý',NULL,NULL),(2,2,'Iphone 13 Vip Pro',19,1,23000000,3,69000000,'Hà Nội','test address 25','0904212345','Transfer - Chuyển khoản','đang xử lý',NULL,NULL),(3,2,'Iphone 13 Vip Pro',19,1,23000000,3,69000000,'Hà Nội','test address 25','0904212345','Transfer - Chuyển khoản','đang xử lý',NULL,NULL),(4,3,'Iphone 13 Vip Pro',19,1,23000000,5,115000000,'Tỉnh/Thành phố, Quận/Huyện, Phường/Xã','test address 3','0933333333','Cash - Tiền mặt','đang xử lý','6/2/2022, 11:57:59 AM',NULL),(5,1,'Iphone 13 Vip Pro',19,1,23000000,2,46000000,'Đà Nẵng','test address 345','0905512345','Tiền mặt','đang xử lý','6/7/2022, 10:37:00 PM',NULL),(6,18,'Iphone 11 64GB Chính hãng',20,1,12390000,4,49560000,'Hà Nội','68 22 Street','0968202211','Tiền mặt','đang xử lý','6/8/2022, 10:59:43 PM',NULL);
+INSERT INTO `orders` VALUES (1,2,'Iphone 13 Vip Pro',19,1,23000000,2,46000000,'Thành Phố Hồ Chí Minh','test address 12','0905512345','Cash - Tiền mặt','processing',NULL,NULL),(2,2,'Iphone 13 Vip Pro',19,1,23000000,3,69000000,'Hà Nội','test address 25','0904212345','Transfer - Chuyển khoản','processing',NULL,NULL),(3,2,'Iphone 13 Vip Pro',19,1,23000000,3,69000000,'Hà Nội','test address 25','0904212345','Transfer - Chuyển khoản','processing',NULL,NULL),(4,3,'Iphone 13 Vip Pro',19,1,23000000,5,115000000,'Tỉnh/Thành phố, Quận/Huyện, Phường/Xã','test address 3','0933333333','Cash - Tiền mặt','processing','6/2/2022, 11:57:59 AM',NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,7 +151,7 @@ CREATE TABLE `shopee_item` (
   `shop_name` varchar(255) DEFAULT NULL,
   `storage_name` varchar(255) DEFAULT NULL,
   `product_classify` varchar(255) DEFAULT NULL,
-  `STATUS` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT 'I',
+  `STATUS` char(1) CHARACTER SET utf8mb3 COLLATE utf8_general_ci DEFAULT 'I',
   PRIMARY KEY (`Pid`),
   KEY `seller_idx` (`Pid`),
   KEY `id_idx` (`seller_id`,`seller_name`),
@@ -165,9 +165,50 @@ CREATE TABLE `shopee_item` (
 
 LOCK TABLES `shopee_item` WRITE;
 /*!40000 ALTER TABLE `shopee_item` DISABLE KEYS */;
-INSERT INTO `shopee_item` VALUES (1,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize',150000,'Áo nam','I sell everything',1,'','','','','','I'),(2,'Áo nam trắng 2',100000,'Áo nam','I sell everything but no2',2,'','','','','','I'),(3,'Áo nam đen 5',50000,'Áo nam','I sell everything',1,'','','','','','I'),(4,'Áo nam trắng 4',40000,'Áo nam','I sell everything but no2',2,'','','','','','I'),(7,'Áo nữ 5',430000,'Áo nữ','I sell everything but no2',2,'','','','','','I'),(12,'Áo nữ trắng 6',60000,'Áo nam','I sell everything',1,'','','','','','I'),(13,'Áo nam cam 7',70000,'Áo nam','I sell everything',1,'','','','','','I'),(14,'Áo đỏ caro',100000000,'Áo nam','I sell everything but no2',2,'','','','','','I'),(19,'Iphone 13 Vip Pro',23000000,'Đồ điện tử','I sell everything',1,'quá ghê gớm','Apple','Thegioididong nhà làm','Kho 1 địa chỉ...','Hàng dễ vỡ','I'),(20,'Iphone 11 64GB Chính hãng',12390000,'Đồ điện tử','I sell everything',1,'Trả góp 0% uy tín ','Apple','Thegioididong nhà làm','Kho hàng ở đâu đó','Hàng dễ vỡ','I'),(21,'Sản phẩm thú cưng xịn',555,'Thú cưng','I sell everything but no2',2,'mô tả','','','','','I');
+INSERT INTO `shopee_item` VALUES (1,'Áo thun nam nữ unisex tay lỡ, áo phông cotton from rộng AD69 Oversize',150000,'Áo nam','I sell everything',1,'','','','','','I'),(2,'Áo nam trắng 2',100000,'Áo nam','I sell everything but no2',2,'','','','','','I'),(3,'Áo nam đen 5',50000,'Áo nam','I sell everything',1,'','','','','','I'),(4,'Áo nam trắng 4',40000,'Áo nam','I sell everything but no2',2,'','','','','','I'),(7,'Áo nữ 5',430000,'Áo nữ','I sell everything but no2',2,'','','','','','I'),(12,'Áo nữ trắng 6',60000,'Áo nam','I sell everything',1,'','','','','','I'),(13,'Áo nam cam 7',70000,'Áo nam','I sell everything',1,'','','','','','I'),(14,'Áo đỏ caro',100000000,'Áo nam','I sell everything but no2',2,'','','','','','I'),(19,'Iphone 13 Vip Pro',23000000,'Áo nam','I sell everything',1,'quá ghê gớm','Apple','Thegioididong nhà làm','Kho 1 địa chỉ...','Hàng dễ vỡ','I'),(20,'Iphone 11 64GB Chính hãng',12390000,'Đồ điện tử','I sell everything',1,'Trả góp 0% uy tín ','Apple','Thegioididong nhà làm','Kho hàng ở đâu đó','Hàng dễ vỡ','I'),(21,'Sản phẩm thú cưng xịn',555,'Thú cưng','I sell everything but no2',2,'mô tả','','','','','I');
 /*!40000 ALTER TABLE `shopee_item` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `vcart`
+--
+
+DROP TABLE IF EXISTS `vcart`;
+/*!50001 DROP VIEW IF EXISTS `vcart`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `vcart` AS SELECT 
+ 1 AS `UID`,
+ 1 AS `MERCHANT`,
+ 1 AS `MID`,
+ 1 AS `PID`,
+ 1 AS `quantity`,
+ 1 AS `item_name`,
+ 1 AS `price`,
+ 1 AS `EFFDATE`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping events for database 'mydb'
+--
+
+--
+-- Final view structure for view `vcart`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vcart`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `vcart` AS select `c`.`UID` AS `UID`,`a`.`seller_branch_name` AS `MERCHANT`,`a`.`Uid` AS `MID`,`c`.`PID` AS `PID`,`c`.`QUANTITY` AS `quantity`,`i`.`item_name` AS `item_name`,`i`.`price` AS `price`,`c`.`EFFDATE` AS `EFFDATE` from (((`cart` `c` left join `shopee_item` `i` on((`c`.`PID` = `i`.`Pid`))) join (select `c`.`UID` AS `UID`,`i`.`seller_id` AS `SELLER_ID`,max(`c`.`EFFDATE`) AS `EFFDATE` from (`cart` `c` left join `shopee_item` `i` on((`c`.`PID` = `i`.`Pid`))) group by `c`.`UID`,`i`.`seller_id`) `e` on(((`i`.`seller_id` = `e`.`SELLER_ID`) and (`c`.`UID` = `e`.`UID`)))) join `accounts` `a` on((`i`.`seller_id` = `a`.`Uid`))) order by `c`.`UID` desc,`e`.`EFFDATE` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -178,4 +219,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-09 20:02:43
+-- Dump completed on 2022-06-10  0:02:52
