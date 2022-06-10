@@ -90,7 +90,7 @@ An e-commerce site will have the seller user account and buyer/customer user acc
 
 ## 4. Functions & Features (incompleted ones)
 Features that are incomplete or that to be developed further after the course:
-- Buy product through 'Cart' function.
+- Buy product through 'Cart' function. (50% done)
 - Search/Filter products properly.
 - Functions to handle the processes after the customer has ordered the products.
 - Review/Comment/Rate functions for products.
