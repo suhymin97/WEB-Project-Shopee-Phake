@@ -33,7 +33,7 @@ function Validator(options) {
         
         //khi nhấn nút submit
         formElement.onsubmit = function(e) {
-            e.preventDefault();
+            
             
             var isFormValid = true;
 
@@ -49,21 +49,23 @@ function Validator(options) {
 
 
                 if(isFormValid) {
-                    // console.log('Không có lỗi');
-                    if(typeof options.onSubmit === 'function') {
-                        var enableInputs = formElement.querySelectorAll('[name]:not([disabled])');
-                        var formValues = Array.from(enableInputs).reduce(function(values, input) {
-                            values[input.name] = input.value;
-                            return values;
-                        }, {});
-                        var fullname = formValues.fullname;
+                    return true
+                    // // console.log('Không có lỗi');
+                    // if(typeof options.onSubmit === 'function') {
+                    //     var enableInputs = formElement.querySelectorAll('[name]:not([disabled])');
+                    //     var formValues = Array.from(enableInputs).reduce(function(values, input) {
+                    //         values[input.name] = input.value;
+                    //         return values;
+                    //     }, {});
+                    //     var fullname = formValues.fullname;
                 
-                        options.onSubmit(formValues);
-                        localStorage.setItem('myvalue',formValues.fullname);
-                        location.href = './index.html'
-                    }
+                    //     options.onSubmit(formValues);
+                    //     localStorage.setItem('myvalue',formValues.fullname);
+                    //     location.href = './index.html'
+                    // }
                 } else {
                     // formElement.submit();
+                    e.preventDefault();
                 }
         }
 

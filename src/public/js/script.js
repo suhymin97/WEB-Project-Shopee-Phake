@@ -96,6 +96,7 @@ for (let i = 0; i < type.length; i++) {
         const displayItems = this.getAttribute('category');
         for (let z = 0; z < topProd.length; z++) {
             topProd[z].style.transform = 'scale(0)';
+            
             setTimeout(() => {
                 topProd[z].style.display = 'none';
             }, 200);

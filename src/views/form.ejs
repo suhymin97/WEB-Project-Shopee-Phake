@@ -177,8 +177,8 @@
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
-                            <label for="fullname" class="form-label">Tên shop của bạn</label>
-                            <input id="fullname" name="sellerBranch" type="text" placeholder="VD: Shop uy tín 555"
+                            <label for="shopname" class="form-label">Tên shop của bạn</label>
+                            <input id="shopname" name="sellerBranch" type="text" placeholder="VD: Shop uy tín 555"
                                 class="form-control">
                             <span class="form-message"></span>
                         </div>
@@ -187,13 +187,14 @@
         </form>
 
     </div>
-    <script src="/src/public/js/validation.js"></script>
+    <script src="/js/validation.js"></script>
     <script>
         Validator({
             form: '#form-1',
             errorMessage: '.form-message',
             rules: [
                 Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
+                Validator.isRequired('#shopname', 'Vui lòng nhập tên đầy đủ của bạn'),
                 Validator.isRequired('#email'),
                 Validator.isEmail('#email'),
                 Validator.minLength('#password', 6),
