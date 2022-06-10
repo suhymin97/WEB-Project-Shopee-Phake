@@ -28,7 +28,7 @@ let getSellerPage = async (req, res) => {
 }
 let getLoginPage = async (req, res) => {
     //logic
-    return res.render('login.ejs')
+    return res.render('login.ejs', { errMsg: '' })
 }
 let getAuth = async (req, res) => {
     //login logic
@@ -51,13 +51,16 @@ let getAuth = async (req, res) => {
             req.session.userid = results[0].Uid;
             res.redirect(redirectTo); //req previous
         } else {
-            res.send('Incorrect Username and/or Password!');
+            //res.send('Incorrect Username and/or Password!');
+            return res.render('login.ejs', { errMsg: 'Wrong Username OR/AND Password' })
+
         }
         res.end();
     }
     else {
-        res.send('Please enter Username and Password!');
-        res.end();
+        //res.send('Please enter Username and Password!');
+        return res.render('login.ejs', { errMsg: 'You have not enter Username OR/AND Password' })
+        //res.end();
     }
 }
 

@@ -1,242 +1,255 @@
 <%- include('./parts/_headera.ejs') %>
-<link rel="stylesheet" href="/css/showProduct.css">
-<%- include('./parts/_headerb1.ejs') %>
-    <div class="route_link_container" style="display: contents;">
-        <div class="route_link">
-            <a href="/home">Shopee (sendback trang chính)</a>
-            <i class="ti-angle-right"></i>
-            <%= infoProduct.category %>
+    <link rel="stylesheet" href="/css/showProduct.css">
+    <%- include('./parts/_headerb1.ejs') %>
+        <div class="route_link_container" style="display: contents;">
+            <div class="route_link">
+                <a href="/home">Shopee (sendback trang chính)</a>
                 <i class="ti-angle-right"></i>
-                <%= infoProduct.item_name %>
+                <%= infoProduct.category %>
+                    <i class="ti-angle-right"></i>
+                    <%= infoProduct.item_name %>
+            </div>
         </div>
-    </div>
-    <div class="show_product_container">
-        
-        <div class="show_product_box">
-            <div class="show_product_box_cover">
-                <!-- <img src="image/product/<%= infoProduct.id %>.jpg" alt="lỗi hình ảnh"> -->
-                <img class="product_pic" src="/image/product/<%= infoProduct.Pid %>.jpg" alt="lỗi hình ảnh hoặc ảnh chưa đc up" />
-                <div class="empty"></div>
-                <div class="show_product_info">
-                    <div class="product_title">
-                        <%= infoProduct.item_name %>
-                    </div>
-                    <div class="product_status">
-                        <div class="star"><span>4.8</span>
-                            <i class="ti-star"></i>
-                            <i class="ti-star"></i>
-                            <i class="ti-star"></i>
-                            <i class="ti-star"></i>
-                            <i class="ti-star"></i>
+        <div class="show_product_container">
+
+            <div class="show_product_box">
+                <div class="show_product_box_cover">
+                    <!-- <img src="image/product/<%= infoProduct.id %>.jpg" alt="lỗi hình ảnh"> -->
+                    <img class="product_pic" src="/image/product/<%= infoProduct.Pid %>.jpg"
+                        alt="lỗi hình ảnh hoặc ảnh chưa đc up" />
+                    <div class="empty"></div>
+                    <div class="show_product_info">
+                        <div class="product_title">
+                            <%= infoProduct.item_name %>
                         </div>
-                        <div class="evaluation"><span>1.7k</span> <span>đánh giá</span></div>
-                        <div class="sold"><span>4.3k</span> <span>đã bán</span></div>
-                    </div>
-                    <div class="product_price_box">
-                        <div class="price_header">
-                            <img src="https://cf.shopee.vn/file/76b80c43b486023bb46bc0cec508431f" alt="">
-                        </div>
-                        <div class="product_price_cover">
-                            <div class="product_price">
-                                <%= infoProduct.price %> đ
+                        <div class="product_status">
+                            <div class="star"><span>4.8</span>
+                                <i class="ti-star"></i>
+                                <i class="ti-star"></i>
+                                <i class="ti-star"></i>
+                                <i class="ti-star"></i>
+                                <i class="ti-star"></i>
                             </div>
-                            <div class="product_price_more">
-                                <img src="/image/gicungre.png" alt="" width="50px">
-                                <div class="product_price_more_info">
-                                    <div class="product_price_more_title">Gì Cũng Rẻ</div>
-                                    <div class="product_price_more_desc">Giá tốt nhất so với các sản phẩm còn lại trên
-                                        Shopee!
-                                        <i class="ti-help-alt"></i>
+                            <div class="evaluation"><span>1.7k</span> <span>đánh giá</span></div>
+                            <div class="sold"><span>4.3k</span> <span>đã bán</span></div>
+                        </div>
+                        <div class="product_price_box">
+                            <div class="price_header">
+                                <img src="https://cf.shopee.vn/file/76b80c43b486023bb46bc0cec508431f" alt="">
+                            </div>
+                            <div class="product_price_cover">
+                                <div class="product_price">
+                                    <%= infoProduct.price %> đ
+                                </div>
+                                <div class="product_price_more">
+                                    <img src="/image/gicungre.png" alt="" width="50px">
+                                    <div class="product_price_more_info">
+                                        <div class="product_price_more_title">Gì Cũng Rẻ</div>
+                                        <div class="product_price_more_desc">Giá tốt nhất so với các sản phẩm còn lại
+                                            trên
+                                            Shopee!
+                                            <i class="ti-help-alt"></i>
+                                        </div>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product_specific_info">
-                        <div class="product_benefit_container">
-                            <div class="product_benefit">
-                                <div class="ptitle">Mua Giá Bán Buôn/ Bán Sỉ</div>
-                            </div>
-
-                            <div class="product_benefit pdesc">Mua (5 - 10) sản phẩm chỉ với ₫51.000, Mua (11 - 20) sản
-                                phẩm chỉ với ₫49.000
-                            </div>
-                        </div>
-
-                        <form action="/buyNow" method="post">
-
-                            <div class="product_ship_container">
-                                <div class="product_ship_title">
-                                    <div class="ptitle">Vận Chuyển</div>
+                        <div class="product_specific_info">
+                            <div class="product_benefit_container">
+                                <div class="product_benefit">
+                                    <div class="ptitle">Mua Giá Bán Buôn/ Bán Sỉ</div>
                                 </div>
-                                <div class="product_ship pdesc">
-                                    <i class="ti-truck"></i>
-                                    <span>Vận chuyển tới</span>
-                                    <div class="cus_position">
-                                        <div class="user_position">
-                                            <div class="primary_position">
-                                                <span>Chọn vị trí</span>
-                                                <i class="ti-angle-down"></i>
-                                                <div class="select_position">
-                                                    <select class="select" name="orderLocation">
-                                                        <option class="option"
-                                                            value="Tỉnh/Thành phố, Quận/Huyện, Phường/Xã">Tỉnh/Thành
-                                                            phố,
-                                                            Quận/Huyện, Phường/Xã</option>
-                                                        <option class="option" value="Thành Phố Hồ Chí Minh">Thành Phố
-                                                            Hồ
-                                                            Chí Minh</option>
-                                                        <option class="option" value="Hà Nội">Hà Nội</option
-                                                            class="option">
-                                                        <option class="option" value="Huế">Huế</option>
-                                                        <option class="option" value="Đà Nẵng">Đà Nẵng</option>
-                                                    </select>
+
+                                <div class="product_benefit pdesc">Mua (5 - 10) sản phẩm chỉ với ₫51.000, Mua (11 - 20)
+                                    sản
+                                    phẩm chỉ với ₫49.000
+                                </div>
+                            </div>
+
+                            <form action="/buyNow" method="post">
+
+                                <div class="product_ship_container">
+                                    <div class="product_ship_title">
+                                        <div class="ptitle">Vận Chuyển</div>
+                                    </div>
+                                    <div class="product_ship pdesc">
+                                        <i class="ti-truck"></i>
+                                        <span>Vận chuyển tới</span>
+                                        <div class="cus_position">
+                                            <div class="user_position">
+                                                <div class="primary_position">
+                                                    <span>Chọn vị trí</span>
+                                                    <i class="ti-angle-down"></i>
+                                                    <div class="select_position">
+                                                        <select class="select" name="orderLocation">
+                                                            <option class="option"
+                                                                value="Tỉnh/Thành phố, Quận/Huyện, Phường/Xã">Tỉnh/Thành
+                                                                phố,
+                                                                Quận/Huyện, Phường/Xã</option>
+                                                            <option class="option" value="Thành Phố Hồ Chí Minh">Thành
+                                                                Phố
+                                                                Hồ
+                                                                Chí Minh</option>
+                                                            <option class="option" value="Hà Nội">Hà Nội</option
+                                                                class="option">
+                                                            <option class="option" value="Huế">Huế</option>
+                                                            <option class="option" value="Đà Nẵng">Đà Nẵng</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="product_amount_container">
-                                <div class="product_amount ptitle">Số Lượng</div>
-                                <input class="pdesc" type="number" value="1" min="1" max="99" name="quantity" id="quantity">
-                            </div>
-                            <div class="btn2" 
-                            <% if(loginUser){ %> >
-                                <input type="text" hidden value="<%= userId %>" name="Uid" />
-                                <input type="text" hidden value="<%= infoProduct.Pid %>" name="Pid" id="Pid"/>
-                                <!-- <button class="buy" type="submit"><a href="/buyNow">Mua Ngay</a></button> -->
-                                <button class="btn-inline btn-tinted btn--l GfiOwy RT2b7v" aria-disabled="false" 
-                                    type="button" onclick="addCart()">Thêm Vào Giỏ Hàng</button>
-                                <button class="btn-inline btn-solid-primary btn--l GfiOwy" 
-                                    type="submit">Mua Ngay</button> <!-- class="buy"-->
-                            <% } else { %>
-                                onclick="location.href='/login'">
-                                <input type="text" hidden value="<%= infoProduct.Pid %>" name="Pid" />
-                                <button class="btn-inline btn-tinted btn--l GfiOwy RT2b7v" aria-disabled="false">Thêm Vào Giỏ Hàng</button>
-                                <button class="btn-inline btn-solid-primary btn--l GfiOwy">Mua Ngay</button> <!-- class="buy"-->
-                            <% }%>                                   
-                            </div>
+                                <div class="product_amount_container">
+                                    <div class="product_amount ptitle">Số Lượng</div>
+                                    <input class="pdesc" type="number" value="1" min="1" max="99" name="quantity"
+                                        id="quantity">
+                                </div>
+                                <div class="btn2" <% if(loginUser){ %> >
+                                    <input type="text" hidden value="<%= userId %>" name="Uid" />
+                                    <input type="text" hidden value="<%= infoProduct.Pid %>" name="Pid" id="Pid" />
+                                    <!-- <button class="buy" type="submit"><a href="/buyNow">Mua Ngay</a></button> -->
+                                    <button class="btn-inline btn-tinted btn--l GfiOwy RT2b7v" aria-disabled="false"
+                                        type="button" onclick="addCart()">Thêm Vào Giỏ Hàng</button>
+                                    <button class="btn-inline btn-solid-primary btn--l GfiOwy" type="submit">Mua
+                                        Ngay</button> <!-- class="buy"-->
+                                    <% } else { %>
+                                        onclick="location.href='/login'">
+                                        <input type="text" hidden value="<%= infoProduct.Pid %>" name="Pid" />
+                                        <button class="btn-inline btn-tinted btn--l GfiOwy RT2b7v"
+                                            aria-disabled="false">Thêm Vào Giỏ Hàng</button>
+                                        <button class="btn-inline btn-solid-primary btn--l GfiOwy">Mua Ngay</button>
+                                        <!-- class="buy"-->
+                                        <% }%>
+                                </div>
                                 <!--div class="btn-1">
                                     <button class="add" type="button">Thêm Vào Giỏ Hàng</button>
-                                </div-->                        
-                        </form>
-                        <form>
-                            
-                        </form>
-                            
+                                </div-->
+                            </form>
+                            <form>
+
+                            </form>
+
+
+                        </div>
+
 
                     </div>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="shop_container">
-        <div class="shop_box">
-            <div class="shop_margin">
-                <img src="/image/shop_logo.png" alt="" width="90px" height="90px">
-            </div>
-            <div class="shop_info shop_margin">
-                <p class="shop_name">
-                    <%= infoProduct.seller_name %>
-                </p>
-                <p class="online">Online 41 phút trước</p>
-                <button class="chat_btn">
-                    <i class="ti-email"></i>
-                    Chat Ngay</button>
-            </div>
-        </div>
-        <div class="shop_status">
-            <div class="status_line">
-                <div>Đánh Giá</div>
-                <p>87.6K</p>
-                <div>Tỉ Lệ Phản Hồi</div>
-                <p>99%</p>
-                <div>Tham Gia</div>
-                <p>6 năm trước</p>
-            </div>
-            <div class="status_line">
-                <div>Sản Phẩm</div>
-                <p>694</p>
-                <div>Thời Gian Phản Hồi</div>
-                <p>trong vài giờ</p>
-                <div>Người Theo Dõi</div>
-                <p>334.2K</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="product_details">
-        <div class="details_1">
-            <div class="product_details_header">CHI TIẾT SẢN PHẨM</div>
-            <div class="product_details_body">
-                <div class="product_category">
-                    <div class="cate_header">Danh mục</div>
-                    <span class="cate_content"><a href="/home">Shopee</a> <i class="ti-angle-right"></i> <%= infoProduct.category %> <i class="ti-angle-right"></i> <%= infoProduct.item_name %> </span>
-                </div>
-                <div class="product_storage">
-                    <div class="sto_header">Kho hàng</div>
-                    <span class="sto_content"><%= infoProduct.storage_name %></span>
-                </div>
-                <div class="product_location">
-                    <div class="loc_header">Gửi từ</div>
-                    <span class="loc_content">Ai biết</span>
                 </div>
             </div>
         </div>
 
-        <div class="details_2">
-            <div class="product_desc_header">MÔ TẢ SẢN PHẨM</div>
-            <div class="product_desc_body">
-                <%= infoProduct.description %>
+        <div class="shop_container">
+            <div class="shop_box">
+                <div class="shop_margin">
+                    <img src="/image/shop_logo.png" alt="" width="90px" height="90px">
+                </div>
+                <div class="shop_info shop_margin">
+                    <p class="shop_name">
+                        <%= infoProduct.seller_name %>
+                    </p>
+                    <p class="online">Online 41 phút trước</p>
+                    <button class="chat_btn">
+                        <i class="ti-email"></i>
+                        Chat Ngay</button>
+                </div>
+            </div>
+            <div class="shop_status">
+                <div class="status_line">
+                    <div>Đánh Giá</div>
+                    <p>87.6K</p>
+                    <div>Tỉ Lệ Phản Hồi</div>
+                    <p>99%</p>
+                    <div>Tham Gia</div>
+                    <p>6 năm trước</p>
+                </div>
+                <div class="status_line">
+                    <div>Sản Phẩm</div>
+                    <p>694</p>
+                    <div>Thời Gian Phản Hồi</div>
+                    <p>trong vài giờ</p>
+                    <div>Người Theo Dõi</div>
+                    <p>334.2K</p>
+                </div>
             </div>
         </div>
-    </div>
+
+        <div class="product_details">
+            <div class="details_1">
+                <div class="product_details_header">CHI TIẾT SẢN PHẨM</div>
+                <div class="product_details_body">
+                    <div class="product_category">
+                        <div class="cate_header">Danh mục</div>
+                        <span class="cate_content"><a href="/home">Shopee</a> <i class="ti-angle-right"></i>
+                            <%= infoProduct.category %> <i class="ti-angle-right"></i>
+                                <%= infoProduct.item_name %>
+                        </span>
+                    </div>
+                    <div class="product_storage">
+                        <div class="sto_header">Kho hàng</div>
+                        <span class="sto_content">
+                            <%= infoProduct.storage_name %>
+                        </span>
+                    </div>
+                    <div class="product_location">
+                        <div class="loc_header">Gửi từ</div>
+                        <span class="loc_content">
+                            <%= infoProduct.shop_name %>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details_2">
+                <div class="product_desc_header">MÔ TẢ SẢN PHẨM</div>
+                <div class="product_desc_body">
+                    <%= infoProduct.description %>
+                </div>
+            </div>
+        </div>
 
 
 
 
 
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>        
-		
-		addCart = function() {
-            var quantity = $('#quantity').val();
-            var pid = $('#Pid').val();
-            $.ajax({
-                type: 'POST',
-                data: JSON.stringify({ product: pid, quantity: quantity}),
-                dataType: 'json',
-                contentType: "application/json; charset=UTF-8",
-                url: location.protocol + '//' + location.host + '/addCart',
-                success: function(res) {
-                    Swal.fire({
-                        text: "Đã thêm vào giỏ hàng.", 
-                        icon: "success",
-                        buttons: false,
-                        showCancelButton: false,
-                        showConfirmButton: false,
-                        timer: 3000,
-                    });
-                },
-                error: function() {
-                    Swal.fire({
-                        text: "Đã xảy ra lỗi.",
-                        icon: 'warning',
-                        showCancelButton: false,
-                        showConfirmButton: false,
-                        timer: 3000,
-                    });
-                    // alert("Vui lòng đăng nhập trước");
-                }
-            });
-        }
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+
+            addCart = function () {
+                var quantity = $('#quantity').val();
+                var pid = $('#Pid').val();
+                $.ajax({
+                    type: 'POST',
+                    data: JSON.stringify({ product: pid, quantity: quantity }),
+                    dataType: 'json',
+                    contentType: "application/json; charset=UTF-8",
+                    url: location.protocol + '//' + location.host + '/addCart',
+                    success: function (res) {
+                        Swal.fire({
+                            text: "Đã thêm vào giỏ hàng.",
+                            icon: "success",
+                            buttons: false,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            timer: 3000,
+                        });
+                    },
+                    error: function () {
+                        Swal.fire({
+                            text: "Đã xảy ra lỗi.",
+                            icon: 'warning',
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            timer: 3000,
+                        });
+                        // alert("Vui lòng đăng nhập trước");
+                    }
+                });
+            }
 
         </script>
-        
-<%- include('./parts/_footer.ejs') %>
+
+        <%- include('./parts/_footer.ejs') %>
