@@ -20,8 +20,9 @@
                     <img src="/image/shop_logo.png" alt="" width="60px">
                 </a>
             </div>
-            <div class="nav_title">Chỉnh sửa thông tin sản phẩm <span
-                style="font-weight: 600"><%= dataProduct.item_name %></span></div>
+            <div class="nav_title">Chỉnh sửa thông tin sản phẩm <span style="font-weight: 600">
+                    <%= dataProduct.item_name %>
+                </span></div>
         </div>
 
         <div class="right_obj">
@@ -51,7 +52,8 @@
                     </label>
                     <!-- <br> -->
                     <label class="spe" for=""><span>* Mô tả</span>
-                        <textarea style="border-width: 0" name="itemDescription" rows="4" cols="10"><%= dataProduct.description %></textarea>
+                        <textarea style="border-width: 0" name="itemDescription" rows="4"
+                            cols="10"><%= dataProduct.description %></textarea>
                         <i class="ti-pencil"></i>
                         <i style="margin-left: 16px" class="ti-trash"></i>
                     </label>
@@ -59,7 +61,7 @@
                     <label for=""><span>* Danh mục</span>
                         <select name="itemCategory">
                             <option value="Áo nam">Áo nam</option>
-                            <option value="Áo nữ">Áo nữ</option>
+                            <option value="Thời trang nữ">Áo nữ</option>
                             <option value="Đồ điện tử">Đồ điện tử</option>
                             <option value="Thiết bị gia dụng">Thiết bị gia dụng</option>
                             <option value="Thú cưng">Thú cưng</option>
@@ -113,58 +115,58 @@
         </div>
         <div class="add_form_container">
             <input type="text" value="<%= dataProduct.Pid %>" hidden name="Pid" />
-                <button class="up_btn" type="submit">Cập Nhật Sản Phẩm</button>
+            <button class="up_btn" type="submit">Cập Nhật Sản Phẩm</button>
         </div>
     </form>
-    
+
     <script>
-            const errMsg = '  Vui Lòng Chỉ Nhập Số'
+        const errMsg = '  Vui Lòng Chỉ Nhập Số'
 
-            const btn = document.querySelector('.up_btn')
-            const price =  document.querySelector('.itemPrice')
-            const pencils = document.querySelectorAll('.ti-pencil')
-            const trashes = document.querySelectorAll('.ti-trash')
+        const btn = document.querySelector('.up_btn')
+        const price = document.querySelector('.itemPrice')
+        const pencils = document.querySelectorAll('.ti-pencil')
+        const trashes = document.querySelectorAll('.ti-trash')
 
-            price.addEventListener('focus', (e)=> {
-                e.target.value = null
+        price.addEventListener('focus', (e) => {
+            e.target.value = null
+        })
+
+        price.addEventListener('blur', () => {
+            price.style.border = 'none'
+        })
+
+        pencils.forEach((pencil) => {
+            const cover = pencil.parentElement
+            const input = cover.querySelector('input') || cover.querySelector('textarea')
+            pencil.addEventListener('click', () => {
+                input.focus()
             })
+        })
 
-            price.addEventListener('blur', () => {
-                    price.style.border = 'none'
+        trashes.forEach((trash) => {
+            const cover = trash.parentElement
+            const input = cover.querySelector('input') || cover.querySelector('textarea')
+            trash.addEventListener('click', () => {
+                input.value = null
+                input.focus()
             })
+        })
 
-            pencils.forEach((pencil) => {
-                const cover = pencil.parentElement
-                const input = cover.querySelector('input') || cover.querySelector('textarea')
-                pencil.addEventListener('click', () => {
-                    input.focus()
-                })
-            })
+        const handleCheck = (e) => {
+            e.preventDefault();
+            price.value = errMsg
+            price.style.border = '1px solid #ee4d2d'
 
-            trashes.forEach((trash) => {
-                const cover = trash.parentElement
-                const input = cover.querySelector('input') || cover.querySelector('textarea')
-                trash.addEventListener('click', () => {
-                    input.value = null
-                    input.focus()
-                })
-            })
+        }
 
-            const handleCheck = (e) => {
-                e.preventDefault();
-                price.value = errMsg
-                price.style.border = '1px solid #ee4d2d'
-                
+        price.addEventListener('change', (e) => {
+            if (isNaN(e.target.value)) {
+                btn.addEventListener('click', handleCheck)
+
+            } else {
+                btn.removeEventListener('click', handleCheck)
             }
-
-            price.addEventListener('change', (e) => {
-                if(isNaN(e.target.value)) {
-                    btn.addEventListener('click', handleCheck) 
-
-                } else {
-                    btn.removeEventListener('click', handleCheck)
-                }
-            })
+        })
     </script>
 
 </body>
