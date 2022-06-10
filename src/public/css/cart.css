@@ -199,7 +199,6 @@ input[type="checkbox" i] {
 
 input {
     line-height: normal;
-    margin-left: 8px;
 }
 
 .stardust-checkbox__box:after{
@@ -249,8 +248,37 @@ button {
     flex-shrink: 0;
 }
 .checkall_label {
-    width: 70%;
     align-items: left;
     display: flex;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.grid-item {
+    width: 30%;
+}
+.footer {
+    padding-left: 50px;
+}
+/* button submit */
+.btn--l {
+    font-size: 14px;
+    height: 38px;
+    padding: 0 20px;
+}
+
+.bill_voucher1 {
+    width: 100%;
+    height: 30%;
+    border-bottom: 1px dashed #88888870;
+    display: flex;
+    line-height: 48px;
+    justify-content: space-around;
+}
+
+.update > .btn {
+    margin-left: 20px;
 }
 
