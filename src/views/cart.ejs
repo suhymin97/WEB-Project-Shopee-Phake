@@ -1,6 +1,7 @@
 <%- include('./parts/_headera.ejs') %>
 <link rel="stylesheet" href="/css/button.css">
 <link rel="stylesheet" href="/css/cart.css">
+<script src="/src/public/js/cart.js"></script>
 <%- include('./parts/_headerb2.ejs') %>
 
 <div class="shop"></div>
@@ -33,7 +34,10 @@ for(let i=0; i < products.length; i++) {
         <!--product start-->
         <div class="_1row">
         <div class="product">
-            <input type="text" hidden value="<%= products[i].Pid %>" name="products[i].mid" id="Pid"/>  
+            <input type="text" hidden
+                    value="0"
+                    name="pid[<%= products[i].Pid %>]"
+                    id=""/>                    
             <div class="checkbox"> <!--Check box -->
                 <label class="stardust-checkbox">
                     <input class="stardust-checkbox__input" type="checkbox" id="productcheckbox">
@@ -51,11 +55,11 @@ for(let i=0; i < products.length; i++) {
             <div class="otherdetail _3quantity"> <!--quantity start -->
                 <div class="_3he7rw shopee-input-quantity">
                     <input class="_3Ell0h _37H5-t" type="number" role="spinbutton" aria-valuenow="2"
-                        value="<%=products[i].quantity%>" min ="1" max="99" id="quantity" name="<%=products[i].pid%>">
+                        value="<%=products[i].quantity%>" min ="1" max="99" id="quantity" name="quant[<%=products[i].pid%>]">
                 </div>
             </div> <!--quantity  end -->
             <div class="otherdetail _3del">
-                <button class="btdel">Xóa</button>
+                <button class="btdel" onclick='document.getElementById("<%=products[i].Pid%>").value="1"; deleteItem();'>Xóa</button>
             </div>
         </div>
         </div>
@@ -97,7 +101,8 @@ for(let i=0; i < products.length; i++) {
             </div>
         
             <div class="update grid-item" style="display: flex; align-items: center; position: relative;">
-                <button class="btn btn-inline btn-tinted btn--l GfiOwy RT2b7v" aria-disabled="false">Cập nhật giỏ hàng</button>
+                <button class="btn btn-inline btn-tinted btn--l GfiOwy RT2b7v" aria-disabled="false" type="button" 
+                    onClick="updateCart()">Cập nhật giỏ hàng</button>
             </div>
         </div>
 
@@ -179,6 +184,80 @@ for(let i=0; i < products.length; i++) {
             });
         });
     });
+    deleteItem = function () {
+        var pid = document.getElementsByName("pid");
+        $('product').css("visibility", "hidden")
+        for(var i =0; i<pid.length(); i++) {
+            if (pid[i].value==1) {
+                $.ajax({
+                    type: 'POST',
+                    data: JSON.stringify({ product: pid[i].id}),
+                    dataType: 'json',
+                    contentType: "application/json; charset=UTF-8",
+                    url: location.protocol + '//' + location.host + '/cartDeleteItem',
+                    success: function (res) {
+                        Swal.fire({
+                            text: res,
+                            icon: "success",
+                            buttons: false,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            timer: 3000,
+                        });
+                    },
+                    error: function () {
+                        Swal.fire({
+                            text: "Đã xảy ra lỗi.",
+                            icon: 'warning',
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            timer: 3000,
+                        });
+                        // alert("Vui lòng đăng nhập trước");
+                    }
+                });
+                break;
+            }
+        }
+    }
+    updateCart = function() {
+        var pid = $('input[name^=pid]').map (function(idx, elem) {
+            return($(elem).val());
+        }).get();
+        var quantity = $('input[name^=quan]').map (function(idx, elem) {
+            return($(elem).val());
+        }).get();
+        console.log(quantity[1]);
+                $.ajax({
+                    type: 'POST',
+                    data: { pid: pid, quantity: quantity},
+                    dataType: 'json',
+                    contentType: "application/json; charset=UTF-8",
+                    url: location.protocol + '//' + location.host + '/updateCart',
+                    success: function (res) {
+                        Swal.fire({
+                            text: res,
+                            icon: "success",
+                            buttons: false,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            timer: 3000,
+                        });
+                    },
+                    error: function () {
+                        Swal.fire({
+                            text: "Đã xảy ra lỗi.",
+                            icon: 'warning',
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            timer: 3000,
+                        });
+                        // alert("Vui lòng đăng nhập trước");
+                    }
+                });
+
+    }
+    handleOver = function(){}
 </script>
 
 <%- include('./parts/_footer.ejs') %>

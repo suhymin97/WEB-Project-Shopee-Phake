@@ -10,7 +10,7 @@ let getCart = async(req, res) => { //AVu7 for future change
 }
 
  //Mill cart
- let addCart = async(req, res) => {
+let addCart = async(req, res) => {
     let pid = req.body.product;
     let quantity = req.body.quantity;
     let uid = req.session.userid;
@@ -23,6 +23,25 @@ let getCart = async(req, res) => { //AVu7 for future change
     return res.send({title: "Đã thêm vào giỏ hàng"});
 }
 
+let deleteItem = async(req, res) => {
+    let pid = req.body.pid;
+    let uid = req.session.userid;
+    console.log("Del: " + pid + " " + uid);
+    await pool.execute(`DELETE FROM cart WHERE UID = ? AND PID = ? `, [uid, pid]);
+    return getCart();
+}
+
+let updateCart = async(req, res) => {
+    let pid = req.body.pid;
+    let quantity = req.body.quantity;
+    let uid = req.session.userid;
+    console.log("Del: " + pid + " " + uid);
+    for (var i=0;i<pid.length();i++) {
+        await pool.execute(`UPDATE cart SET QUANTITY = ? WHERE UID = ? AND PID = ? `, [uid, pid[i], quantit[i]]);
+    }
+    return getCart();
+}
+
 module.exports = {
-    getCart, addCart
+    getCart, addCart, deleteItem, updateCart
 }

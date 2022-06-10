@@ -74,6 +74,8 @@ const initWebRoute = (app) => {
     /* Cart section */
     router.get('/cart', isAuthenticated, cartController.getCart);
     router.post('/addCart', isAuthenticated, cartController.addCart);
+    router.post('/cartDeleteItem', cartController.deleteItem);
+    router.post('/updateCart', cartController.updateCart);
 
 
 
