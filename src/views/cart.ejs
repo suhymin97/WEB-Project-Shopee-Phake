@@ -124,6 +124,7 @@ for(let i=0; i < products.length; i++) {
     </form>
 
 </div>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     $('#checkAll').click(function () {
         var users = $('input[name="username[]"]').map(function(){ 
@@ -230,9 +231,8 @@ for(let i=0; i < products.length; i++) {
         console.log(quantity[1]);
                 $.ajax({
                     type: 'POST',
-                    data: { pid: pid, quantity: quantity},
-                    dataType: 'json',
-                    contentType: "application/json; charset=UTF-8",
+                    data: JSON.stringify({ pid: pid, quantity: quantity}),
+                    dataType: "json",
                     url: location.protocol + '//' + location.host + '/updateCart',
                     success: function (res) {
                         Swal.fire({
@@ -254,7 +254,7 @@ for(let i=0; i < products.length; i++) {
                         });
                         // alert("Vui lòng đăng nhập trước");
                     }
-                });
+                });     
 
     }
     handleOver = function(){}
