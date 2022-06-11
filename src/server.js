@@ -5,11 +5,11 @@ import initWebRoute from './route/web'
 require('dotenv').config()
 const path = require('path');
 
+
 const session = require('express-session');
 
 const app = express()
-const port = process.env.PORT || 8080;
-
+const port = process.env.PORT || 8082;
 //define static folder
 app.use(express.static("public"));
 //app.use(express.static(path.join(__dirname, 'public')));
@@ -32,7 +32,6 @@ configViewEngine(app);
 initWebRoute(app);
 //init time zone - Mil
 process.env.TZ = 'Asia/Saigon';
-
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
