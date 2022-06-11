@@ -28,7 +28,7 @@ let deleteItem = async(req, res) => {
     let uid = req.session.userid;
     console.log("Del: " + pid + " " + uid);
     await pool.execute(`DELETE FROM cart WHERE UID = ? AND PID = ? `, [uid, pid]);
-    return getCart();
+    return res.redirect('/cart');
 }
 
 let updateCart = async(req, res) => {
