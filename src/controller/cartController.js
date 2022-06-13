@@ -14,7 +14,7 @@ let addCart = async(req, res) => {
     let pid = req.body.product;
     let quantity = req.body.quantity;
     let uid = req.session.userid;
-    
+    let date = DateTime();
     console.log(pid + " " + quantity + " " + uid + " " + date);
     await pool.execute(`INSERT INTO cart(UID, PID, QUANTITY, EFFDATE) 
             values (?, ?, ?, ?)
@@ -36,8 +36,9 @@ let updateCart = async(req, res) => {
     let quantity = req.body.quantity;
     let uid = req.session.userid;
     let date = DateTime();
-        await pool.execute(`UPDATE CART SET QUANTITY = QUANTITY - 1, EFFDATE = ? WHERE UID = ? AND PID = ?`, [date, uid, 2]);
-        await pool.execute(`UPDATE CART SET QUANTITY = QUANTITY - 1, EFFDATE = ? WHERE UID = ? AND PID = ?`, [date, uid,20]);
+    for (var i=0; i< quantity.length();i++) {
+        await pool.execute(`UPDATE CART SET QUANTITY = ?, EFFDATE = ? WHERE UID = ? AND PID = ?`, [quantity[2], date, uid, 3]);
+    }
     return res.send("Success");
 }
 

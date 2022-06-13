@@ -231,10 +231,11 @@ for(let i=0; i < products.length; i++) {
         var quantity = $('input[name^=quan]').map (function(idx, elem) {
             return($(elem).val());
         }).get();
-        console.log(quantity[1]);
+        var senddata = JSON.stringify(quantity);
+        console.log(senddata);
                 $.ajax({
                     type: 'POST',
-                    data: JSON.stringify({ pid: pid, quantity: quantity}),
+                    data: senddata,
                     dataType: "json",
                     url: location.protocol + '//' + location.host + '/updateCart',
                     success: function (res) {
